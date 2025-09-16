@@ -635,8 +635,8 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: CIS289_JustTheTwoOfUs
-  metroPackageVersion: 
+  metroPackageName: CIS289JustTheTwoOfUs
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -644,7 +644,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: CIS289_JustTheTwoOfUs
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: CIS289_JustTheTwoOfUs
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
