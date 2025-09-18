@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private PlayerActions playerActions;
     private Vector2 movementInput;
     private PlayerInput playerInput;
+    public GameObject otherCharacter;
 
     private void Awake()
     {
@@ -36,8 +37,10 @@ public class PlayerController : MonoBehaviour
         movementInput = playerActions.Action_Map.Movement.ReadValue<Vector2>();
 
         //setting y axis to 0 (temperary until velocity is applied on this axis
-        movementInput.y = 0f;
-        rb.linearVelocity = movementInput * speed;
+        //movementInput.y = 0f;
+
+        float currentYVelocity = rb.linearVelocityY;
+        rb.linearVelocity = new Vector2 (movementInput.x * speed, currentYVelocity);
 
         
     }
@@ -59,6 +62,9 @@ public class PlayerController : MonoBehaviour
         if(playerInput.actions["SwitchPlayer"].WasPressedThisFrame())
         {
             Debug.Log("Switch players");
+            this.GetComponent<PlayerController>().enabled = false;
+            otherCharacter.GetComponent<PlayerController>().enabled = true;
+
         }
         
     }
