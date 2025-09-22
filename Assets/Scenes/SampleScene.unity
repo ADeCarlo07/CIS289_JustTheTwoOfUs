@@ -210,7 +210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 203199241}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.00000049173826, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.018991342, w: 0.9998197}
   m_LocalPosition: {x: 2.31, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -602,7 +602,7 @@ Transform:
   m_GameObject: {fileID: 439167868}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.63398904, w: -0.77334213}
-  m_LocalPosition: {x: -7.1371055, y: 18.178276, z: 0}
+  m_LocalPosition: {x: -7.1371055, y: 18.17828, z: 0}
   m_LocalScale: {x: 6.666666, y: 6.666666, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1000,11 +1000,14 @@ MonoBehaviour:
   - {fileID: 731097763}
   - {fileID: 351175547}
   - {fileID: 749698347}
+  - {fileID: 1656649648}
   m_Weight: 1
   m_AlwaysUpdate: 1
   m_SolverEditorData:
   - color: {r: 0, g: 1, b: 0, a: 1}
     showGizmo: 0
+  - color: {r: 0, g: 1, b: 0, a: 1}
+    showGizmo: 1
   - color: {r: 0, g: 1, b: 0, a: 1}
     showGizmo: 1
   - color: {r: 0, g: 1, b: 0, a: 1}
@@ -1232,11 +1235,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7694217771748202108, guid: b7ea3b0e602433248899b12dce45df98, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.97793996
+      value: 0.9373937
       objectReference: {fileID: 0}
     - target: {fileID: -7694217771748202108, guid: b7ea3b0e602433248899b12dce45df98, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.20888612
+      value: -0.34827143
+      objectReference: {fileID: 0}
+    - target: {fileID: -7694217771748202108, guid: b7ea3b0e602433248899b12dce45df98, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -41.234
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: b7ea3b0e602433248899b12dce45df98, type: 3}
       propertyPath: m_LocalScale.x
@@ -1471,6 +1478,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -7552582706839291426, guid: b7ea3b0e602433248899b12dce45df98, type: 3}
       insertIndex: -1
       addedObject: {fileID: 749698348}
+    - targetCorrespondingSourceObject: {fileID: -7552582706839291426, guid: b7ea3b0e602433248899b12dce45df98, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1656649649}
     - targetCorrespondingSourceObject: {fileID: -7694217771748202108, guid: b7ea3b0e602433248899b12dce45df98, type: 3}
       insertIndex: -1
       addedObject: {fileID: 203199242}
@@ -1550,6 +1560,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2471920254983572574, guid: b7ea3b0e602433248899b12dce45df98, type: 3}
   m_PrefabInstance: {fileID: 1054705958}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1656649647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1656649649}
+  - component: {fileID: 1656649648}
+  m_Layer: 0
+  m_Name: New LimbSolver2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1656649648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656649647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30ae93fb156fc6d4c828c64571fc3edd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.2D.IK.Runtime::UnityEngine.U2D.IK.LimbSolver2D
+  m_ConstrainRotation: 1
+  m_SolveFromDefaultPose: 1
+  m_Weight: 1
+  m_Chain:
+    m_EffectorTransform: {fileID: 0}
+    m_TargetTransform: {fileID: 0}
+    m_TransformCount: 0
+    m_Transforms: []
+    m_DefaultLocalRotations: []
+    m_StoredLocalRotations: []
+  m_Flip: 0
+--- !u!4 &1656649649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656649647}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 786270578}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1691860926
 GameObject:
   m_ObjectHideFlags: 0
