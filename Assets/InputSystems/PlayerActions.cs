@@ -109,6 +109,24 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Run"",
+                    ""type"": ""Button"",
+                    ""id"": ""d7b71199-eafd-4794-ad0c-657af86cca07"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""aae02109-1860-410b-8eef-494a63254dd8"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -168,6 +186,61 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""9312daaa-457f-4522-88dd-301c5f7a98e5"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""f648b4d3-84c0-4ac6-864b-95efbcabebff"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""a5e5077b-e263-4fb7-b741-17461c88b3f8"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""41cbb5ab-7033-4305-b721-7c73b1d66b04"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""fb9018e7-410a-4781-840c-f4d865d125ce"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""ad5fc652-2ed9-4473-8541-da7f7e4ffa7a"",
                     ""path"": ""<Keyboard>/r"",
@@ -175,6 +248,61 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""SwitchPlayer"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""16e13ca4-060a-4b53-94ef-a2ac0f5009c9"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchPlayer"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6f86336c-0af9-40cd-84b0-a511d6f08e38"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Run"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ffe5d8e5-2f78-4943-b199-4f759a64c9a9"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Run"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b63e6644-c2d8-4116-897f-0bac1590fe3b"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""84223acc-2baf-44b8-a89f-2f0c5ab29b5a"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -187,6 +315,8 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         m_Action_Map = asset.FindActionMap("Action_Map", throwIfNotFound: true);
         m_Action_Map_Movement = m_Action_Map.FindAction("Movement", throwIfNotFound: true);
         m_Action_Map_SwitchPlayer = m_Action_Map.FindAction("SwitchPlayer", throwIfNotFound: true);
+        m_Action_Map_Run = m_Action_Map.FindAction("Run", throwIfNotFound: true);
+        m_Action_Map_Jump = m_Action_Map.FindAction("Jump", throwIfNotFound: true);
     }
 
     ~@PlayerActions()
@@ -269,6 +399,8 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private List<IAction_MapActions> m_Action_MapActionsCallbackInterfaces = new List<IAction_MapActions>();
     private readonly InputAction m_Action_Map_Movement;
     private readonly InputAction m_Action_Map_SwitchPlayer;
+    private readonly InputAction m_Action_Map_Run;
+    private readonly InputAction m_Action_Map_Jump;
     /// <summary>
     /// Provides access to input actions defined in input action map "Action_Map".
     /// </summary>
@@ -288,6 +420,14 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Action_Map/SwitchPlayer".
         /// </summary>
         public InputAction @SwitchPlayer => m_Wrapper.m_Action_Map_SwitchPlayer;
+        /// <summary>
+        /// Provides access to the underlying input action "Action_Map/Run".
+        /// </summary>
+        public InputAction @Run => m_Wrapper.m_Action_Map_Run;
+        /// <summary>
+        /// Provides access to the underlying input action "Action_Map/Jump".
+        /// </summary>
+        public InputAction @Jump => m_Wrapper.m_Action_Map_Jump;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -320,6 +460,12 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @SwitchPlayer.started += instance.OnSwitchPlayer;
             @SwitchPlayer.performed += instance.OnSwitchPlayer;
             @SwitchPlayer.canceled += instance.OnSwitchPlayer;
+            @Run.started += instance.OnRun;
+            @Run.performed += instance.OnRun;
+            @Run.canceled += instance.OnRun;
+            @Jump.started += instance.OnJump;
+            @Jump.performed += instance.OnJump;
+            @Jump.canceled += instance.OnJump;
         }
 
         /// <summary>
@@ -337,6 +483,12 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @SwitchPlayer.started -= instance.OnSwitchPlayer;
             @SwitchPlayer.performed -= instance.OnSwitchPlayer;
             @SwitchPlayer.canceled -= instance.OnSwitchPlayer;
+            @Run.started -= instance.OnRun;
+            @Run.performed -= instance.OnRun;
+            @Run.canceled -= instance.OnRun;
+            @Jump.started -= instance.OnJump;
+            @Jump.performed -= instance.OnJump;
+            @Jump.canceled -= instance.OnJump;
         }
 
         /// <summary>
@@ -391,5 +543,19 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSwitchPlayer(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Run" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRun(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Jump" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnJump(InputAction.CallbackContext context);
     }
 }
