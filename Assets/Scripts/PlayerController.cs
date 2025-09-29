@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     private bool jumpRequested;
     public Transform groundCheck;
+    private string nameOfCharacter;
 
 
     private void Awake()
@@ -68,12 +69,14 @@ public class PlayerController : MonoBehaviour
 
         animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
         animator.SetFloat("VerticalVelocity", rb.linearVelocity.y);
+        animator.SetInteger("VertVel", (int)rb.linearVelocity.y);
 
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        nameOfCharacter = gameObject.name;
         animator = GetComponent<Animator>();
     }
 
@@ -105,6 +108,7 @@ public class PlayerController : MonoBehaviour
         if(playerInput.actions["SwitchPlayer"].WasPressedThisFrame())
         {
             Debug.Log("Switch players");
+            currentSpeed = 0f;
             this.GetComponent<PlayerController>().enabled = false;
             otherCharacter.GetComponent<PlayerController>().enabled = true;
 
