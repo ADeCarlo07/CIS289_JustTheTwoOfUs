@@ -2,8 +2,6 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using UnityEngine.UI;
-using System;
-using NUnit.Framework;
 using System.Collections.Generic;
 public class Dialogue : MonoBehaviour
 {

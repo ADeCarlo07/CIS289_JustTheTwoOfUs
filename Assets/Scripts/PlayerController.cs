@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,7 +20,13 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     private bool jumpRequested;
     public Transform groundCheck;
-    private string nameOfCharacter;
+    public Material material;
+    public CinemachineCamera cam;
+    public GameObject circleCollider;
+    public float vertexOfParabola;
+    public GameManager gameManager;
+    public GameObject follower;
+    
 
 
     private void Awake()
@@ -43,6 +49,9 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Vector3 position = circleCollider.transform.position;
+        position.x = this.transform.position.x;
+        circleCollider.transform.position = position;
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
         Run();
 
@@ -65,25 +74,34 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             jumpRequested = false;
         }
-    
 
+        material.SetFloat("_PlayerOffset", this.transform.position.x);
+      
         animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
         animator.SetFloat("VerticalVelocity", rb.linearVelocity.y);
         animator.SetInteger("VertVel", (int)rb.linearVelocity.y);
 
     }
+    private void OnApplicationQuit()
+    {
+        material.SetFloat("_PlayerOffset", 0);
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        nameOfCharacter = gameObject.name;
+        gameManager.setTargetPlayer(this.gameObject);
+        gameManager.setOtherPlayer(otherCharacter);
         animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(movementInput.x != 0)
+        var receiver = follower.GetComponent<FollowScript>();
+        receiver.SendMessage("SwitchCalled", false);
+
+        if (movementInput.x != 0)
         {
             //flips entire gameObject by inverting its x scale
             Vector3 scale = transform.localScale;
@@ -109,8 +127,28 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Switch players");
             currentSpeed = 0f;
+            rb.gravityScale = 0;
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            this.GetComponent<RotateWithCurve>().enabled = true;
             this.GetComponent<PlayerController>().enabled = false;
+
+
+
+            gameManager.setTargetPlayer(otherCharacter);
+            gameManager.setOtherPlayer(this.gameObject);
+            //cam.Follow = otherCharacter.transform;
+            var receiver = follower.GetComponent<FollowScript>();
+            receiver.SendMessage("SwitchCalled", true);
+            otherCharacter.GetComponent<RotateWithCurve>().enabled = false;
+            otherCharacter.GetComponent<Rigidbody2D>().gravityScale = 1;
             otherCharacter.GetComponent<PlayerController>().enabled = true;
+            otherCharacter.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+            otherCharacter.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            otherCharacter.transform.rotation = Quaternion.Euler(0, 0, 0);
+            Vector3 pos = otherCharacter.transform.position;
+            pos.y = vertexOfParabola;
+            otherCharacter.transform.position = pos;
+
 
         }
         
@@ -129,6 +167,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
+   
 
 }

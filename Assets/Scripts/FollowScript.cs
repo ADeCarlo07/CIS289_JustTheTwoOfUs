@@ -1,45 +1,48 @@
+using System.Collections;
 using UnityEngine;
 
 public class FollowScript : MonoBehaviour
 {
-    public GameObject otherPlayer;
-    private bool inRadius = false;
+    public GameManager gameManager;
+    private Vector3 origPos;
+    private Vector3 targetPos;
+    private float timeToMove = 0.2f;
+    public float vertex = -6f;
+    private Rigidbody2D rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void FixedUpdate()
     {
         
     }
 
-    private void Follow()
+
+    // Update is called once per frame
+    void Update()
     {
-        if (otherPlayer != null)
-        {
-            if (!inRadius)
-            {
-                
-            }
-        }
+        transform.position = gameManager.getTargetPlayer().transform.position;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void MoveToOtherCharacter(bool move)
     {
-        if (collision.gameObject.CompareTag("FollowRadius"))
+        Debug.Log(move);
+        if(move)
         {
-            inRadius = true;
+            Vector2 direction = (gameManager.getTargetPlayer().transform.position - gameManager.getOtherPlayer().transform.position).normalized;
+            rb.AddForce(direction);
         }
+
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("FollowRadius"))
-        {
-            inRadius = false;
-        }
-    }
+    
+
 }
