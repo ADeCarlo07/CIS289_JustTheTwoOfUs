@@ -98,8 +98,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var receiver = follower.GetComponent<FollowScript>();
-        receiver.SendMessage("SwitchCalled", false);
 
         if (movementInput.x != 0)
         {
@@ -125,6 +123,9 @@ public class PlayerController : MonoBehaviour
     {
         if(playerInput.actions["SwitchPlayer"].WasPressedThisFrame())
         {
+            gameManager.setTargetPlayer(otherCharacter);
+            gameManager.setOtherPlayer(this.gameObject);
+
             Debug.Log("Switch players");
             currentSpeed = 0f;
             rb.gravityScale = 0;
@@ -132,22 +133,31 @@ public class PlayerController : MonoBehaviour
             this.GetComponent<RotateWithCurve>().enabled = true;
             this.GetComponent<PlayerController>().enabled = false;
 
+            gameManager.setMustMoveCamera(true);
 
 
-            gameManager.setTargetPlayer(otherCharacter);
-            gameManager.setOtherPlayer(this.gameObject);
-            //cam.Follow = otherCharacter.transform;
-            var receiver = follower.GetComponent<FollowScript>();
-            receiver.SendMessage("SwitchCalled", true);
-            otherCharacter.GetComponent<RotateWithCurve>().enabled = false;
-            otherCharacter.GetComponent<Rigidbody2D>().gravityScale = 1;
-            otherCharacter.GetComponent<PlayerController>().enabled = true;
-            otherCharacter.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-            otherCharacter.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-            otherCharacter.transform.rotation = Quaternion.Euler(0, 0, 0);
-            Vector3 pos = otherCharacter.transform.position;
-            pos.y = vertexOfParabola;
-            otherCharacter.transform.position = pos;
+            //Debug.Log("Switch players");
+            //currentSpeed = 0f;
+            //rb.gravityScale = 0;
+            //rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            //this.GetComponent<RotateWithCurve>().enabled = true;
+            //this.GetComponent<PlayerController>().enabled = false;
+
+           
+
+            //otherCharacter.GetComponent<RotateWithCurve>().enabled = false;
+            //otherCharacter.GetComponent<Rigidbody2D>().gravityScale = 1;
+            //otherCharacter.GetComponent<PlayerController>().enabled = true;
+            //otherCharacter.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+            //otherCharacter.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            //otherCharacter.transform.rotation = Quaternion.Euler(0, 0, 0);
+            //Vector3 pos = otherCharacter.transform.position;
+            //pos.y = vertexOfParabola;
+            //otherCharacter.transform.position = pos;
+
+            gameManager.setCanActivateOtherCharacter(false);
+            
+            
 
 
         }

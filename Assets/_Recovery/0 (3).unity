@@ -4888,9 +4888,8 @@ GameObject:
   - component: {fileID: 1598809720}
   - component: {fileID: 1598809719}
   - component: {fileID: 1598809718}
-  - component: {fileID: 1598809722}
   m_Layer: 3
-  m_Name: Parabola
+  m_Name: Open Sprite Shape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5233,33 +5232,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &1598809722
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1598809717}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
 --- !u!1 &1616442089
 GameObject:
   m_ObjectHideFlags: 0
@@ -5852,6 +5824,7 @@ GameObject:
   - component: {fileID: 1788207947}
   - component: {fileID: 1788207951}
   - component: {fileID: 1788207950}
+  - component: {fileID: 1788207949}
   - component: {fileID: 1788207948}
   m_Layer: 0
   m_Name: Follow
@@ -5911,6 +5884,21 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &1788207949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788207946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 395b5146e9b66ac4ba568ea8d0d5ed69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotateWithCurve
+  material: {fileID: 2100000, guid: 6f6faee07e1447d44be66c73fbdbdc9d, type: 2}
+  heightOffset: 1
+  angle: 0
 --- !u!50 &1788207950
 Rigidbody2D:
   serializedVersion: 5
@@ -5952,7 +5940,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FollowScript
   gameManager: {fileID: 213844448}
   vertex: -6
-  speed: 8
 --- !u!1 &1894539737 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8653719598885068355, guid: b7ea3b0e602433248899b12dce45df98, type: 3}
