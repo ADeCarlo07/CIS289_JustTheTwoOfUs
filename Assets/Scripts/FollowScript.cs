@@ -8,6 +8,9 @@ public class FollowScript : MonoBehaviour
     public Material material;
     public float moveDuration = 2f;
     private bool isMoving;
+    private Vector3 endPos;
+    //certain things aren't needed unless the scene uses my matieral that curves the scene
+    public bool curvedScene;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -40,9 +43,18 @@ public class FollowScript : MonoBehaviour
     IEnumerator MoveToTarget()
     {
         Vector3 startPos = transform.position;
-        Vector3 endPosY = gameManager.getTargetPlayer().transform.position;
-        endPosY.y = vertexOfParabola;
-        Vector3 endPos = endPosY;
+        if (curvedScene)
+        {
+            Vector3 endPosY = gameManager.getTargetPlayer().transform.position;
+            endPosY.y = vertexOfParabola;
+            endPos = endPosY;
+        }
+        else
+        {
+            endPos = gameManager.getTargetPlayer().transform.position;
+        }
+        
+
         float elapsed = 0f;
 
         while (elapsed < moveDuration)
@@ -50,25 +62,37 @@ public class FollowScript : MonoBehaviour
             elapsed += Time.deltaTime;
             float t = elapsed / moveDuration;
             transform.position = Vector3.Lerp(startPos, endPos, t);
-            material.SetFloat("_PlayerOffset", transform.position.x);
+
+            if (curvedScene)
+            {
+                material.SetFloat("_PlayerOffset", transform.position.x);
+            }
+           
 
             yield return null;
         }
 
         transform.position = endPos;
-        material.SetFloat("_PlayerOffset", endPos.x);
+        
 
-        gameManager.getTargetPlayer().GetComponent<RotateWithCurve>().enabled = false;
+        if (curvedScene)
+        {
+            material.SetFloat("_PlayerOffset", endPos.x);
+            gameManager.getTargetPlayer().GetComponent<RotateWithCurve>().enabled = false;
+        }
+        
         gameManager.getTargetPlayer().GetComponent<Rigidbody2D>().gravityScale = 1;
         gameManager.getTargetPlayer().GetComponent<PlayerController>().enabled = true;
         gameManager.getTargetPlayer().GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         gameManager.getTargetPlayer().GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         gameManager.getTargetPlayer().transform.rotation = Quaternion.Euler(0, 0, 0);
         Vector3 pos = gameManager.getTargetPlayer().transform.position;
-        pos.y = vertexOfParabola;
+        if (curvedScene)
+        {
+            pos.y = vertexOfParabola;
+        }
         gameManager.getTargetPlayer().transform.position = pos;
 
-        gameManager.setCanActivateOtherCharacter(true);
         gameManager.setMustMoveCamera(false);
 
 

@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
     private GameObject targetPlayer;
     private GameObject otherPlayer;
     private bool mustMoveCamera;
-    private bool canActivateOtherCharacter;
+    private GameObject spaceDog;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,18 +16,31 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public bool getCanActivateOtherCharacter()
+    public GameObject getSpaceDog()
     {
-        return canActivateOtherCharacter;
+        return spaceDog;
     }
 
-    public void setCanActivateOtherCharacter(bool caoc)
+    public void setSpaceDog(GameObject sd)
     {
-        canActivateOtherCharacter = caoc;
+        spaceDog = sd;
     }
+
+    public bool playingAsSpaceDog()
+    {
+        if (targetPlayer == spaceDog)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
 
     public bool getMustMoveCamera()
     {

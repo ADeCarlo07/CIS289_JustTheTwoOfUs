@@ -26,6 +26,11 @@ public class PlayerController : MonoBehaviour
     public float vertexOfParabola;
     public GameManager gameManager;
     public GameObject follower;
+    private int maxNumJumps = 1;
+    private int numJumps = 0;
+    public GameObject spaceDog;
+    //certain things aren't needed unless the scene uses my matieral that curves the scene
+    public bool curvedScene;
     
 
 
@@ -49,10 +54,14 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 position = circleCollider.transform.position;
-        position.x = this.transform.position.x;
-        circleCollider.transform.position = position;
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
+        if (curvedScene)
+        {
+            Vector3 position = circleCollider.transform.position;
+            position.x = this.transform.position.x;
+            circleCollider.transform.position = position;
+        }
+        
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
         Run();
 
         //ternary operator, saying if we are running current speed is run speed
@@ -67,15 +76,45 @@ public class PlayerController : MonoBehaviour
 
       
         //checking to see if player can jump and letting them jump
-        if (isGrounded && jumpRequested)
+
+        if (gameManager.playingAsSpaceDog())
         {
-            animator.SetTrigger("Jump");
-            rb.linearVelocity = new Vector2(rb.linearVelocityX, 0);
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            jumpRequested = false;
+            if (jumpRequested && numJumps != maxNumJumps)
+            {
+                numJumps++;
+                Debug.Log("Space dog jumped");
+                animator.SetTrigger("Jump");
+                rb.linearVelocity = new Vector2(rb.linearVelocityX, 0);
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+              
+                jumpRequested = false;
+            }
+            if (numJumps == maxNumJumps && isGrounded)
+            {
+                numJumps = 0;
+                jumpRequested = false;
+            }
+
+        }
+        else
+        {
+            if (isGrounded && jumpRequested)
+            {
+                animator.SetTrigger("Jump");
+                rb.linearVelocity = new Vector2(rb.linearVelocityX, 0);
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                jumpRequested = false;
+            }
+        }
+        
+
+
+        if (curvedScene)
+        {
+            material.SetFloat("_PlayerOffset", this.transform.position.x);
         }
 
-        material.SetFloat("_PlayerOffset", this.transform.position.x);
+        
       
         animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
         animator.SetFloat("VerticalVelocity", rb.linearVelocity.y);
@@ -84,12 +123,17 @@ public class PlayerController : MonoBehaviour
     }
     private void OnApplicationQuit()
     {
-        material.SetFloat("_PlayerOffset", 0);
+        if (curvedScene)
+        {
+            material.SetFloat("_PlayerOffset", 0);
+        }
+        
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        gameManager.setSpaceDog(spaceDog);
         gameManager.setTargetPlayer(this.gameObject);
         gameManager.setOtherPlayer(otherCharacter);
         animator = GetComponent<Animator>();
@@ -110,10 +154,21 @@ public class PlayerController : MonoBehaviour
 
         switchCharacters();
 
-        if (playerInput.actions["Jump"].WasPressedThisFrame() && isGrounded)
+        if (gameManager.playingAsSpaceDog())
         {
-            jumpRequested = true;
+            if (playerInput.actions["Jump"].WasPressedThisFrame())
+            {
+                jumpRequested = true;
+            }
         }
+        else
+        {
+            if (playerInput.actions["Jump"].WasPressedThisFrame() && isGrounded)
+            {
+                jumpRequested = true;
+            }
+        }
+        
 
         animator.SetBool("IsGrounded", isGrounded);
         
@@ -130,7 +185,11 @@ public class PlayerController : MonoBehaviour
             currentSpeed = 0f;
             rb.gravityScale = 0;
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
-            this.GetComponent<RotateWithCurve>().enabled = true;
+            if (curvedScene)
+            {
+                this.GetComponent<RotateWithCurve>().enabled = true;
+            }
+           
             this.GetComponent<PlayerController>().enabled = false;
 
             gameManager.setMustMoveCamera(true);
@@ -155,7 +214,6 @@ public class PlayerController : MonoBehaviour
             //pos.y = vertexOfParabola;
             //otherCharacter.transform.position = pos;
 
-            gameManager.setCanActivateOtherCharacter(false);
             
             
 

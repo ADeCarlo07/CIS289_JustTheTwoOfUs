@@ -3692,7 +3692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineFollow
   TrackerSettings:
     BindingMode: 4
-    PositionDamping: {x: 1, y: 1, z: 1}
+    PositionDamping: {x: 0.5, y: 0.5, z: 0.5}
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
@@ -4315,6 +4315,7 @@ MonoBehaviour:
   vertexOfParabola: -6
   gameManager: {fileID: 213844448}
   follower: {fileID: 1788207946}
+  curvedScene: 1
 --- !u!61 &1163706106
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5889,6 +5890,7 @@ MonoBehaviour:
   vertexOfParabola: -6
   material: {fileID: 2100000, guid: 6f6faee07e1447d44be66c73fbdbdc9d, type: 2}
   moveDuration: 0.75
+  curvedScene: 1
 --- !u!1 &1894539737 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8653719598885068355, guid: b7ea3b0e602433248899b12dce45df98, type: 3}
@@ -6079,6 +6081,7 @@ MonoBehaviour:
   vertexOfParabola: -6
   gameManager: {fileID: 213844448}
   follower: {fileID: 1788207946}
+  curvedScene: 1
 --- !u!95 &1894539744
 Animator:
   serializedVersion: 7
@@ -6251,6 +6254,7 @@ MonoBehaviour:
   vertexOfParabola: 0
   gameManager: {fileID: 0}
   follower: {fileID: 0}
+  curvedScene: 0
 --- !u!58 &1925395784
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6481,6 +6485,7 @@ MonoBehaviour:
   vertexOfParabola: 0
   gameManager: {fileID: 0}
   follower: {fileID: 0}
+  curvedScene: 0
 --- !u!50 &1931142647
 Rigidbody2D:
   serializedVersion: 5
@@ -6957,15 +6962,15 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2034296644}
-  - {fileID: 404061203}
   - {fileID: 157395388}
-  - {fileID: 18324035}
-  - {fileID: 1788207947}
   - {fileID: 1598809721}
-  - {fileID: 1925395787}
+  - {fileID: 673021487}
+  - {fileID: 213844449}
+  - {fileID: 1788207947}
   - {fileID: 101084584}
+  - {fileID: 18324035}
+  - {fileID: 404061203}
+  - {fileID: 1925395787}
   - {fileID: 1160353591}
   - {fileID: 1931142650}
-  - {fileID: 213844449}
-  - {fileID: 673021487}
   - {fileID: 173113150}
