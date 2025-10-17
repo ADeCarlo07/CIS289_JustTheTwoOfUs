@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FollowScript : MonoBehaviour
 {
-    public GameManager gameManager;
+    //public GameManager gameManager;
     public float vertexOfParabola = -6f;
     public Material material;
     public float moveDuration = 2f;
@@ -11,6 +11,9 @@ public class FollowScript : MonoBehaviour
     private Vector3 endPos;
     //certain things aren't needed unless the scene uses my matieral that curves the scene
     public bool curvedScene;
+    public bool level01;
+    public GameObject spaceDog;
+    public float level01_heightOffset;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,34 +27,88 @@ public class FollowScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (gameManager.getMustMoveCamera() && !isMoving)
+        if (level01)
         {
-            isMoving = true;
-            StartCoroutine(MoveToTarget());
             
 
+
+
+
+            if (GameManager.instance.getMustMoveCamera() && !isMoving)
+            {
+                isMoving = true;
+
+                GameManager.instance.getTargetPlayer().GetComponent<PlayerController_SpecialLevel01>().enabled = true;
+                GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().gravityScale = 1;
+                GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+                GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+                GameManager.instance.getTargetPlayer().transform.rotation = Quaternion.Euler(0, 0, 0);
+
+
+
+                //Vector3 pos = GameManager.instance.getTargetPlayer().transform.position;
+                //GameManager.instance.getTargetPlayer().transform.position = pos;
+
+                GameManager.instance.setMustMoveCamera(false);
+
+                foreach (SpriteRenderer sr in GameManager.instance.getTargetPlayer().GetComponentsInChildren<SpriteRenderer>())
+                {
+                    sr.enabled = true;
+                }
+
+                isMoving = false;
+            }
+            else
+            {
+                Vector3 pos = GameManager.instance.getTargetPlayer().transform.position;
+                //pos.x = GameManager.instance.getTargetPlayer().transform.position.x;
+                //pos.y = transform.position.y;
+                transform.position = pos;
+
+            }
             
         }
-
-        if (!gameManager.getMustMoveCamera())
+        else
         {
-            transform.position = gameManager.getTargetPlayer().transform.position;
+            if (GameManager.instance.getMustMoveCamera() && !isMoving)
+            {
+                isMoving = true;
+                StartCoroutine(MoveToTarget());
+
+
+
+            }
+
+
+            if (!GameManager.instance.getMustMoveCamera())
+            {
+                transform.position = GameManager.instance.getTargetPlayer().transform.position;
+                GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+                GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+                GameManager.instance.getTargetPlayer().transform.rotation = Quaternion.Euler(0, 0, 0);
+
+                //foreach (SpriteRenderer sr in GameManager.instance.getTargetPlayer().GetComponentsInChildren<SpriteRenderer>())
+                //{
+                //    sr.enabled = false;
+                //}
+            }
         }
+        
     }
 
 
     IEnumerator MoveToTarget()
     {
         Vector3 startPos = transform.position;
-        if (curvedScene)
+        if (curvedScene && !level01)
         {
-            Vector3 endPosY = gameManager.getTargetPlayer().transform.position;
+            Vector3 endPosY = GameManager.instance.getTargetPlayer().transform.position;
             endPosY.y = vertexOfParabola;
             endPos = endPosY;
         }
         else
         {
-            endPos = gameManager.getTargetPlayer().transform.position;
+            endPos = GameManager.instance.getTargetPlayer().transform.position;
         }
         
 
@@ -63,7 +120,7 @@ public class FollowScript : MonoBehaviour
             float t = elapsed / moveDuration;
             transform.position = Vector3.Lerp(startPos, endPos, t);
 
-            if (curvedScene)
+            if (curvedScene && !level01)
             {
                 material.SetFloat("_PlayerOffset", transform.position.x);
             }
@@ -78,22 +135,32 @@ public class FollowScript : MonoBehaviour
         if (curvedScene)
         {
             material.SetFloat("_PlayerOffset", endPos.x);
-            gameManager.getTargetPlayer().GetComponent<RotateWithCurve>().enabled = false;
+            //GameManager.instance.getTargetPlayer().GetComponent<RotateWithCurve>().enabled = false;
+            foreach (SpriteRenderer sr in GameManager.instance.getTargetPlayer().GetComponentsInChildren<SpriteRenderer>())
+            {
+                sr.enabled = true;
+            }
         }
         
-        gameManager.getTargetPlayer().GetComponent<Rigidbody2D>().gravityScale = 1;
-        gameManager.getTargetPlayer().GetComponent<PlayerController>().enabled = true;
-        gameManager.getTargetPlayer().GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-        gameManager.getTargetPlayer().GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-        gameManager.getTargetPlayer().transform.rotation = Quaternion.Euler(0, 0, 0);
-        Vector3 pos = gameManager.getTargetPlayer().transform.position;
+        GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().gravityScale = 1;
+
+        
+            
+        GameManager.instance.getTargetPlayer().GetComponent<PlayerController>().enabled = true;
+        GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+        GameManager.instance.getTargetPlayer().transform.rotation = Quaternion.Euler(0, 0, 0);
+        
+            
+        
+        Vector3 pos = GameManager.instance.getTargetPlayer().transform.position;
         if (curvedScene)
         {
             pos.y = vertexOfParabola;
         }
-        gameManager.getTargetPlayer().transform.position = pos;
+        GameManager.instance.getTargetPlayer().transform.position = pos;
 
-        gameManager.setMustMoveCamera(false);
+        GameManager.instance.setMustMoveCamera(false);
 
 
         isMoving = false;

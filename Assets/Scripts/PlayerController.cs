@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     public CinemachineCamera cam;
     public GameObject circleCollider;
     public float vertexOfParabola;
-    public GameManager gameManager;
+    //public GameManager gameManager;
     public GameObject follower;
     private int maxNumJumps = 1;
     private int numJumps = 0;
@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
       
         //checking to see if player can jump and letting them jump
 
-        if (gameManager.playingAsSpaceDog())
+        if (GameManager.instance.playingAsSpaceDog())
         {
             if (jumpRequested && numJumps != maxNumJumps)
             {
@@ -133,9 +133,9 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        gameManager.setSpaceDog(spaceDog);
-        gameManager.setTargetPlayer(this.gameObject);
-        gameManager.setOtherPlayer(otherCharacter);
+        GameManager.instance.setSpaceDog(spaceDog);
+        GameManager.instance.setTargetPlayer(this.gameObject);
+        GameManager.instance.setOtherPlayer(otherCharacter);
         animator = GetComponent<Animator>();
     }
 
@@ -154,7 +154,7 @@ public class PlayerController : MonoBehaviour
 
         switchCharacters();
 
-        if (gameManager.playingAsSpaceDog())
+        if (GameManager.instance.playingAsSpaceDog())
         {
             if (playerInput.actions["Jump"].WasPressedThisFrame())
             {
@@ -178,8 +178,8 @@ public class PlayerController : MonoBehaviour
     {
         if(playerInput.actions["SwitchPlayer"].WasPressedThisFrame())
         {
-            gameManager.setTargetPlayer(otherCharacter);
-            gameManager.setOtherPlayer(this.gameObject);
+            GameManager.instance.setTargetPlayer(otherCharacter);
+            GameManager.instance.setOtherPlayer(this.gameObject);
 
             Debug.Log("Switch players");
             currentSpeed = 0f;
@@ -192,7 +192,7 @@ public class PlayerController : MonoBehaviour
            
             this.GetComponent<PlayerController>().enabled = false;
 
-            gameManager.setMustMoveCamera(true);
+            GameManager.instance.setMustMoveCamera(true);
 
 
             //Debug.Log("Switch players");

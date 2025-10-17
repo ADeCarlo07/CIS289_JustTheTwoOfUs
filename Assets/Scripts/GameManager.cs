@@ -6,11 +6,27 @@ public class GameManager : MonoBehaviour
     private GameObject otherPlayer;
     private bool mustMoveCamera;
     private GameObject spaceDog;
+    private bool spaceDogRotate;
+    public static GameManager instance { get; private set; }
+
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        DontDestroyOnLoad(this);
+        
+        //DontDestroyOnLoad(this);
     }
 
     // Update is called once per frame
@@ -18,6 +34,8 @@ public class GameManager : MonoBehaviour
     {
 
     }
+
+  
 
     public GameObject getSpaceDog()
     {
@@ -33,12 +51,24 @@ public class GameManager : MonoBehaviour
     {
         if (targetPlayer == spaceDog)
         {
+            setSpaceDogRotate(true);
             return true;
         }
         else
         {
+            setSpaceDogRotate(false);
             return false;
         }
+    }
+
+    public void setSpaceDogRotate(bool set)
+    {
+        spaceDogRotate = set;
+    }
+
+    public bool getSpaceDogRotate()
+    {
+        return spaceDogRotate;
     }
 
 

@@ -5,16 +5,40 @@ public class RotateWithCurve : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Material material;
     public float heightOffset = 0.5f;
-    public float angle;
+    private float angle;
+    public GameObject spaceGuy;
+
+    // public GameManager gameManager;
+
+    void OnEnable()
+    {
+        
+    }
+
+    void OnDisable()
+    {
+       
+    }
 
     void Start()
     {
+       
+
+        Vector3 scale = spaceGuy.transform.localScale;
+
+        // SpaceGuy should always be upside down
+        scale.y = -Mathf.Abs(scale.y);
+        spaceGuy.transform.localScale = scale;
+
         
     }
 
     // Update is called once per frame
     void Update()
     {
+       
+        
+
         //updating y pos to match the curve. Just doing what
         //I did in the shader for the material to the sprite (kind of)
         Vector3 pos = transform.position;
