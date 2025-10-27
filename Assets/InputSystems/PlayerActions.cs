@@ -338,6 +338,164 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Swimming_Map"",
+            ""id"": ""bc0a1e17-0739-4925-bd65-3457586c0cd8"",
+            ""actions"": [
+                {
+                    ""name"": ""Swim"",
+                    ""type"": ""Button"",
+                    ""id"": ""27c5ffa8-a964-4aba-be6b-9d62c7aa7701"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""Value"",
+                    ""id"": ""8091d9b2-0f85-4083-b81a-5e74a9f09b48"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""79aa21dc-cc7b-4e5f-8f4b-b05da93e650b"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Swim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2196eb0b-38fa-4700-a387-4637d792778c"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Swim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""82fcabbc-dc2e-4d5d-b45e-f58eb65a1e37"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""6a4c629c-a080-4804-9514-9cd09755c8cb"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""5535a39f-e9c7-4202-85e1-f62f0fc91f17"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""e9981481-56cf-4e05-aa25-d3d65bf27cf4"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""ae2c6e93-f7eb-4d26-a517-df2de45633c8"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""728b1423-c2b3-49eb-901e-a6404f7bc6c4"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""4bf40502-76b4-4fd1-9c26-d5a42226267b"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""3041ac93-e7f5-4dc5-9749-7e0197a767b5"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""d013b1e4-47c7-4af6-9cc7-5b758c42e49e"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""e500f31c-7fd5-4e60-ab8d-b89d5357891e"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -349,11 +507,16 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         m_Action_Map_Run = m_Action_Map.FindAction("Run", throwIfNotFound: true);
         m_Action_Map_Jump = m_Action_Map.FindAction("Jump", throwIfNotFound: true);
         m_Action_Map_Shoot = m_Action_Map.FindAction("Shoot", throwIfNotFound: true);
+        // Swimming_Map
+        m_Swimming_Map = asset.FindActionMap("Swimming_Map", throwIfNotFound: true);
+        m_Swimming_Map_Swim = m_Swimming_Map.FindAction("Swim", throwIfNotFound: true);
+        m_Swimming_Map_Movement = m_Swimming_Map.FindAction("Movement", throwIfNotFound: true);
     }
 
     ~@PlayerActions()
     {
         UnityEngine.Debug.Assert(!m_Action_Map.enabled, "This will cause a leak and performance issues, PlayerActions.Action_Map.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Swimming_Map.enabled, "This will cause a leak and performance issues, PlayerActions.Swimming_Map.Disable() has not been called.");
     }
 
     /// <summary>
@@ -565,6 +728,113 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="Action_MapActions" /> instance referencing this action map.
     /// </summary>
     public Action_MapActions @Action_Map => new Action_MapActions(this);
+
+    // Swimming_Map
+    private readonly InputActionMap m_Swimming_Map;
+    private List<ISwimming_MapActions> m_Swimming_MapActionsCallbackInterfaces = new List<ISwimming_MapActions>();
+    private readonly InputAction m_Swimming_Map_Swim;
+    private readonly InputAction m_Swimming_Map_Movement;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "Swimming_Map".
+    /// </summary>
+    public struct Swimming_MapActions
+    {
+        private @PlayerActions m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public Swimming_MapActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "Swimming_Map/Swim".
+        /// </summary>
+        public InputAction @Swim => m_Wrapper.m_Swimming_Map_Swim;
+        /// <summary>
+        /// Provides access to the underlying input action "Swimming_Map/Movement".
+        /// </summary>
+        public InputAction @Movement => m_Wrapper.m_Swimming_Map_Movement;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_Swimming_Map; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="Swimming_MapActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(Swimming_MapActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="Swimming_MapActions" />
+        public void AddCallbacks(ISwimming_MapActions instance)
+        {
+            if (instance == null || m_Wrapper.m_Swimming_MapActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_Swimming_MapActionsCallbackInterfaces.Add(instance);
+            @Swim.started += instance.OnSwim;
+            @Swim.performed += instance.OnSwim;
+            @Swim.canceled += instance.OnSwim;
+            @Movement.started += instance.OnMovement;
+            @Movement.performed += instance.OnMovement;
+            @Movement.canceled += instance.OnMovement;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="Swimming_MapActions" />
+        private void UnregisterCallbacks(ISwimming_MapActions instance)
+        {
+            @Swim.started -= instance.OnSwim;
+            @Swim.performed -= instance.OnSwim;
+            @Swim.canceled -= instance.OnSwim;
+            @Movement.started -= instance.OnMovement;
+            @Movement.performed -= instance.OnMovement;
+            @Movement.canceled -= instance.OnMovement;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="Swimming_MapActions.UnregisterCallbacks(ISwimming_MapActions)" />.
+        /// </summary>
+        /// <seealso cref="Swimming_MapActions.UnregisterCallbacks(ISwimming_MapActions)" />
+        public void RemoveCallbacks(ISwimming_MapActions instance)
+        {
+            if (m_Wrapper.m_Swimming_MapActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="Swimming_MapActions.AddCallbacks(ISwimming_MapActions)" />
+        /// <seealso cref="Swimming_MapActions.RemoveCallbacks(ISwimming_MapActions)" />
+        /// <seealso cref="Swimming_MapActions.UnregisterCallbacks(ISwimming_MapActions)" />
+        public void SetCallbacks(ISwimming_MapActions instance)
+        {
+            foreach (var item in m_Wrapper.m_Swimming_MapActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_Swimming_MapActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="Swimming_MapActions" /> instance referencing this action map.
+    /// </summary>
+    public Swimming_MapActions @Swimming_Map => new Swimming_MapActions(this);
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Action_Map" which allows adding and removing callbacks.
     /// </summary>
@@ -607,5 +877,27 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnShoot(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Swimming_Map" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="Swimming_MapActions.AddCallbacks(ISwimming_MapActions)" />
+    /// <seealso cref="Swimming_MapActions.RemoveCallbacks(ISwimming_MapActions)" />
+    public interface ISwimming_MapActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "Swim" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSwim(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Movement" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnMovement(InputAction.CallbackContext context);
     }
 }

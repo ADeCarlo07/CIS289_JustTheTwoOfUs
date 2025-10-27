@@ -14,6 +14,9 @@ public class FollowScript : MonoBehaviour
     public bool level01;
     public GameObject spaceDog;
     public float level01_heightOffset;
+
+    public GameObject circleCollider;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -102,6 +105,8 @@ public class FollowScript : MonoBehaviour
         Vector3 startPos = transform.position;
         if (curvedScene && !level01)
         {
+           
+
             Vector3 endPosY = GameManager.instance.getTargetPlayer().transform.position;
             endPosY.y = vertexOfParabola;
             endPos = endPosY;
@@ -119,6 +124,9 @@ public class FollowScript : MonoBehaviour
             elapsed += Time.deltaTime;
             float t = elapsed / moveDuration;
             transform.position = Vector3.Lerp(startPos, endPos, t);
+            Vector3 position = circleCollider.transform.position;
+            position.x = this.transform.position.x;
+            circleCollider.transform.position = position;
 
             if (curvedScene && !level01)
             {
@@ -141,12 +149,13 @@ public class FollowScript : MonoBehaviour
                 sr.enabled = true;
             }
         }
-        
+
+        GameManager.instance.getTargetPlayer().GetComponent<PlayerController>().enabled = true;
         GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().gravityScale = 1;
 
         
             
-        GameManager.instance.getTargetPlayer().GetComponent<PlayerController>().enabled = true;
+      
         GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         GameManager.instance.getTargetPlayer().transform.rotation = Quaternion.Euler(0, 0, 0);

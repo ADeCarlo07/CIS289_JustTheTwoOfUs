@@ -1,0 +1,308 @@
+fileFormatVersion: 2
+guid: 7ccdef4d7480b3a42b5471e2a4fe23ab
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1576942572372638566
+    second: Level 2 enemy 2_0
+  - first:
+      213: -1050927793822509319
+    second: Level 2 enemy 2_1
+  - first:
+      213: -2437392817892383240
+    second: Level 2 enemy 2_2
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Level 2 enemy 2_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 577
+        width: 808
+        height: 1340
+      alignment: 9
+      pivot: {x: 0.49054602, y: 0.12945962}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 232, y: -670}
+        - {x: 347, y: -670}
+        - {x: 404, y: -653}
+        - {x: 404, y: -638}
+        - {x: 404, y: -595}
+        - {x: 404, y: -475}
+        - {x: 392, y: -447}
+        - {x: 381, y: -408}
+        - {x: 354, y: -360}
+        - {x: 339, y: -336}
+        - {x: 319, y: -306}
+        - {x: 311, y: -268}
+        - {x: 276, y: -250}
+        - {x: 260, y: -226}
+        - {x: 368, y: -59}
+        - {x: 334, y: -38}
+        - {x: 248, y: -19}
+        - {x: 242, y: 670}
+        - {x: -64, y: 670}
+        - {x: -182, y: 561}
+        - {x: -154, y: 390}
+        - {x: -147, y: 359}
+        - {x: -154, y: 352}
+        - {x: -162, y: 335}
+        - {x: -169, y: 317}
+        - {x: -385, y: -31}
+        - {x: -340, y: -155}
+        - {x: -402, y: -358}
+        - {x: -402, y: -669}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66b36712aec62e510800000000000000
+      internalID: 1576942572372638566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 2 enemy 2_1
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 737
+        width: 627
+        height: 567
+      alignment: 9
+      pivot: {x: 0.4878171, y: 0.055411957}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -282.5, y: -164.5}
+        - {x: -261.5, y: -182.5}
+        - {x: -167.5, y: -283.5}
+        - {x: 155.5, y: -281.5}
+        - {x: 174.5, y: -273.5}
+        - {x: 179.5, y: -263.5}
+        - {x: 190.5, y: -233.5}
+        - {x: 237.5, y: -176.5}
+        - {x: 299.5, y: -152.5}
+        - {x: 292.5, y: -114.5}
+        - {x: 236.5, y: -80.5}
+        - {x: 307.5, y: -76.5}
+        - {x: 309.5, y: -6.5}
+        - {x: 224.5, y: 23.5}
+        - {x: 309.5, y: 65.5}
+        - {x: 311.5, y: 105.5}
+        - {x: 223.5, y: 129.5}
+        - {x: 293.5, y: 172.5}
+        - {x: 298.5, y: 221.5}
+        - {x: 128.5, y: 283.5}
+        - {x: -206.5, y: 282.5}
+        - {x: -304.5, y: 213.5}
+        - {x: -296.5, y: 178.5}
+        - {x: -293.5, y: 169.5}
+        - {x: -289.5, y: 157.5}
+        - {x: -299.5, y: 146.5}
+        - {x: -304.5, y: -132.5}
+        - {x: -306.5, y: -138.5}
+        - {x: -300.5, y: -143.5}
+        - {x: -298.5, y: -153.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f6df945dba5a61f0800000000000000
+      internalID: -1050927793822509319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 2 enemy 2_2
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 475
+        width: 701
+        height: 830
+      alignment: 9
+      pivot: {x: 0.49273568, y: 0.3435421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -32.5, y: -347}
+        - {x: -5.5, y: -260}
+        - {x: -9.5, y: -230}
+        - {x: -4.5, y: -242}
+        - {x: -2.5, y: -324}
+        - {x: 93.5, y: -414}
+        - {x: 187.5, y: -414}
+        - {x: 201.5, y: -410}
+        - {x: 349.5, y: -181}
+        - {x: 349.5, y: -28}
+        - {x: 305.5, y: 156}
+        - {x: 199.5, y: 414}
+        - {x: -117.5, y: 414}
+        - {x: -219.5, y: 347}
+        - {x: -239.5, y: 246}
+        - {x: -242.5, y: 205}
+        - {x: -251.5, y: 128}
+        - {x: -235.5, y: 72}
+        - {x: -235.5, y: 20}
+        - {x: -246.5, y: -11}
+        - {x: -282.5, y: -41}
+        - {x: -323.5, y: -82}
+        - {x: -349.5, y: -102}
+        - {x: -349.5, y: -139}
+        - {x: -339.5, y: -148}
+        - {x: -292.5, y: -356}
+        - {x: -199.5, y: -414}
+        - {x: -81.5, y: -414}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f5af6f5524ac2ed0800000000000000
+      internalID: -2437392817892383240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5bd5db0407afaa94c86c82c0f77ddb61
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Level 2 enemy 2_0: 1576942572372638566
+      Level 2 enemy 2_1: -1050927793822509319
+      Level 2 enemy 2_2: -2437392817892383240
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

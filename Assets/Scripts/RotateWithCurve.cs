@@ -7,6 +7,7 @@ public class RotateWithCurve : MonoBehaviour
     public float heightOffset = 0.5f;
     private float angle;
     public GameObject spaceGuy;
+    public bool level1;
 
     // public GameManager gameManager;
 
@@ -23,12 +24,15 @@ public class RotateWithCurve : MonoBehaviour
     void Start()
     {
        
+        if (level1)
+        {
+            Vector3 scale = spaceGuy.transform.localScale;
 
-        Vector3 scale = spaceGuy.transform.localScale;
-
-        // SpaceGuy should always be upside down
-        scale.y = -Mathf.Abs(scale.y);
-        spaceGuy.transform.localScale = scale;
+            // SpaceGuy should always be upside down
+            scale.y = -Mathf.Abs(scale.y);
+            spaceGuy.transform.localScale = scale;
+        }
+      
 
         
     }

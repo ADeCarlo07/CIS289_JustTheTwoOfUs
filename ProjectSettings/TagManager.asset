@@ -6,6 +6,7 @@ TagManager:
   tags:
   - FollowRadius
   - Ground
+  - SpaceGuy
   layers:
   - Default
   - TransparentFX

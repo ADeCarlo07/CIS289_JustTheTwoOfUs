@@ -31,7 +31,9 @@ public class PlayerController : MonoBehaviour
     public GameObject spaceDog;
     //certain things aren't needed unless the scene uses my matieral that curves the scene
     public bool curvedScene;
-    
+
+
+    public GameObject rotateFollowObject;
 
 
     private void Awake()
@@ -43,6 +45,19 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
+
+        if (curvedScene)
+        {
+            rotateFollowObject.GetComponent<HideFollow>().enabled = true;
+
+            foreach (SpriteRenderer sr in rotateFollowObject.GetComponentsInChildren<SpriteRenderer>())
+            {
+                sr.enabled = false;
+            }
+        }
+       
+
+
         playerActions.Action_Map.Enable();
        
     }
@@ -182,41 +197,37 @@ public class PlayerController : MonoBehaviour
             GameManager.instance.setOtherPlayer(this.gameObject);
 
             Debug.Log("Switch players");
+            rb.linearVelocity = Vector2.zero;
+            //rb.angularVelocity = 0f;
             currentSpeed = 0f;
             rb.gravityScale = 0;
+
+
+
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
+
+
+
             if (curvedScene)
             {
-                this.GetComponent<RotateWithCurve>().enabled = true;
+                rotateFollowObject.GetComponent<HideFollow>().enabled = false;
+
+                foreach (SpriteRenderer sr in rotateFollowObject.GetComponentsInChildren<SpriteRenderer>())
+                {
+                    sr.enabled = true;
+                }
+
+                foreach (SpriteRenderer sr in gameObject.GetComponentsInChildren<SpriteRenderer>())
+                {
+                    sr.enabled = false;
+                }
+                //this.GetComponent<RotateWithCurve>().enabled = true;
+                //GameManager.instance.getTargetPlayer().GetComponent<RotateWithCurve>().enabled = false;
             }
-           
+
             this.GetComponent<PlayerController>().enabled = false;
 
             GameManager.instance.setMustMoveCamera(true);
-
-
-            //Debug.Log("Switch players");
-            //currentSpeed = 0f;
-            //rb.gravityScale = 0;
-            //rb.constraints = RigidbodyConstraints2D.FreezeAll;
-            //this.GetComponent<RotateWithCurve>().enabled = true;
-            //this.GetComponent<PlayerController>().enabled = false;
-
-           
-
-            //otherCharacter.GetComponent<RotateWithCurve>().enabled = false;
-            //otherCharacter.GetComponent<Rigidbody2D>().gravityScale = 1;
-            //otherCharacter.GetComponent<PlayerController>().enabled = true;
-            //otherCharacter.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-            //otherCharacter.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-            //otherCharacter.transform.rotation = Quaternion.Euler(0, 0, 0);
-            //Vector3 pos = otherCharacter.transform.position;
-            //pos.y = vertexOfParabola;
-            //otherCharacter.transform.position = pos;
-
-            
-            
-
 
         }
         

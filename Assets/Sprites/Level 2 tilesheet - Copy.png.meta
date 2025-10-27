@@ -1,0 +1,589 @@
+fileFormatVersion: 2
+guid: 3704bc81d4e638c438bfe8d64a94773f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8522982718968090896
+    second: Level 2 tilesheet - Copy_0
+  - first:
+      213: -8275781358189195322
+    second: Level 2 tilesheet - Copy_1
+  - first:
+      213: -5192878734365831326
+    second: Level 2 tilesheet - Copy_2
+  - first:
+      213: -3917545031221758433
+    second: Level 2 tilesheet - Copy_3
+  - first:
+      213: 46302351920078917
+    second: Level 2 tilesheet - Copy_4
+  - first:
+      213: -967364869968951848
+    second: Level 2 tilesheet - Copy_5
+  - first:
+      213: -6038435548146205731
+    second: Level 2 tilesheet - Copy_6
+  - first:
+      213: 9196778521653975149
+    second: Level 2 tilesheet - Copy_7
+  - first:
+      213: 7445514318702113196
+    second: Level 2 tilesheet - Copy_8
+  - first:
+      213: -5166769587167676326
+    second: Level 2 tilesheet - Copy_9
+  - first:
+      213: -6303830309956572162
+    second: Level 2 tilesheet - Copy_10
+  - first:
+      213: -7254566100407041135
+    second: Level 2 tilesheet - Copy_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Level 2 tilesheet - Copy_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1277
+        width: 1281
+        height: 771
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 640.5, y: 385.5}
+        - {x: -580.5, y: 385.5}
+        - {x: -640.5, y: 315.5}
+        - {x: -640.5, y: 125.5}
+        - {x: -631.5, y: 126.5}
+        - {x: -640.5, y: 98.5}
+        - {x: -640.5, y: -130.5}
+        - {x: -631.5, y: -129.5}
+        - {x: -640.5, y: -171.5}
+        - {x: -640.5, y: -385.5}
+        - {x: 640.5, y: -385.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 011d2ee40a7b74670800000000000000
+      internalID: 8522982718968090896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 2 tilesheet - Copy_1
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 1404
+        width: 753
+        height: 644
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -117.5, y: -77}
+        - {x: -114.5, y: 69}
+        - {x: 87.5, y: 70}
+        - {x: 200.5, y: 64}
+        - {x: 286.5, y: 80}
+        - {x: 376.5, y: 31}
+        - {x: 376.5, y: 322}
+        - {x: -370.5, y: 322}
+        - {x: -376.5, y: 315}
+        - {x: -376.5, y: -127}
+        - {x: -301.5, y: -322}
+        - {x: -188.5, y: -322}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cf4552a3b4862d80800000000000000
+      internalID: -8275781358189195322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 2 tilesheet - Copy_2
+      rect:
+        serializedVersion: 2
+        x: 1567
+        y: 1284
+        width: 99
+        height: 461
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 19.5, y: 230.5}
+        - {x: -5.5, y: 230.5}
+        - {x: -36.5, y: 203.5}
+        - {x: -49.5, y: 181.5}
+        - {x: -49.5, y: -176.5}
+        - {x: -43.5, y: -230.5}
+        - {x: 17.5, y: -230.5}
+        - {x: 19.210693, y: -222.42767}
+        - {x: 23.5, y: -223.5}
+        - {x: 49.5, y: -223.5}
+        - {x: 49.5, y: 71.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26fc17cdd403fe7b0800000000000000
+      internalID: -5192878734365831326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 2 tilesheet - Copy_3
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 1286
+        width: 123
+        height: 442
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -7.5, y: -45}
+        - {x: -59.5, y: -65}
+        - {x: -61.5, y: -87}
+        - {x: -61.5, y: -221}
+        - {x: 61.5, y: -221}
+        - {x: 61.5, y: 197}
+        - {x: -10.5, y: 221}
+        - {x: -22.5, y: 221}
+        - {x: -28.5, y: 212}
+        - {x: -27.5, y: 203}
+        - {x: -25.5, y: 68}
+        - {x: -19.5, y: 10}
+        - {x: -0.5, y: -48}
+        - {x: 2.5, y: -52}
+        - {x: 2.5, y: -54}
+        - {x: -0.5, y: -50}
+      - - {x: -58.5, y: -60}
+        - {x: -38.5, y: -32}
+        - {x: -26.5, y: 8}
+        - {x: -26.5, y: 34}
+        - {x: -30.5, y: 47}
+        - {x: -57.5, y: 110}
+        - {x: -60.5, y: 112}
+        - {x: -61.5, y: 112}
+        - {x: -61.5, y: -61}
+      - - {x: 4.5, y: -60}
+        - {x: 2.5, y: -61}
+        - {x: 2.5, y: -55}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f163e66dc8512a9c0800000000000000
+      internalID: -3917545031221758433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 2 tilesheet - Copy_4
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 8
+        width: 238
+        height: 1128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 119, y: 564}
+        - {x: -104, y: 564}
+        - {x: -119, y: 539}
+        - {x: -119, y: -564}
+        - {x: 119, y: -564}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54026766ebf74a000800000000000000
+      internalID: 46302351920078917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 2 tilesheet - Copy_5
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 10
+        width: 245
+        height: 1128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 122.5, y: -224}
+        - {x: 121.5, y: -205}
+        - {x: 122.5, y: -192}
+        - {x: 122.5, y: 495}
+        - {x: 116.5, y: 564}
+        - {x: -122.5, y: 564}
+        - {x: -122.5, y: -562}
+        - {x: -121.5, y: -564}
+        - {x: 122.5, y: -564}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d50f4da6ca3392f0800000000000000
+      internalID: -967364869968951848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 2 tilesheet - Copy_6
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 1022
+        width: 1025
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 512.5, y: 93}
+        - {x: 509.5, y: 95}
+        - {x: -512.5, y: 95}
+        - {x: -512.5, y: -96}
+        - {x: 512.5, y: -96}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddb77a9acda233ca0800000000000000
+      internalID: -6038435548146205731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 2 tilesheet - Copy_7
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 783
+        width: 632
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 246, y: -109}
+        - {x: 316, y: -98}
+        - {x: 316, y: 111}
+        - {x: -252, y: 111}
+        - {x: -278, y: 89}
+        - {x: -316, y: 30}
+        - {x: -316, y: -41}
+        - {x: -293, y: -90}
+        - {x: -218, y: -111}
+        - {x: -179, y: -112}
+        - {x: 222, y: -112}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d68902db65581af70800000000000000
+      internalID: 9196778521653975149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 2 tilesheet - Copy_8
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 573
+        width: 218
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 109, y: 93}
+        - {x: 41, y: 93}
+        - {x: -109, y: 93}
+        - {x: -109, y: -2}
+        - {x: -109, y: -92}
+        - {x: -72, y: -93}
+        - {x: 109, y: -90}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca1f25823d7c35760800000000000000
+      internalID: 7445514318702113196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 2 tilesheet - Copy_9
+      rect:
+        serializedVersion: 2
+        x: 1203
+        y: 599
+        width: 54
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5834986f62fb48b0800000000000000
+      internalID: -5166769587167676326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 2 tilesheet - Copy_10
+      rect:
+        serializedVersion: 2
+        x: 1534
+        y: 25
+        width: 514
+        height: 744
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 257, y: 372}
+        - {x: 1, y: 372}
+        - {x: 2, y: 115}
+        - {x: 257, y: 115}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efba2b27bbb4488a0800000000000000
+      internalID: -6303830309956572162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 2 tilesheet - Copy_11
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 0
+        width: 535
+        height: 489
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 267.5, y: -45.5}
+        - {x: 267.5, y: 198.5}
+        - {x: 156.5, y: 243.5}
+        - {x: -149.5, y: 243.5}
+        - {x: -263.5, y: 127.5}
+        - {x: -263.5, y: -133.5}
+        - {x: -202.5, y: -244.5}
+        - {x: 227.5, y: -244.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 193c5a9619a925b90800000000000000
+      internalID: -7254566100407041135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 2 tilesheet - Copy_12
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1786
+        width: 512
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c3b2d72fd4c06a4881720b9f03fc002
+      internalID: -1847754968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a5081ad26deeae8459494f3f1f92bf56
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Level 2 tilesheet - Copy_0: 8522982718968090896
+      Level 2 tilesheet - Copy_1: -8275781358189195322
+      Level 2 tilesheet - Copy_10: -6303830309956572162
+      Level 2 tilesheet - Copy_11: -7254566100407041135
+      Level 2 tilesheet - Copy_12: -1847754968
+      Level 2 tilesheet - Copy_2: -5192878734365831326
+      Level 2 tilesheet - Copy_3: -3917545031221758433
+      Level 2 tilesheet - Copy_4: 46302351920078917
+      Level 2 tilesheet - Copy_5: -967364869968951848
+      Level 2 tilesheet - Copy_6: -6038435548146205731
+      Level 2 tilesheet - Copy_7: 9196778521653975149
+      Level 2 tilesheet - Copy_8: 7445514318702113196
+      Level 2 tilesheet - Copy_9: -5166769587167676326
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

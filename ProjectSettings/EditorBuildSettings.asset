@@ -6,6 +6,36 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: ec6467f53b6c0374589ad8092d3cbb25
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: f6dcffc1a2a4a6e499e049c64064f71f
+  - enabled: 1
+    path: Assets/Scenes/Level01.unity
+    guid: 43f48a02d39c02847b908afbf88d81bd
+  - enabled: 1
+    path: Assets/Scenes/Level02.unity
+    guid: fe4f893658ed1fc4eb5f35e61d701e47
+  - enabled: 1
+    path: Assets/Scenes/Level03.unity
+    guid: bde6ff9997926704fa78ce2730ffc816
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 8ab69a102393fb64fba732b59e27f648
+  - enabled: 1
+    path: Assets/Scenes/Level02_Underwater.unity
+    guid: cbb119ddac768bc498711936b54af79e
+  - enabled: 1
+    path: Assets/Scenes/Level03_Rhythm01.unity
+    guid: 31421af3477d4644dbd5b44c05548952
+  - enabled: 1
+    path: Assets/Scenes/Level03_Rhythm02.unity
+    guid: 780dd9b5edc7c054bafad0f5c81fc85a
+  - enabled: 1
+    path: Assets/Scenes/Level03_Rhythm03.unity
+    guid: bc15850ba63081b4f87e6965cb8d5666
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects:

@@ -3,6 +3,7 @@ using TMPro;
 using System.Collections;
 using UnityEngine.UI;   
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 public class Dialogue : MonoBehaviour
 {
     [System.Serializable]
@@ -10,6 +11,7 @@ public class Dialogue : MonoBehaviour
     {
         public string line;
         public Sprite characterDialogueBox;
+        
 
 
         public string getLine()
@@ -55,10 +57,12 @@ public class Dialogue : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+       
         textComponent.text = string.Empty;
         if (dialogueLines.Count > 0 )
         {
+            GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+            GameManager.instance.getTargetPlayer().GetComponent<PlayerController>().enabled = false;
             StartDialogue();
         }
     }
@@ -116,6 +120,7 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
+            GameManager.instance.getTargetPlayer().GetComponent<PlayerController>().enabled = true;
             gameObject.SetActive(false);
         }
     }
