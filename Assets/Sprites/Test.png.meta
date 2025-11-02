@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2438949e19e83a94fa61985cb7aea5cc
+guid: ded2ac9babfd15b4ca990ce3e87bb462
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3094295009086649834
-    second: Title screen background_0
+      213: -4549871927518758641
+    second: Test_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,9 +40,9 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -126,23 +126,48 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Title screen background_0
+      name: Test_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 2048
-        height: 2048
+        y: 1
+        width: 2047
+        height: 2042
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline: []
+      outline:
+      - - {x: -1000.5, y: -801}
+        - {x: -1023.5, y: -908}
+        - {x: -1023.5, y: -1021}
+        - {x: -779.5, y: -1021}
+        - {x: -723.5, y: -891}
+        - {x: -647.5, y: -794}
+        - {x: -639.5, y: -728}
+        - {x: -685.5, y: -713}
+        - {x: -710.5, y: -720}
+        - {x: -727.5, y: -722}
+        - {x: -726.5, y: -717}
+        - {x: -726.5, y: -710}
+        - {x: -729.5, y: -701}
+        - {x: -735.5, y: -692}
+        - {x: -732.5, y: -688}
+        - {x: -730.5, y: -676}
+        - {x: -736.5, y: -666}
+        - {x: -742.5, y: -662}
+        - {x: -747.5, y: -661}
+        - {x: -758.5, y: -666}
+        - {x: -758.5, y: -664}
+        - {x: -795.5, y: -680}
+        - {x: -817.5, y: -608}
+        - {x: -866.5, y: -599}
+        - {x: -966.5, y: -720}
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ae5bfde9ae421fa20800000000000000
-      internalID: 3094295009086649834
+      spriteID: f09f8b2969b9bd0c0800000000000000
+      internalID: -4549871927518758641
       vertices: []
       indices: 
       edges: []
@@ -151,7 +176,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 41d1a784e3635dc4296980053a61c6fe
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +186,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Title screen background_0: 3094295009086649834
+      Test_0: -4549871927518758641
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
