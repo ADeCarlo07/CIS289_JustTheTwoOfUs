@@ -7,6 +7,11 @@ TagManager:
   - FollowRadius
   - Ground
   - SpaceGuy
+  - Wall
+  - Button01
+  - Button02
+  - Bullet
+  - GroundUpsideDown
   layers:
   - Default
   - TransparentFX

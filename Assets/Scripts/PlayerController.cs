@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     public GameObject spaceDog;
     //certain things aren't needed unless the scene uses my matieral that curves the scene
     public bool curvedScene;
+    
 
 
     public GameObject rotateFollowObject;
@@ -79,48 +80,7 @@ public class PlayerController : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
         Run();
 
-        //ternary operator, saying if we are running current speed is run speed
-        //and if we aren't its walkspeed
-        currentSpeed = isRunning ? runSpeed : walkSpeed;
-
-        //reading and storing the input
-        movementInput = playerActions.Action_Map.Movement.ReadValue<Vector2>();
-
-        float currentYVelocity = rb.linearVelocityY;
-        rb.linearVelocity = new Vector2 (movementInput.x * currentSpeed, currentYVelocity);
-
-      
-        //checking to see if player can jump and letting them jump
-
-        if (GameManager.instance.playingAsSpaceDog())
-        {
-            if (jumpRequested && numJumps != maxNumJumps)
-            {
-                numJumps++;
-                Debug.Log("Space dog jumped");
-                animator.SetTrigger("Jump");
-                rb.linearVelocity = new Vector2(rb.linearVelocityX, 0);
-                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-              
-                jumpRequested = false;
-            }
-            if (numJumps == maxNumJumps && isGrounded)
-            {
-                numJumps = 0;
-                jumpRequested = false;
-            }
-
-        }
-        else
-        {
-            if (isGrounded && jumpRequested)
-            {
-                animator.SetTrigger("Jump");
-                rb.linearVelocity = new Vector2(rb.linearVelocityX, 0);
-                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-                jumpRequested = false;
-            }
-        }
+        
         
 
 
@@ -157,6 +117,49 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //ternary operator, saying if we are running current speed is run speed
+        //and if we aren't its walkspeed
+        currentSpeed = isRunning ? runSpeed : walkSpeed;
+
+        //reading and storing the input
+        movementInput = playerActions.Action_Map.Movement.ReadValue<Vector2>();
+        movementInput = movementInput.normalized;
+
+        float currentYVelocity = rb.linearVelocityY;
+        rb.linearVelocity = new Vector2(movementInput.x * currentSpeed, currentYVelocity);
+
+
+        //checking to see if player can jump and letting them jump
+
+        if (GameManager.instance.playingAsSpaceDog())
+        {
+            if (jumpRequested && numJumps < maxNumJumps)
+            {
+                numJumps++;
+                Debug.Log("Space dog jumped");
+                animator.SetTrigger("Jump");
+                rb.linearVelocity = new Vector2(rb.linearVelocityX, 0);
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+
+                jumpRequested = false;
+            }
+            if (numJumps >= maxNumJumps && isGrounded)
+            {
+                numJumps = 0;
+                jumpRequested = false;
+            }
+
+        }
+        else
+        {
+            if (isGrounded && jumpRequested)
+            {
+                animator.SetTrigger("Jump");
+                rb.linearVelocity = new Vector2(rb.linearVelocityX, 0);
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                jumpRequested = false;
+            }
+        }
 
         if (movementInput.x != 0)
         {
@@ -193,7 +196,16 @@ public class PlayerController : MonoBehaviour
     {
         if(playerInput.actions["SwitchPlayer"].WasPressedThisFrame())
         {
-            GameManager.instance.setTargetPlayer(otherCharacter);
+            if (!GameManager.instance.playingAsSpaceDog())
+            {
+                gameObject.GetComponent<SpaceGuyShoot>().enabled = false;
+            }
+            else if (GameManager.instance.playingAsSpaceDog())
+            {
+                GameManager.instance.getOtherPlayer().GetComponent<SpaceGuyShoot>().enabled = true;
+            }
+
+                GameManager.instance.setTargetPlayer(otherCharacter);
             GameManager.instance.setOtherPlayer(this.gameObject);
 
             Debug.Log("Switch players");

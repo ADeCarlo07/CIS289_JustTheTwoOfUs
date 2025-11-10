@@ -14,6 +14,10 @@ public class FollowScript : MonoBehaviour
     public bool level01;
     public GameObject spaceDog;
     public float level01_heightOffset;
+    public AudioSource followAudioSource;
+    public AudioClip switchSound;
+
+    public float heightOffset;
 
     public GameObject circleCollider;
 
@@ -85,7 +89,13 @@ public class FollowScript : MonoBehaviour
 
             if (!GameManager.instance.getMustMoveCamera())
             {
-                transform.position = GameManager.instance.getTargetPlayer().transform.position;
+                Vector2 pos = transform.position;
+                Vector2 pPos = GameManager.instance.getTargetPlayer().transform.position;
+
+                pos.y = pPos.y + heightOffset;
+                pos.x = pPos.x;
+                transform.position = pos;
+
                 GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
                 GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
                 GameManager.instance.getTargetPlayer().transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -102,6 +112,11 @@ public class FollowScript : MonoBehaviour
 
     IEnumerator MoveToTarget()
     {
+        if(!followAudioSource.isPlaying)
+        {
+            followAudioSource.PlayOneShot(switchSound);
+        }
+     
         Vector3 startPos = transform.position;
         if (curvedScene && !level01)
         {
@@ -167,11 +182,12 @@ public class FollowScript : MonoBehaviour
         {
             pos.y = vertexOfParabola;
         }
+       
         GameManager.instance.getTargetPlayer().transform.position = pos;
 
         GameManager.instance.setMustMoveCamera(false);
 
-
+        followAudioSource.Stop();
         isMoving = false;
     }
 

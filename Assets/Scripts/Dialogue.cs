@@ -11,6 +11,7 @@ public class Dialogue : MonoBehaviour
     {
         public string line;
         public Sprite characterDialogueBox;
+       
         
 
 
@@ -53,6 +54,11 @@ public class Dialogue : MonoBehaviour
     public float textSpeed;
     private int index;
     public List<DialogueLines> dialogueLines = new List<DialogueLines>();
+    public bool level01;
+    public bool level02;
+    public bool level02_underwater;
+    public bool level03;
+    public bool tutorial;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -61,8 +67,38 @@ public class Dialogue : MonoBehaviour
         textComponent.text = string.Empty;
         if (dialogueLines.Count > 0 )
         {
-            GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
-            GameManager.instance.getTargetPlayer().GetComponent<PlayerController>().enabled = false;
+            
+
+            if (level01)
+            {
+                GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+                GameManager.instance.getTargetPlayer().GetComponent<PlayerController_SpecialLevel01>().enabled = false;
+            }
+            else if (level02)
+            {
+                GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+                GameManager.instance.getTargetPlayer().GetComponent<PlayerController>().enabled = false;
+            }
+            else if (level02_underwater)
+            {
+                GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+                GameManager.instance.getTargetPlayer().GetComponent<PlayerController_Level02Special>().enabled = false;
+            }
+            else if (level03)
+            {
+                GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+                GameManager.instance.getTargetPlayer().GetComponent<PlayerController>().enabled = false;
+            }
+            else if (tutorial)
+            {
+                GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+                GameManager.instance.getTargetPlayer().GetComponent<PlayerController>().enabled = false;
+            }
+            else
+            {
+                
+            }
+                
             StartDialogue();
         }
     }
@@ -120,7 +156,31 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            GameManager.instance.getTargetPlayer().GetComponent<PlayerController>().enabled = true;
+
+            if (level01)
+            {
+                GameManager.instance.getTargetPlayer().GetComponent<PlayerController_SpecialLevel01>().enabled = true;
+            }
+            else if (level02)
+            {
+                GameManager.instance.getTargetPlayer().GetComponent<PlayerController>().enabled = true;
+            }
+            else if (level02_underwater)
+            {
+                GameManager.instance.getTargetPlayer().GetComponent<PlayerController_Level02Special>().enabled = true;
+            }
+            else if (level03)
+            {
+                GameManager.instance.getTargetPlayer().GetComponent<PlayerController>().enabled = true;
+            }
+            else if (tutorial)
+            {
+                GameManager.instance.getTargetPlayer().GetComponent<PlayerController>().enabled = true;
+            }
+            else
+            {
+
+            }
             gameObject.SetActive(false);
         }
     }

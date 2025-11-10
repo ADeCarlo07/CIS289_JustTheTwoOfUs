@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     private bool mustMoveCamera;
     private GameObject spaceDog;
     private bool spaceDogRotate;
+    public bool triggerTutorialButton01;
+    public bool triggerTutorialButton02;
     public static GameManager instance { get; private set; }
 
 
@@ -35,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-  
+
 
     public GameObject getSpaceDog()
     {

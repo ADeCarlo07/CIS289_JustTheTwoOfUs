@@ -90,6 +90,7 @@ public class PlayerController_SpecialLevel01 : MonoBehaviour
 
         //reading and storing the input
         movementInput = playerActions.Action_Map.Movement.ReadValue<Vector2>();
+        movementInput = movementInput.normalized;
 
         float currentYVelocity = rb.linearVelocityY;
         rb.linearVelocity = new Vector2(movementInput.x * currentSpeed, currentYVelocity);

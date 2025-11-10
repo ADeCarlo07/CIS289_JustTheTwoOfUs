@@ -43,6 +43,7 @@ public class PlayerController_Level02Special : MonoBehaviour
     private void FixedUpdate()
     {
         movementInput = playerActions.Swimming_Map.Movement.ReadValue<Vector2>();
+        movementInput = movementInput.normalized;
 
         float currentYVelocity = rb.linearVelocityY;
         rb.linearVelocity = new Vector2(movementInput.x * speed, currentYVelocity);

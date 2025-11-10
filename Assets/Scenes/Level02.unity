@@ -11721,6 +11721,11 @@ MonoBehaviour:
     characterDialogueBox: {fileID: 5392214278869696427, guid: e4955e0569eb60045a6cca06f2de1c00, type: 3}
   - line: ...charge up our repair gun here.
     characterDialogueBox: {fileID: 5392214278869696427, guid: e4955e0569eb60045a6cca06f2de1c00, type: 3}
+  level01: 0
+  level02: 1
+  level02_underwater: 0
+  level03: 0
+  tutorial: 0
 --- !u!114 &727554115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11831,6 +11836,11 @@ MonoBehaviour:
     characterDialogueBox: {fileID: 8495583623763930966, guid: a32271d48158db146b2a5c7365fa3472, type: 3}
   - line: Yay! Deal!
     characterDialogueBox: {fileID: 7230102730091871856, guid: 55356a3f99944854ba7db34f24cdc674, type: 3}
+  level01: 0
+  level02: 1
+  level02_underwater: 0
+  level03: 0
+  tutorial: 0
 --- !u!114 &741812141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12168,6 +12178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a06b78bf494d764f8574d5aa815ac43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  triggerTutorialButton01: 0
+  triggerTutorialButton02: 0
 --- !u!4 &848069218
 Transform:
   m_ObjectHideFlags: 0
@@ -13289,6 +13301,9 @@ MonoBehaviour:
   level01: 0
   spaceDog: {fileID: 663199271}
   level01_heightOffset: 20
+  followAudioSource: {fileID: 0}
+  switchSound: {fileID: 0}
+  heightOffset: 0
   circleCollider: {fileID: 1135569346}
 --- !u!4 &1423881018
 Transform:

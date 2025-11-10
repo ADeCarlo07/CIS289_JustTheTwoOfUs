@@ -9,6 +9,7 @@ public class Level1_Enemy1_Attack : MonoBehaviour
     private Rigidbody2D player_rb;
     public Transform mouth;
     private Animator animator;
+    public GameObject bush;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,19 +26,28 @@ public class Level1_Enemy1_Attack : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (playerInRad)
+        if (playerInRad && bush.GetComponent<Level1_Enemy1_Bush>().canAttack)
         {
+            animator.SetBool("OutOfRad", false);
+            animator.SetTrigger("Attack");
             Vector3 direction = (mouth.position - player.transform.position).normalized;
             player_rb.AddForce(direction * pullForce, ForceMode2D.Force);
+            
         }
+        if (!bush.GetComponent<Level1_Enemy1_Bush>().canAttack)
+        {
+            animator.SetBool("OutOfRad", true);
+
+        }
+
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            animator.SetBool("OutOfRad", false);
-            animator.SetTrigger("Attack");
+            
             Debug.Log("player in rad");
             playerInRad = true;
         }

@@ -65,7 +65,7 @@ public class RotateWithCurve : MonoBehaviour
 
     }
 
-    private float SampleGroundSlope(float x)
+    public float SampleGroundSlope(float x)
     {
         float offsetX = x - material.GetFloat("_PlayerOffset");
         return 2 * offsetX * material.GetFloat("_CurveStrength");
