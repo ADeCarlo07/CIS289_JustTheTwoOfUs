@@ -2,32 +2,27 @@ using UnityEngine;
 
 public class Level1_Enemy3_radius : MonoBehaviour
 {
+    public float radius = 3f;
+    public LayerMask playerLayer;
     public bool playerInRange;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
-
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
+        if (hit != null)
         {
             playerInRange = true;
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
+        else
         {
             playerInRange = false;
         }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        //So I can see it in the editor when I'm adjusting the size
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }

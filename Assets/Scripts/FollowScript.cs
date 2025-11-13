@@ -43,6 +43,11 @@ public class FollowScript : MonoBehaviour
 
             if (GameManager.instance.getMustMoveCamera() && !isMoving)
             {
+                if (!followAudioSource.isPlaying)
+                {
+                    followAudioSource.PlayOneShot(switchSound);
+                }
+
                 isMoving = true;
 
                 GameManager.instance.getTargetPlayer().GetComponent<PlayerController_SpecialLevel01>().enabled = true;

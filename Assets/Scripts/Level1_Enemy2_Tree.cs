@@ -17,25 +17,33 @@ public class Level1_Enemy2_Tree : MonoBehaviour
 
     private bool isFiring = false;
 
+    private bool heartShot;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        shootTimer -= Time.deltaTime;
+        heartShot = level1_Enemy2.GetComponent<Level01_Enemy02>().isHeartShot;
 
-        if (shootTimer <= 0f && level1_Enemy2.GetComponent<Level01_Enemy02>().playerInRad)
+        if (!heartShot)
         {
-            
-            StartCoroutine(FireSequence());
+            shootTimer -= Time.deltaTime;
 
-            //reset timer
-            shootTimer = shootCooldown;
+            if (shootTimer <= 0f && level1_Enemy2.GetComponent<Level01_Enemy02>().playerInRad)
+            {
+
+                StartCoroutine(FireSequence());
+
+                //reset timer
+                shootTimer = shootCooldown;
+            }
         }
+        
     }
 
     IEnumerator FireSequence()
@@ -106,7 +114,7 @@ public class Level1_Enemy2_Tree : MonoBehaviour
 
         float slope = curveController.SampleGroundSlope(bulletSpawn03.position.x);
         Vector2 direction = new Vector2(0f, -1f);
-        Vector2 slopeInfluence = new Vector2(slope * 0.5f, 0f); // subtle horizontal lean
+        Vector2 slopeInfluence = new Vector2(slope * 0.5f, 0f);
 
         Vector2 finalDirection = (direction + slopeInfluence).normalized;
 

@@ -21,25 +21,40 @@ public class Level01_Enemy02 : MonoBehaviour
 
     private bool isFiring = false;
 
+    public GameObject heartRad;
+    public bool isHeartShot;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
         animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        shootTimer -= Time.deltaTime;
+        isHeartShot = heartRad.GetComponent<Level1_Enemy2_HeartRad>().stopAttacking;
 
-        if (shootTimer <= 0f && playerInRad && !GameManager.instance.playingAsSpaceDog())
+        if (!isHeartShot)
         {
-            animator.SetTrigger("Attack");
-            StartCoroutine(FireSequence());
+            shootTimer -= Time.deltaTime;
 
-            //reset timer
-            shootTimer = shootCooldown; 
+            if (shootTimer <= 0f && playerInRad && !GameManager.instance.playingAsSpaceDog())
+            {
+                animator.SetTrigger("Attack");
+                StartCoroutine(FireSequence());
+
+                //reset timer
+                shootTimer = shootCooldown;
+            }
         }
+        else
+        {
+            animator.SetBool("StopAttacking", true);
+        }
+        
     }
 
     IEnumerator FireSequence()

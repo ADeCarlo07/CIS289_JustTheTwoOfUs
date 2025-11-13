@@ -198,13 +198,13 @@ public class PlayerController_SpecialLevel01 : MonoBehaviour
                 scale.x = Mathf.Sign(movementInput.x) * Mathf.Abs(scale.x);
                 transform.localScale = scale;
             }
-            else
-            {
-                // Snap back to facing right
-                Vector3 scale = transform.localScale;
-                scale.x = Mathf.Abs(scale.x);
-                transform.localScale = scale;
-            }
+            //else
+            //{
+            //    //Snap back to facing right
+            //    Vector3 scale = transform.localScale;
+            //    scale.x = Mathf.Abs(scale.x);
+            //    transform.localScale = scale;
+            //}
         }
         else
         {
@@ -215,7 +215,12 @@ public class PlayerController_SpecialLevel01 : MonoBehaviour
             //this is so the space guy character remains upside down
             Vector3 scale = transform.localScale;
             scale.y = -Mathf.Abs(scale.y);
-            scale.x = Mathf.Sign(movementInput.x) * Mathf.Abs(scale.x);
+
+            if (movementInput.x != 0)
+            {
+                scale.x = Mathf.Sign(movementInput.x) * Mathf.Abs(scale.x);
+            }
+
             transform.localScale = scale;
 
         }
@@ -249,8 +254,15 @@ public class PlayerController_SpecialLevel01 : MonoBehaviour
     {
         if (playerInput.actions["SwitchPlayer"].WasPressedThisFrame())
         {
-          
-      
+
+            if (!GameManager.instance.playingAsSpaceDog())
+            {
+                gameObject.GetComponent<SpaceGuyShoot>().enabled = false;
+            }
+            else if (GameManager.instance.playingAsSpaceDog())
+            {
+                GameManager.instance.getOtherPlayer().GetComponent<SpaceGuyShoot>().enabled = true;
+            }
 
             GameManager.instance.setTargetPlayer(otherCharacter);
             GameManager.instance.setOtherPlayer(this.gameObject);

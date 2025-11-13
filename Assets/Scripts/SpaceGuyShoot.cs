@@ -1,13 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class SpaceGuyShoot : MonoBehaviour
 {
     public Transform bulletSpawnpoint;
     public GameObject bullet;
-    private int ammoCount = 0;
-    private int maxAmmo = 5;
+    private int ammoCount = 5;
     private PlayerInput playerInput;
+    public Image ammoBar;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,11 +24,34 @@ public class SpaceGuyShoot : MonoBehaviour
 
     public void Shoot()
     {
-        if (playerInput.actions["Shoot"].WasPressedThisFrame() && ammoCount != maxAmmo)
+        if (playerInput.actions["Shoot"].WasPressedThisFrame() && ammoCount != 0)
         {
             Debug.Log("Player shot");
-            Instantiate(bullet, bulletSpawnpoint.position, bulletSpawnpoint.rotation);
-            ammoCount++;
+            ammoCount--;
+            ammoBar.GetComponent<AmmoBar>().RemoveAmmo(1);
+
+
+            Vector2 direction;
+            if (transform.localScale.x > 0)
+            {
+                direction = Vector2.right;
+            }
+            else
+            {
+                direction = Vector2.left;
+            }
+
+            GameObject newBullet = Instantiate(bullet, bulletSpawnpoint.position, bulletSpawnpoint.rotation);
+
+            newBullet.GetComponent<Bullet>().SetDirection(direction);
+
+            //flips object
+            if (transform.localScale.x < 0)
+            {
+                Vector3 flippedScale = newBullet.transform.localScale;
+                flippedScale.x *= -1;
+                newBullet.transform.localScale = flippedScale;
+            }
         }
     }
 }
