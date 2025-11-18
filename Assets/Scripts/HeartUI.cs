@@ -10,12 +10,13 @@ public class HeartUI : MonoBehaviour
 
     private List<Image> heartImages = new List<Image>();
 
-    public int currentHearts = 3;
+    public int currentHearts;
 
     private Transform heartTransform;
 
     private void Start()
     {
+        currentHearts = GameManager.instance.getNumberOfHearts();
         UpdateHeartDisplay(currentHearts);
     }
 

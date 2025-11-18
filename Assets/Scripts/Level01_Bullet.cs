@@ -6,10 +6,12 @@ public class Level01_Bullet : MonoBehaviour
     private Vector2 direction;
     public float bulletLifeTime;
     public bool upsideDown;
+    private GameObject heartUI;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void SetDirection(Vector2 dir)
+    public void SetDirection(Vector2 dir, GameObject hrtUI)
     {
+        heartUI = hrtUI;
         direction = dir.normalized;
         GetComponent<Rigidbody2D>().linearVelocity = direction * bulletSpeed;
     }
@@ -33,6 +35,18 @@ public class Level01_Bullet : MonoBehaviour
             {
                 Destroy(this.gameObject);
             }
+
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Character01") && !GameManager.instance.playingAsSpaceDog())
+            {
+                heartUI.GetComponent<HeartDamage>().TakeDamage(1);
+            }
+
+            if (collision.gameObject.CompareTag("Border"))
+            {
+                Destroy(this.gameObject);
+            }
+
+          
         }
         else
         {
@@ -40,6 +54,18 @@ public class Level01_Bullet : MonoBehaviour
             {
                 Destroy(this.gameObject);
             }
+
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Character02") && GameManager.instance.playingAsSpaceDog())
+            {
+                heartUI.GetComponent<HeartDamage>().TakeDamage(2);
+            }
+
+            if (collision.gameObject.CompareTag("Border"))
+            {
+                Destroy(this.gameObject);
+            }
+
+           
         }
         
     }

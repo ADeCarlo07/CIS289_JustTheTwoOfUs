@@ -4,8 +4,11 @@ using UnityEngine.UI;
 
 public class SpaceGuyTransporter : MonoBehaviour
 {
+    //Special case script for level02
+
     public Material material;
     public Image dialogue;
+    public string scene;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,7 +27,7 @@ public class SpaceGuyTransporter : MonoBehaviour
         {
             if (!dialogue.gameObject.activeSelf)
             {
-                SceneManager.LoadScene("Level02_Underwater");
+                SceneManager.LoadScene(scene);
                 material.SetFloat("_PlayerOffset", 0);
             }
         }

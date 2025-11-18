@@ -4,6 +4,8 @@ using static UnityEngine.InputSystem.DefaultInputActions;
 
 public class PlayerController_Level02Special : MonoBehaviour
 {
+    //Easiest movement script I've had to make.. A blessing really.
+
     private Vector2 movementInput;
     private Rigidbody2D rb;
     private PlayerActions playerActions;
@@ -11,6 +13,10 @@ public class PlayerController_Level02Special : MonoBehaviour
     private Animator animator;
     public float speed = 4f;
     public float swimForce = 4f;
+    public AudioSource audioSource;
+    public AudioClip swim;
+
+    public GameObject pauseMenu;
 
 
     private void Awake()
@@ -24,8 +30,7 @@ public class PlayerController_Level02Special : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-   
-        
+        GameManager.instance.setTargetPlayer(this.gameObject);
     }
 
     // Update is called once per frame
@@ -33,10 +38,23 @@ public class PlayerController_Level02Special : MonoBehaviour
     {
         if (playerInput.actions["Swim"].WasPressedThisFrame())
         {
+            audioSource.PlayOneShot(swim);
             animator.SetTrigger("PushUp");
             Debug.Log("Player wants to swim");
            
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, swimForce);
+        }
+        if (playerInput.actions["Pause"].WasPressedThisFrame())
+        {
+            pauseMenu.SetActive(true);
+        }
+
+        if (movementInput.x != 0)
+        {
+            //flips entire gameObject by inverting its x scale
+            Vector3 scale = transform.localScale;
+            scale.x = Mathf.Sign(movementInput.x) * Mathf.Abs(scale.x);
+            transform.localScale = scale;
         }
     }
 

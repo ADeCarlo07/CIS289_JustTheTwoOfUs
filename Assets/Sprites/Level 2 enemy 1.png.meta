@@ -189,6 +189,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Level 2 enemy 1_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 634
+        height: 1953
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7df4186bda2d7c64293ac5ad45e2c568
+      internalID: -1286788680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -205,6 +227,7 @@ TextureImporter:
     nameFileIdTable:
       Level 2 enemy 1_0: -133215823448647320
       Level 2 enemy 1_1: 605197051
+      Level 2 enemy 1_2: -1286788680
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

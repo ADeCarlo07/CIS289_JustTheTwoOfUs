@@ -29,19 +29,26 @@ public class PlayerController : MonoBehaviour
     private int maxNumJumps = 1;
     private int numJumps = 0;
     public GameObject spaceDog;
+
     //certain things aren't needed unless the scene uses my matieral that curves the scene
     public bool curvedScene;
-    
+
+    public AudioSource audioSource;
+    public AudioSource audioSource2;
+    public AudioClip walkingSound;
+    public AudioClip runningSound;
 
 
     public GameObject rotateFollowObject;
 
+    public GameObject pauseMenu;
 
     private void Awake()
     {
+        rb = GetComponent<Rigidbody2D>();
+
         playerActions = new PlayerActions();
         playerInput = GetComponent<PlayerInput>();
-        rb = GetComponent<Rigidbody2D>();
     }
 
     private void OnEnable()
@@ -108,15 +115,28 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //When player would die as SpaceGuy in level 1, gravity would be flopped
+        //and it would save across scenes, making it so when player restarted the game
+        //and went to tutorial the characters would float upwards. I'm going to assume
+        //that when a new scene would load when playing as space guy from level 1
+        //it would keep the flopped gravity as well so this is just a safety measure
+        Physics2D.gravity = new Vector2(0, -9.8f);
+
         GameManager.instance.setSpaceDog(spaceDog);
         GameManager.instance.setTargetPlayer(this.gameObject);
         GameManager.instance.setOtherPlayer(otherCharacter);
         animator = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (playerInput.actions["Pause"].WasPressedThisFrame())
+        {
+            pauseMenu.SetActive(true);
+        }
+
         //ternary operator, saying if we are running current speed is run speed
         //and if we aren't its walkspeed
         currentSpeed = isRunning ? runSpeed : walkSpeed;
@@ -124,6 +144,50 @@ public class PlayerController : MonoBehaviour
         //reading and storing the input
         movementInput = playerActions.Action_Map.Movement.ReadValue<Vector2>();
         movementInput = movementInput.normalized;
+
+        //Audio
+        if (movementInput != Vector2.zero && isGrounded)
+        {
+            if (isRunning)
+            {
+                if (audioSource2.isPlaying)
+                {
+                    audioSource2.Stop();
+                }
+
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.clip = runningSound;
+                    audioSource.loop = true;
+                    audioSource.Play();
+                }
+            }
+            else
+            {
+                if (audioSource.isPlaying)
+                {
+                    audioSource.Stop();
+                }
+
+                if (!audioSource2.isPlaying)
+                {
+                    audioSource2.clip = walkingSound;
+                    audioSource2.loop = true;
+                    audioSource2.Play();
+                }
+            }
+        }
+        else
+        {
+            if (audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
+            if (audioSource2.isPlaying)
+            {
+                audioSource2.Stop();
+            }
+        }
 
         float currentYVelocity = rb.linearVelocityY;
         rb.linearVelocity = new Vector2(movementInput.x * currentSpeed, currentYVelocity);

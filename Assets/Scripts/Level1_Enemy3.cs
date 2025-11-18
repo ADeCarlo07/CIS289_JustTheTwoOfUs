@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Level1_Enemy3 : MonoBehaviour
@@ -14,11 +15,22 @@ public class Level1_Enemy3 : MonoBehaviour
 
     private Vector3 targetPosition;
 
+    private int numHits;
 
+    public float radius = 1f;
+    public LayerMask bulletLayer;
+
+    public bool defeated;
+
+    private bool isAttacking;
+
+    public GameObject heartUI;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        numHits = 0;
+        defeated = false;
         animator = GetComponent<Animator>();
         moveRadiusScript = moveRadius.GetComponent<Level1_Enemy3_radius>();
         attackRadiusScript = attackRad.GetComponent<Level1_Enemy3_radius>();
@@ -46,6 +58,11 @@ public class Level1_Enemy3 : MonoBehaviour
                 Debug.Log("Walking towards player");
                 targetPosition = new Vector3(player.transform.position.x, transform.position.y, transform.position.z);
                 transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            }
+
+            if (playerInAttackRad && !isAttacking)
+            {
+                StartCoroutine(attack());
             }
         }
        
@@ -75,5 +92,31 @@ public class Level1_Enemy3 : MonoBehaviour
             scale.x = adjustedDirection * Mathf.Abs(scale.x);
             transform.localScale = scale;
         }
+
+        //if(numHits == 5)
+        //{
+            
+        //}
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            gameObject.SetActive(false);
+            defeated = true;
+
+            Debug.Log("Bullet hit enemy 3");
+            //numHits++;
+        }
+    }
+
+    IEnumerator attack()
+    {
+        isAttacking = true;
+        heartUI.GetComponent<HeartDamage>().TakeDamage(1);
+        yield return new WaitForSeconds(0.75f);
+        isAttacking = false;
     }
 }

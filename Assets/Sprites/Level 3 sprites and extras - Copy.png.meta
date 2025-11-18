@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: c7d11e1ea1f3c054082d9e3f646aafc0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3199751396720831637
+    second: Level 3 sprites and extras - Copy_0
+  - first:
+      213: -8472070377425796786
+    second: Level 3 sprites and extras - Copy_1
+  - first:
+      213: -5369554096004639325
+    second: Level 3 sprites and extras - Copy_2
+  - first:
+      213: -4607311993372335586
+    second: Level 3 sprites and extras - Copy_3
+  - first:
+      213: 4620386143766661223
+    second: Level 3 sprites and extras - Copy_4
+  - first:
+      213: -207613537440859278
+    second: Level 3 sprites and extras - Copy_5
+  - first:
+      213: 449504990345574619
+    second: Level 3 sprites and extras - Copy_6
+  - first:
+      213: 3350923695733231244
+    second: Level 3 sprites and extras - Copy_7
+  - first:
+      213: -2800406314002039540
+    second: Level 3 sprites and extras - Copy_8
+  - first:
+      213: -8953564496025189857
+    second: Level 3 sprites and extras - Copy_9
+  - first:
+      213: 5061286676814798842
+    second: Level 3 sprites and extras - Copy_10
+  - first:
+      213: -4843547158918959263
+    second: Level 3 sprites and extras - Copy_11
+  - first:
+      213: 1347976593453946003
+    second: Level 3 sprites and extras - Copy_12
+  - first:
+      213: -109390575179108787
+    second: Level 3 sprites and extras - Copy_13
+  - first:
+      213: 5017562277121808369
+    second: Level 3 sprites and extras - Copy_14
+  - first:
+      213: -7223976043192709121
+    second: Level 3 sprites and extras - Copy_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Level 3 sprites and extras - Copy_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1535
+        width: 754
+        height: 332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6315e4ce033893d0800000000000000
+      internalID: -3199751396720831637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3 sprites and extras - Copy_1
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 1789
+        width: 245
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e410d61f0e82d6a80800000000000000
+      internalID: -8472070377425796786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3 sprites and extras - Copy_2
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 1795
+        width: 238
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a55661bff28b75b0800000000000000
+      internalID: -5369554096004639325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3 sprites and extras - Copy_3
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 1795
+        width: 238
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1225a1172a8f00c0800000000000000
+      internalID: -4607311993372335586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3 sprites and extras - Copy_4
+      rect:
+        serializedVersion: 2
+        x: 1544
+        y: 1791
+        width: 193
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7684958c7b8ee1040800000000000000
+      internalID: 4620386143766661223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3 sprites and extras - Copy_5
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 1827
+        width: 117
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27b764276986e1df0800000000000000
+      internalID: -207613537440859278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3 sprites and extras - Copy_6
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 1278
+        width: 238
+        height: 489
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd8305a3866fc3600800000000000000
+      internalID: 449504990345574619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3 sprites and extras - Copy_7
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 1280
+        width: 228
+        height: 366
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8e4e99e85fd08e20800000000000000
+      internalID: 3350923695733231244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3 sprites and extras - Copy_8
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 1534
+        width: 516
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0db52b6b45f229d0800000000000000
+      internalID: -2800406314002039540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3 sprites and extras - Copy_9
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 775
+        width: 740
+        height: 898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f128ed4678c8eb380800000000000000
+      internalID: -8953564496025189857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3 sprites and extras - Copy_10
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1278
+        width: 302
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aff96fdaa6d4d3640800000000000000
+      internalID: 5061286676814798842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3 sprites and extras - Copy_11
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 1279
+        width: 197
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16f68cb658348ccb0800000000000000
+      internalID: -4843547158918959263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3 sprites and extras - Copy_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 766
+        width: 315
+        height: 492
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3941d52e199f4b210800000000000000
+      internalID: 1347976593453946003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3 sprites and extras - Copy_13
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 0
+        width: 651
+        height: 725
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4e6ca8f9dd5b7ef0800000000000000
+      internalID: -109390575179108787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3 sprites and extras - Copy_14
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 0
+        width: 321
+        height: 627
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f7de3e8e46f1a540800000000000000
+      internalID: 5017562277121808369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3 sprites and extras - Copy_15
+      rect:
+        serializedVersion: 2
+        x: 1306
+        y: 0
+        width: 473
+        height: 740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fff019f10184fbb90800000000000000
+      internalID: -7223976043192709121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Level 3 sprites and extras - Copy_0: -3199751396720831637
+      Level 3 sprites and extras - Copy_1: -8472070377425796786
+      Level 3 sprites and extras - Copy_10: 5061286676814798842
+      Level 3 sprites and extras - Copy_11: -4843547158918959263
+      Level 3 sprites and extras - Copy_12: 1347976593453946003
+      Level 3 sprites and extras - Copy_13: -109390575179108787
+      Level 3 sprites and extras - Copy_14: 5017562277121808369
+      Level 3 sprites and extras - Copy_15: -7223976043192709121
+      Level 3 sprites and extras - Copy_2: -5369554096004639325
+      Level 3 sprites and extras - Copy_3: -4607311993372335586
+      Level 3 sprites and extras - Copy_4: 4620386143766661223
+      Level 3 sprites and extras - Copy_5: -207613537440859278
+      Level 3 sprites and extras - Copy_6: 449504990345574619
+      Level 3 sprites and extras - Copy_7: 3350923695733231244
+      Level 3 sprites and extras - Copy_8: -2800406314002039540
+      Level 3 sprites and extras - Copy_9: -8953564496025189857
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

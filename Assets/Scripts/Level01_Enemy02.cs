@@ -24,6 +24,8 @@ public class Level01_Enemy02 : MonoBehaviour
     public GameObject heartRad;
     public bool isHeartShot;
 
+    public GameObject heartUI;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,7 +43,7 @@ public class Level01_Enemy02 : MonoBehaviour
         {
             shootTimer -= Time.deltaTime;
 
-            if (shootTimer <= 0f && playerInRad && !GameManager.instance.playingAsSpaceDog())
+            if (shootTimer <= 0f && playerInRad)
             {
                 animator.SetTrigger("Attack");
                 StartCoroutine(FireSequence());
@@ -67,7 +69,7 @@ public class Level01_Enemy02 : MonoBehaviour
 
         isFiring = true;
 
-        animator.SetTrigger("Attack");
+        //animator.SetTrigger("Attack");
 
         //Put in random numbers until something was good enough.
         //Last ones are around the time when the animation looks like
@@ -122,7 +124,7 @@ public class Level01_Enemy02 : MonoBehaviour
         float angle = Mathf.Atan2(finalDirection.y, finalDirection.x) * Mathf.Rad2Deg;
         newBullet.transform.rotation = Quaternion.Euler(0, 0, angle);
 
-        newBullet.GetComponent<Level01_Bullet>().SetDirection(finalDirection);
+        newBullet.GetComponent<Level01_Bullet>().SetDirection(finalDirection, heartUI);
     }
 
     private void Shoot02()
@@ -140,7 +142,7 @@ public class Level01_Enemy02 : MonoBehaviour
         float angle = Mathf.Atan2(finalDirection.y, finalDirection.x) * Mathf.Rad2Deg;
         newBullet.transform.rotation = Quaternion.Euler(0, 0, angle);
 
-        newBullet.GetComponent<Level01_Bullet>().SetDirection(finalDirection);
+        newBullet.GetComponent<Level01_Bullet>().SetDirection(finalDirection, heartUI);
     }
 
     private void Shoot03()
@@ -154,7 +156,7 @@ public class Level01_Enemy02 : MonoBehaviour
         Vector2 tangent = new Vector2(1f, slope).normalized;
         Vector2 normal = new Vector2(-tangent.y, tangent.x);
 
-        newBullet.GetComponent<Level01_Bullet>().SetDirection(normal);
+        newBullet.GetComponent<Level01_Bullet>().SetDirection(normal, heartUI);
 
         float angle = Mathf.Atan2(tangent.y, tangent.x) * Mathf.Rad2Deg;
         newBullet.transform.rotation = Quaternion.Euler(0, 0, angle);

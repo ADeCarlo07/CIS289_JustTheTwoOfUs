@@ -171,3 +171,4 @@ MonoBehaviour:
   bulletSpeed: 10
   bulletLifeTime: 10
   upsideDown: 1
+  heartUI: {fileID: 0}

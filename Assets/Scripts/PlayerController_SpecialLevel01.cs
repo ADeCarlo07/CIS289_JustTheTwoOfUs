@@ -1,5 +1,6 @@
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 
 public class PlayerController_SpecialLevel01 : MonoBehaviour
@@ -32,7 +33,7 @@ public class PlayerController_SpecialLevel01 : MonoBehaviour
     //public float vertexOfParabola;
     //public GameManager gameManager;
     public GameObject follower;
-    private int maxNumJumps = 1;
+    private int maxNumJumps = 2;
     private int numJumps = 0;
     public GameObject spaceDog;
     //certain things aren't needed unless the scene uses my matieral that curves the scene
@@ -46,6 +47,14 @@ public class PlayerController_SpecialLevel01 : MonoBehaviour
     public GameObject rotateFollowObject;
 
 
+    public AudioSource audioSource;
+    public AudioSource audioSource2;
+    public AudioClip walkingSound;
+    public AudioClip runningSound;
+
+    public GameObject pauseMenu;
+
+
     private void Awake()
     {
         playerActions = new PlayerActions();
@@ -55,6 +64,18 @@ public class PlayerController_SpecialLevel01 : MonoBehaviour
 
     private void OnEnable()
     {
+        //This was important way early on in development of level 1
+        //Currently, you don't even really see the other characters rotating
+        //counterpart because things in level 1 got overly complicated with the
+        //rightside up and upside down objects. Essentially, when the player would
+        //switch and the other character would stay still while the new current character
+        //would move around, their position would get displaced because of the curvature
+        //of the ground bellow. I didn't like this for the player, so I made a seperate
+        //GameObject that would appear and this object would become hidden and stay in place
+        //while the new rotating GameObject acts as a visual. Worked really well while I had it
+        
+
+        //It follows the character while it moves, but isn't visible in the beginning
         rotateFollowObject.GetComponent<HideFollow>().enabled = true;
 
         foreach (SpriteRenderer sr in rotateFollowObject.GetComponentsInChildren<SpriteRenderer>())
@@ -81,7 +102,7 @@ public class PlayerController_SpecialLevel01 : MonoBehaviour
             circleCollider.transform.position = position;
         }
 
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.05f, groundLayer);
         Run();
 
         //ternary operator, saying if we are running current speed is run speed
@@ -91,6 +112,51 @@ public class PlayerController_SpecialLevel01 : MonoBehaviour
         //reading and storing the input
         movementInput = playerActions.Action_Map.Movement.ReadValue<Vector2>();
         movementInput = movementInput.normalized;
+
+
+        //Audio
+        if (movementInput != Vector2.zero && isGrounded)
+        {
+            if (isRunning)
+            {
+                if (audioSource2.isPlaying)
+                {
+                    audioSource2.Stop();
+                }
+
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.clip = runningSound;
+                    audioSource.loop = true;
+                    audioSource.Play();
+                }
+            }
+            else
+            {
+                if (audioSource.isPlaying)
+                {
+                    audioSource.Stop();
+                }
+
+                if (!audioSource2.isPlaying)
+                {
+                    audioSource2.clip = walkingSound;
+                    audioSource2.loop = true;
+                    audioSource2.Play();
+                }
+            }
+        }
+        else
+        {
+            if (audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
+            if (audioSource2.isPlaying)
+            {
+                audioSource2.Stop();
+            }
+        }
 
         float currentYVelocity = rb.linearVelocityY;
         rb.linearVelocity = new Vector2(movementInput.x * currentSpeed, currentYVelocity);
@@ -103,14 +169,15 @@ public class PlayerController_SpecialLevel01 : MonoBehaviour
             if (jumpRequested && numJumps != maxNumJumps)
             {
                 numJumps++;
-                Debug.Log("Space dog jumped");
+                Debug.Log("Max num jumps: " + maxNumJumps);
+                Debug.Log("Space dog jumped " + numJumps);
                 animator.SetTrigger("Jump");
                 rb.linearVelocity = new Vector2(rb.linearVelocityX, 0);
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
                 jumpRequested = false;
             }
-            if (numJumps == maxNumJumps && isGrounded)
+            if (numJumps >= maxNumJumps && isGrounded)
             {
                 numJumps = 0;
                 jumpRequested = false;
@@ -132,10 +199,18 @@ public class PlayerController_SpecialLevel01 : MonoBehaviour
 
         if (curvedScene)
         {
-            material.SetFloat("_PlayerOffset", this.transform.position.x);
-            material02.SetFloat("_PlayerOffset", this.transform.position.x);
+            if (GameManager.instance.playingAsSpaceDog())
+            {
+                material.SetFloat("_PlayerOffset", this.transform.position.x);
+            }
+            else
+            {
+                material02.SetFloat("_PlayerOffset", this.transform.position.x);
+            }
+      
         }
 
+        Debug.Log("Is grounded: " + isGrounded);
 
 
         animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
@@ -167,12 +242,15 @@ public class PlayerController_SpecialLevel01 : MonoBehaviour
 
 
         
-        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (playerInput.actions["Pause"].WasPressedThisFrame())
+        {
+            pauseMenu.SetActive(true);
+        }
 
         if (!GameManager.instance.playingAsSpaceDog() && !offsetApplied)
         {

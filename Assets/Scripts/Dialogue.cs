@@ -6,6 +6,9 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 public class Dialogue : MonoBehaviour
 {
+    //I watched a very helpful tutorial video for this but I can't
+    //find the link :(
+
     [System.Serializable]
     public class DialogueLines
     {

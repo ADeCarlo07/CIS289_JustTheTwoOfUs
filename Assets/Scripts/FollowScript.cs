@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class FollowScript : MonoBehaviour
 {
+    //This script is what the main camera follows in most scenes and takes care of
+    //camera movement when switching characters
+
     //public GameManager gameManager;
     public float vertexOfParabola = -6f;
     public Material material;
@@ -19,6 +22,8 @@ public class FollowScript : MonoBehaviour
 
     public float heightOffset;
 
+    //Was origionally a circle for curved scenes (ground player was on), but I changed
+    //it to a parabola shape so it properly matches the material
     public GameObject circleCollider;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -34,6 +39,7 @@ public class FollowScript : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //Speical level01 case
         if (level01)
         {
             
@@ -72,9 +78,24 @@ public class FollowScript : MonoBehaviour
             }
             else
             {
-                Vector3 pos = GameManager.instance.getTargetPlayer().transform.position;
-                //pos.x = GameManager.instance.getTargetPlayer().transform.position.x;
-                //pos.y = transform.position.y;
+                //Vector3 pos = GameManager.instance.getTargetPlayer().transform.position;
+                ////pos.x = GameManager.instance.getTargetPlayer().transform.position.x;
+                ////pos.y = transform.position.y;
+                //transform.position = pos;
+
+                Vector2 pos = transform.position;
+                Vector2 pPos = GameManager.instance.getTargetPlayer().transform.position;
+
+                if (GameManager.instance.playingAsSpaceDog())
+                {
+                    pos.y = pPos.y + heightOffset;
+
+                }
+                else
+                {
+                    pos.y = pPos.y - heightOffset;
+                }
+                pos.x = pPos.x;
                 transform.position = pos;
 
             }
@@ -148,6 +169,8 @@ public class FollowScript : MonoBehaviour
             position.x = this.transform.position.x;
             circleCollider.transform.position = position;
 
+            //When on a curved scene, this is how it looks like the cam
+            //Is moving along the curve
             if (curvedScene && !level01)
             {
                 material.SetFloat("_PlayerOffset", transform.position.x);
@@ -156,6 +179,9 @@ public class FollowScript : MonoBehaviour
 
             yield return null;
         }
+
+        //After moving to the new target player it is now at the end, finalize certain pos
+        //and activate scripts
 
         transform.position = endPos;
         
@@ -192,7 +218,7 @@ public class FollowScript : MonoBehaviour
 
         GameManager.instance.setMustMoveCamera(false);
 
-        followAudioSource.Stop();
+        //followAudioSource.Stop();
         isMoving = false;
     }
 

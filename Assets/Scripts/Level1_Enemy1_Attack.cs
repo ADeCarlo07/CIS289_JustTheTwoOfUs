@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class Level1_Enemy1_Attack : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Level1_Enemy1_Attack : MonoBehaviour
     public Transform mouth;
     private Animator animator;
     public GameObject bush;
+    public GameObject attackRad;
+   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,19 +31,29 @@ public class Level1_Enemy1_Attack : MonoBehaviour
     {
         if (playerInRad && bush.GetComponent<Level1_Enemy1_Bush>().canAttack)
         {
-            animator.SetBool("OutOfRad", false);
-            animator.SetTrigger("Attack");
-            Vector3 direction = (mouth.position - player.transform.position).normalized;
-            player_rb.AddForce(direction * pullForce, ForceMode2D.Force);
-            
+            float distance = Vector2.Distance(player.transform.position, mouth.position);
+
+            //Only pull if within a certain range
+            if (distance < 5f)
+            {
+                animator.SetBool("OutOfRad", false);
+                animator.SetTrigger("Attack");
+
+                Vector3 direction = (mouth.position - player.transform.position).normalized;
+                player_rb.AddForce(direction * pullForce, ForceMode2D.Force);
+            }
+            else
+            {
+                //Player is too far, stop pulling
+                animator.SetBool("OutOfRad", true);
+            }
         }
-        if (!bush.GetComponent<Level1_Enemy1_Bush>().canAttack)
+        else if (!bush.GetComponent<Level1_Enemy1_Bush>().canAttack)
         {
             animator.SetBool("OutOfRad", true);
-
         }
 
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

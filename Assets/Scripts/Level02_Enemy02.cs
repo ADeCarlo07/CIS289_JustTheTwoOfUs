@@ -1,5 +1,5 @@
+using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Level02_Enemy02 : MonoBehaviour
@@ -15,6 +15,15 @@ public class Level02_Enemy02 : MonoBehaviour
 
     private float ang;
 
+    private bool isAttacking;
+    public GameObject heartUI;
+
+    public float radius = 3f;
+
+    public LayerMask playerLayer;
+
+    public Transform pos;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,6 +34,12 @@ public class Level02_Enemy02 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
+        if (hit != null && !isAttacking)
+        {
+            StartCoroutine(attack());
+        }
+
 
         if (headPositionList.Count > followIndex)
         {
@@ -47,5 +62,19 @@ public class Level02_Enemy02 : MonoBehaviour
 
     }
 
+    void OnDrawGizmosSelected()
+    {
+        //So I can see it in the editor when I'm adjusting the size
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(pos.position, radius);
+    }
 
+
+    IEnumerator attack()
+    {
+        isAttacking = true;
+        heartUI.GetComponent<HeartDamage>().TakeDamage(1);
+        yield return new WaitForSeconds(0.75f);
+        isAttacking = false;
+    }
 }

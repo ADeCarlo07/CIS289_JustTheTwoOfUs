@@ -9,6 +9,7 @@ public class Level1_Enemy1_Bush : MonoBehaviour
     void Start()
     {
         canAttack = true;
+
     }
 
     // Update is called once per frame
@@ -25,6 +26,7 @@ public class Level1_Enemy1_Bush : MonoBehaviour
             openEye.SetActive(false);
             closedEye.SetActive(true);
         }
+    
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -35,5 +37,6 @@ public class Level1_Enemy1_Bush : MonoBehaviour
             openEye.SetActive(true);
             closedEye.SetActive(false);
         }
+
     }
 }

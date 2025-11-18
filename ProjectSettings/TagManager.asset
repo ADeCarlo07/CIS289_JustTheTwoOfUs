@@ -12,6 +12,12 @@ TagManager:
   - Button02
   - Bullet
   - GroundUpsideDown
+  - Border
+  - RightsideBorder
+  - UpsidedownBorder
+  - Hit
+  - Block
+  - EndOfScreen
   layers:
   - Default
   - TransparentFX
@@ -24,7 +30,7 @@ TagManager:
   - Character02
   - Mask
   - Bullet
-  - 
+  - GroundUpsidedown
   - 
   - 
   - 

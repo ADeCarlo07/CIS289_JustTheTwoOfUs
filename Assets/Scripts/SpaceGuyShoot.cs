@@ -6,9 +6,11 @@ public class SpaceGuyShoot : MonoBehaviour
 {
     public Transform bulletSpawnpoint;
     public GameObject bullet;
-    private int ammoCount = 5;
+    public int ammoCount = 5;
     private PlayerInput playerInput;
     public Image ammoBar;
+    public AudioSource audioSource;
+    public AudioClip shotSound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,6 +28,7 @@ public class SpaceGuyShoot : MonoBehaviour
     {
         if (playerInput.actions["Shoot"].WasPressedThisFrame() && ammoCount != 0)
         {
+            audioSource.PlayOneShot(shotSound);
             Debug.Log("Player shot");
             ammoCount--;
             ammoBar.GetComponent<AmmoBar>().RemoveAmmo(1);

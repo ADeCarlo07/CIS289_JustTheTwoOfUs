@@ -3,28 +3,35 @@ using UnityEngine.Tilemaps;
 
 public class ScrollingBackground : MonoBehaviour
 {
-    private float startPos;
+    //This script is for the moving stars in the background of Tutorial
+
+    public Transform background1;
+    public Transform background2;
     public float speed;
+
     private float length;
-    public Transform cameraTransform;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
-        startPos = transform.position.x;
-        length = GetComponent<TilemapRenderer>().bounds.size.x;
+        length = background1.GetComponent<TilemapRenderer>().bounds.size.x;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        this.gameObject.
-        transform.Translate(Vector2.left * speed * Time.deltaTime);
+        //Move both
+        background1.Translate(Vector2.left * speed * Time.deltaTime);
+        background2.Translate(Vector2.left * speed * Time.deltaTime);
 
-        //if background reached end of length adjust position for infinite scrolling
-        if(transform.position.x  < cameraTransform.position.x - length)
+        //If background1 is fully offscreen, move it in front of background2
+        if (background1.position.x < -length)
         {
-            //if you have two tilemaps you need to times length times 2
-            transform.position += new Vector3(length * 2f, 0f, 0f);
+            background1.position = new Vector3(background2.position.x + length, background1.position.y, background1.position.z);
+        }
+
+        //If background2 is fully offscreen, move it in front of background1
+        if (background2.position.x < -length)
+        {
+            background2.position = new Vector3(background1.position.x + length, background2.position.y, background2.position.z);
         }
     }
 }

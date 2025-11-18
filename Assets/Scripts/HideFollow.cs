@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class HideFollow : MonoBehaviour
 {
+    //This script is for objects that I want to follow the player behind the scenes
+
     public bool rotateFollow;
     public GameObject desiredTarget;
     public Material material;

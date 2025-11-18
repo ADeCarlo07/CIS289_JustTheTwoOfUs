@@ -136,6 +136,15 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""ce9f44de-145a-40c4-9bdd-d143971ca058"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -336,6 +345,28 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""26e59e19-cada-43b2-809d-b1785d18c674"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""adb3d7a8-822a-4721-8a35-c85d29c1221f"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -360,6 +391,15 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""ed1322b4-6fda-412e-9dea-979dcfce7616"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -494,6 +534,160 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0b562a68-1ef0-4831-9855-23989722b308"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0e067cb1-c575-4d7f-b210-d131e0788503"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Rhythm_Map"",
+            ""id"": ""bb6ad1af-3123-46de-8f75-27f4e53ce88b"",
+            ""actions"": [
+                {
+                    ""name"": ""SpaceGuyButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""669ac9e5-50e4-4afa-bd33-ebb5169276c6"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SpaceDogButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""a2e08ff3-2967-477e-8484-7ab1fa8155cc"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Block"",
+                    ""type"": ""Button"",
+                    ""id"": ""79cbe5d6-fa3c-4a34-b976-86abbf2a5d7c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""981eca75-c56c-4f71-a301-73df62f7334d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""50a01adf-d9ed-4138-aae0-2d792046d9cf"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SpaceGuyButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ca279767-67c8-48c7-b877-6cce87801445"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SpaceGuyButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""614309f6-bba4-49bb-8995-487e9470abc2"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SpaceDogButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""aa40a11e-43aa-438f-a459-60ae7e6eab02"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SpaceDogButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e8c322cb-ceee-4e7e-af87-01a0cd22e46b"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Block"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""719ad1fb-8fa0-432c-9e49-d11c062d1773"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Block"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cd665679-370b-45f5-b3a4-60a86cd6f1c2"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6305f92f-5b33-43db-99e1-904148fa99eb"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -507,16 +701,25 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         m_Action_Map_Run = m_Action_Map.FindAction("Run", throwIfNotFound: true);
         m_Action_Map_Jump = m_Action_Map.FindAction("Jump", throwIfNotFound: true);
         m_Action_Map_Shoot = m_Action_Map.FindAction("Shoot", throwIfNotFound: true);
+        m_Action_Map_Pause = m_Action_Map.FindAction("Pause", throwIfNotFound: true);
         // Swimming_Map
         m_Swimming_Map = asset.FindActionMap("Swimming_Map", throwIfNotFound: true);
         m_Swimming_Map_Swim = m_Swimming_Map.FindAction("Swim", throwIfNotFound: true);
         m_Swimming_Map_Movement = m_Swimming_Map.FindAction("Movement", throwIfNotFound: true);
+        m_Swimming_Map_Pause = m_Swimming_Map.FindAction("Pause", throwIfNotFound: true);
+        // Rhythm_Map
+        m_Rhythm_Map = asset.FindActionMap("Rhythm_Map", throwIfNotFound: true);
+        m_Rhythm_Map_SpaceGuyButton = m_Rhythm_Map.FindAction("SpaceGuyButton", throwIfNotFound: true);
+        m_Rhythm_Map_SpaceDogButton = m_Rhythm_Map.FindAction("SpaceDogButton", throwIfNotFound: true);
+        m_Rhythm_Map_Block = m_Rhythm_Map.FindAction("Block", throwIfNotFound: true);
+        m_Rhythm_Map_Pause = m_Rhythm_Map.FindAction("Pause", throwIfNotFound: true);
     }
 
     ~@PlayerActions()
     {
         UnityEngine.Debug.Assert(!m_Action_Map.enabled, "This will cause a leak and performance issues, PlayerActions.Action_Map.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Swimming_Map.enabled, "This will cause a leak and performance issues, PlayerActions.Swimming_Map.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Rhythm_Map.enabled, "This will cause a leak and performance issues, PlayerActions.Rhythm_Map.Disable() has not been called.");
     }
 
     /// <summary>
@@ -597,6 +800,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Action_Map_Run;
     private readonly InputAction m_Action_Map_Jump;
     private readonly InputAction m_Action_Map_Shoot;
+    private readonly InputAction m_Action_Map_Pause;
     /// <summary>
     /// Provides access to input actions defined in input action map "Action_Map".
     /// </summary>
@@ -628,6 +832,10 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Action_Map/Shoot".
         /// </summary>
         public InputAction @Shoot => m_Wrapper.m_Action_Map_Shoot;
+        /// <summary>
+        /// Provides access to the underlying input action "Action_Map/Pause".
+        /// </summary>
+        public InputAction @Pause => m_Wrapper.m_Action_Map_Pause;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -669,6 +877,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Shoot.started += instance.OnShoot;
             @Shoot.performed += instance.OnShoot;
             @Shoot.canceled += instance.OnShoot;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         /// <summary>
@@ -695,6 +906,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Shoot.started -= instance.OnShoot;
             @Shoot.performed -= instance.OnShoot;
             @Shoot.canceled -= instance.OnShoot;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         /// <summary>
@@ -734,6 +948,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private List<ISwimming_MapActions> m_Swimming_MapActionsCallbackInterfaces = new List<ISwimming_MapActions>();
     private readonly InputAction m_Swimming_Map_Swim;
     private readonly InputAction m_Swimming_Map_Movement;
+    private readonly InputAction m_Swimming_Map_Pause;
     /// <summary>
     /// Provides access to input actions defined in input action map "Swimming_Map".
     /// </summary>
@@ -753,6 +968,10 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Swimming_Map/Movement".
         /// </summary>
         public InputAction @Movement => m_Wrapper.m_Swimming_Map_Movement;
+        /// <summary>
+        /// Provides access to the underlying input action "Swimming_Map/Pause".
+        /// </summary>
+        public InputAction @Pause => m_Wrapper.m_Swimming_Map_Pause;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -785,6 +1004,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         /// <summary>
@@ -802,6 +1024,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
             @Movement.canceled -= instance.OnMovement;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         /// <summary>
@@ -835,6 +1060,135 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="Swimming_MapActions" /> instance referencing this action map.
     /// </summary>
     public Swimming_MapActions @Swimming_Map => new Swimming_MapActions(this);
+
+    // Rhythm_Map
+    private readonly InputActionMap m_Rhythm_Map;
+    private List<IRhythm_MapActions> m_Rhythm_MapActionsCallbackInterfaces = new List<IRhythm_MapActions>();
+    private readonly InputAction m_Rhythm_Map_SpaceGuyButton;
+    private readonly InputAction m_Rhythm_Map_SpaceDogButton;
+    private readonly InputAction m_Rhythm_Map_Block;
+    private readonly InputAction m_Rhythm_Map_Pause;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "Rhythm_Map".
+    /// </summary>
+    public struct Rhythm_MapActions
+    {
+        private @PlayerActions m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public Rhythm_MapActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "Rhythm_Map/SpaceGuyButton".
+        /// </summary>
+        public InputAction @SpaceGuyButton => m_Wrapper.m_Rhythm_Map_SpaceGuyButton;
+        /// <summary>
+        /// Provides access to the underlying input action "Rhythm_Map/SpaceDogButton".
+        /// </summary>
+        public InputAction @SpaceDogButton => m_Wrapper.m_Rhythm_Map_SpaceDogButton;
+        /// <summary>
+        /// Provides access to the underlying input action "Rhythm_Map/Block".
+        /// </summary>
+        public InputAction @Block => m_Wrapper.m_Rhythm_Map_Block;
+        /// <summary>
+        /// Provides access to the underlying input action "Rhythm_Map/Pause".
+        /// </summary>
+        public InputAction @Pause => m_Wrapper.m_Rhythm_Map_Pause;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_Rhythm_Map; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="Rhythm_MapActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(Rhythm_MapActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="Rhythm_MapActions" />
+        public void AddCallbacks(IRhythm_MapActions instance)
+        {
+            if (instance == null || m_Wrapper.m_Rhythm_MapActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_Rhythm_MapActionsCallbackInterfaces.Add(instance);
+            @SpaceGuyButton.started += instance.OnSpaceGuyButton;
+            @SpaceGuyButton.performed += instance.OnSpaceGuyButton;
+            @SpaceGuyButton.canceled += instance.OnSpaceGuyButton;
+            @SpaceDogButton.started += instance.OnSpaceDogButton;
+            @SpaceDogButton.performed += instance.OnSpaceDogButton;
+            @SpaceDogButton.canceled += instance.OnSpaceDogButton;
+            @Block.started += instance.OnBlock;
+            @Block.performed += instance.OnBlock;
+            @Block.canceled += instance.OnBlock;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="Rhythm_MapActions" />
+        private void UnregisterCallbacks(IRhythm_MapActions instance)
+        {
+            @SpaceGuyButton.started -= instance.OnSpaceGuyButton;
+            @SpaceGuyButton.performed -= instance.OnSpaceGuyButton;
+            @SpaceGuyButton.canceled -= instance.OnSpaceGuyButton;
+            @SpaceDogButton.started -= instance.OnSpaceDogButton;
+            @SpaceDogButton.performed -= instance.OnSpaceDogButton;
+            @SpaceDogButton.canceled -= instance.OnSpaceDogButton;
+            @Block.started -= instance.OnBlock;
+            @Block.performed -= instance.OnBlock;
+            @Block.canceled -= instance.OnBlock;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="Rhythm_MapActions.UnregisterCallbacks(IRhythm_MapActions)" />.
+        /// </summary>
+        /// <seealso cref="Rhythm_MapActions.UnregisterCallbacks(IRhythm_MapActions)" />
+        public void RemoveCallbacks(IRhythm_MapActions instance)
+        {
+            if (m_Wrapper.m_Rhythm_MapActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="Rhythm_MapActions.AddCallbacks(IRhythm_MapActions)" />
+        /// <seealso cref="Rhythm_MapActions.RemoveCallbacks(IRhythm_MapActions)" />
+        /// <seealso cref="Rhythm_MapActions.UnregisterCallbacks(IRhythm_MapActions)" />
+        public void SetCallbacks(IRhythm_MapActions instance)
+        {
+            foreach (var item in m_Wrapper.m_Rhythm_MapActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_Rhythm_MapActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="Rhythm_MapActions" /> instance referencing this action map.
+    /// </summary>
+    public Rhythm_MapActions @Rhythm_Map => new Rhythm_MapActions(this);
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Action_Map" which allows adding and removing callbacks.
     /// </summary>
@@ -877,6 +1231,13 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnShoot(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Pause" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPause(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Swimming_Map" which allows adding and removing callbacks.
@@ -899,5 +1260,48 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMovement(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Pause" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPause(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Rhythm_Map" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="Rhythm_MapActions.AddCallbacks(IRhythm_MapActions)" />
+    /// <seealso cref="Rhythm_MapActions.RemoveCallbacks(IRhythm_MapActions)" />
+    public interface IRhythm_MapActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "SpaceGuyButton" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSpaceGuyButton(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SpaceDogButton" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSpaceDogButton(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Block" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnBlock(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Pause" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPause(InputAction.CallbackContext context);
     }
 }

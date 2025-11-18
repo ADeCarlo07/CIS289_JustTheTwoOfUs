@@ -8,14 +8,16 @@ public class HeartDamage : MonoBehaviour
     public Image heartUI;
     public int curHealth;
     private int maxHealth = 4;
-    public Image heartList;
+    public GameObject heartList;
     private int heartCount;
+    public AudioSource audioSource;
+    public GameObject backGroundMusic;
 
     private void Start()
     {
-        
+        curHealth = maxHealth;
     }
-
+    
     private void UpdateHealthBar()
     {
         float health = (float)curHealth / maxHealth;
@@ -33,19 +35,40 @@ public class HeartDamage : MonoBehaviour
         curHealth = Mathf.Clamp(curHealth, 0, maxHealth);
         UpdateHealthBar();
 
-        if (curHealth >= 0)
+        if (curHealth <= 0)
         {
             heartCount = heartList.GetComponent<HeartUI>().currentHearts;
+            Debug.Log("Heart Count: " + heartCount);
 
             heartCount--;
 
-            heartList.GetComponent<HeartUI>().currentHearts = heartCount;
+            heartList.GetComponent<HeartUI>().UpdateHeartDisplay(heartCount);
 
-            heartUI.fillAmount = (float) curHealth / maxHealth;
+            if (heartCount == 0)
+            {
+                AudioSource audioS = backGroundMusic.GetComponent<AudioSource>();
+                audioS.Stop();
+                audioSource.Play();
+            }
+            else
+            {
+                if (audioSource.isPlaying)
+                {
+                    AudioSource audioS = backGroundMusic.GetComponent<AudioSource>();
+                    audioS.Play();
+                    audioSource.Stop();
+                }
+              
+            }
 
-            if (heartCount >= 0)
+            if (heartCount < 0)
             {
                 SceneManager.LoadScene("GameOver");
+            }
+            else
+            {
+                curHealth = maxHealth;
+                UpdateHealthBar();
             }
         }
     }

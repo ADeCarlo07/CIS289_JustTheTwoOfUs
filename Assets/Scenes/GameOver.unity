@@ -1304,6 +1304,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TitleScreen
   controls: {fileID: 1062184474}
   credits: {fileID: 772006853}
+  curvedMatieral: {fileID: 2100000, guid: 6f6faee07e1447d44be66c73fbdbdc9d, type: 2}
+  upsidedownCurvedMaterial: {fileID: 2100000, guid: 345aff09acbad2345a70c2396eee6922, type: 2}
 --- !u!114 &612695541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1316,6 +1318,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a06b78bf494d764f8574d5aa815ac43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  triggerTutorialButton01: 0
+  triggerTutorialButton02: 0
 --- !u!4 &612695542
 Transform:
   m_ObjectHideFlags: 0

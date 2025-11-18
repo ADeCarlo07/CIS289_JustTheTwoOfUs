@@ -1265,7 +1265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TutTo01
   maxTime: 10
-  nextLevelName: Level03
+  nextLevelName: Level03DEMO
 --- !u!4 &1136630383
 Transform:
   m_ObjectHideFlags: 0

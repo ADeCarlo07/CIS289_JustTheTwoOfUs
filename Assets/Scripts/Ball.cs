@@ -19,6 +19,14 @@ public class Ball : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            if (GameManager.instance.getTutoralCollectable() == 1)
+            {
+                int numHearts = GameManager.instance.getNumberOfHearts();
+                Debug.Log("Got all tutorial collectables");
+                numHearts++;
+                GameManager.instance.setNumberOfHearts(numHearts);
+                Debug.Log(GameManager.instance.getNumberOfHearts());
+            }
             SceneManager.LoadScene("TutorialCrash");
         }
     }

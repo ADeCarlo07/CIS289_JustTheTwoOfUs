@@ -6,11 +6,20 @@ public class TitleScreen : MonoBehaviour
 {
     public Image controls;
     public Image credits;
+    public Material curvedMatieral;
+    public Material upsidedownCurvedMaterial;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (GameManager.instance != null)
+        {
+            Destroy(GameManager.instance);
+        }
         
+
+        curvedMatieral.SetFloat("_PlayerOffset", 0);
+        upsidedownCurvedMaterial.SetFloat("_PlayerOffset", 0);
     }
 
     // Update is called once per frame
@@ -31,7 +40,6 @@ public class TitleScreen : MonoBehaviour
 
     public void retryButton()
     {
-        Destroy(GameManager.instance);
         SceneManager.LoadScene("Title");
     }
 

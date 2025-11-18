@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class RotateWithCurve : MonoBehaviour
 {
+    //This script is my holy grail for all scenes that deal with my curved matierals
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Material material;
     public float heightOffset = 0.5f;

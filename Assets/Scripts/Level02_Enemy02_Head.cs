@@ -1,10 +1,13 @@
+using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
+
 using UnityEngine;
-using UnityEngine.UIElements;
+
 
 public class Level02_Enemy02_Head : MonoBehaviour
 {
+    //Save the previous pos of the head so level02_enemy02
+    //GameObjects can trail behind
     public List<Vector2> positionHistory = new List<Vector2>();
 
     public Transform rotationCenter;
@@ -19,6 +22,15 @@ public class Level02_Enemy02_Head : MonoBehaviour
 
     private float ang;
 
+    private bool isAttacking;
+    public GameObject heartUI;
+
+    public float radius = 3f;
+
+    public Transform pos;
+
+    public LayerMask playerLayer;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,6 +41,12 @@ public class Level02_Enemy02_Head : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
+        if (hit != null && !isAttacking)
+        {
+            StartCoroutine(attack());
+        }
+
         positionX = rotationCenter.position.x + Mathf.Cos(angle) * rotationRadius;
 
         positionY = rotationCenter.position.y + Mathf.Sin(angle) * rotationRadius;
@@ -77,5 +95,22 @@ public class Level02_Enemy02_Head : MonoBehaviour
             angle = 0f;
         }
 
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        //So I can see it in the editor when I'm adjusting the size
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(pos.position, radius);
+    }
+
+
+
+    IEnumerator attack()
+    {
+        isAttacking = true;
+        heartUI.GetComponent<HeartDamage>().TakeDamage(1);
+        yield return new WaitForSeconds(0.75f);
+        isAttacking = false;
     }
 }

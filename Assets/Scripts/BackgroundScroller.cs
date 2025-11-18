@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class BackgroundScroller : MonoBehaviour
 {
+    //Titlescreen background
+
     public RawImage background;
     public float x;
     public float y;
