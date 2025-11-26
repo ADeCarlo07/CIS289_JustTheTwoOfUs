@@ -979,6 +979,7 @@ MonoBehaviour:
   heightOffset: -7
   spaceGuy: {fileID: 26492887}
   level1: 0
+  level3Special: 0
 --- !u!114 &26492892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7091,6 +7092,7 @@ MonoBehaviour:
   level02_underwater: 0
   level03: 0
   tutorial: 0
+  nextArrow: {fileID: 0}
 --- !u!114 &207609140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7179,6 +7181,7 @@ MonoBehaviour:
   heightOffset: 16.5
   spaceGuy: {fileID: 232218491}
   level1: 1
+  level3Special: 0
 --- !u!95 &232218494
 Animator:
   serializedVersion: 7
@@ -8239,6 +8242,7 @@ MonoBehaviour:
   heightOffset: -8
   spaceGuy: {fileID: 515983997}
   level1: 0
+  level3Special: 0
 --- !u!212 &515984001
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8363,6 +8367,10 @@ MonoBehaviour:
   dialogueBox: {fileID: 2116990796}
   spaceGuyHitLevel1: 1
   spaceGuy: {fileID: 18861301}
+  level01: 0
+  level03: 0
+  dialogues: []
+  level03_enemy: {fileID: 0}
 --- !u!4 &529331670
 Transform:
   m_ObjectHideFlags: 0
@@ -8411,6 +8419,10 @@ MonoBehaviour:
   dialogueBox: {fileID: 1799386702}
   spaceGuyHitLevel1: 0
   spaceGuy: {fileID: 0}
+  level01: 0
+  level03: 0
+  dialogues: []
+  level03_enemy: {fileID: 0}
 --- !u!61 &539386019
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9285,6 +9297,7 @@ MonoBehaviour:
   heightOffset: -4
   spaceGuy: {fileID: 616142982}
   level1: 0
+  level3Special: 0
 --- !u!114 &616142987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9613,6 +9626,7 @@ MonoBehaviour:
   heightOffset: 16.5
   spaceGuy: {fileID: 627687302}
   level1: 1
+  level3Special: 0
 --- !u!95 &627687305
 Animator:
   serializedVersion: 7
@@ -9859,6 +9873,7 @@ MonoBehaviour:
   heightOffset: -3
   spaceGuy: {fileID: 0}
   level1: 0
+  level3Special: 0
 --- !u!61 &660862071
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10241,6 +10256,7 @@ MonoBehaviour:
   heightOffset: 15.5
   spaceGuy: {fileID: 681061661}
   level1: 1
+  level3Special: 0
 --- !u!114 &681061667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10433,6 +10449,7 @@ MonoBehaviour:
   heightOffset: 17.5
   spaceGuy: {fileID: 684351275}
   level1: 1
+  level3Special: 0
 --- !u!70 &684351280
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -12095,6 +12112,7 @@ MonoBehaviour:
   level02_underwater: 0
   level03: 0
   tutorial: 0
+  nextArrow: {fileID: 0}
 --- !u!114 &824440560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12359,7 +12377,7 @@ Transform:
   m_GameObject: {fileID: 830256567}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.937274, y: 5.8470373, z: -10}
+  m_LocalPosition: {x: 9.963523, y: 5.8470373, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12778,6 +12796,7 @@ MonoBehaviour:
   heightOffset: 11
   spaceGuy: {fileID: 857978063}
   level1: 1
+  level3Special: 0
 --- !u!95 &857978068
 Animator:
   serializedVersion: 7
@@ -12849,6 +12868,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Teleporter
   level1: 1
   levelName: Level01ToLevel02
+  level2: 0
+  level3: 0
 --- !u!58 &860896587
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12901,6 +12922,7 @@ MonoBehaviour:
   heightOffset: -4
   spaceGuy: {fileID: 860896585}
   level1: 0
+  level3Special: 0
 --- !u!212 &860896589
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15933,6 +15955,7 @@ MonoBehaviour:
   heightOffset: 18.5
   spaceGuy: {fileID: 920120925}
   level1: 1
+  level3Special: 0
 --- !u!70 &920120927
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -77195,6 +77218,10 @@ MonoBehaviour:
   dialogueBox: {fileID: 207609140}
   spaceGuyHitLevel1: 0
   spaceGuy: {fileID: 0}
+  level01: 0
+  level03: 0
+  dialogues: []
+  level03_enemy: {fileID: 0}
 --- !u!61 &950037522
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -77538,7 +77565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5124723061655457155, guid: de9e3b0b88230a346b16e7fd0b2953ac, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5223349411682070541, guid: de9e3b0b88230a346b16e7fd0b2953ac, type: 3}
       propertyPath: m_Layer
@@ -77928,6 +77955,7 @@ MonoBehaviour:
   heightOffset: 0.5
   spaceGuy: {fileID: 1009632853}
   level1: 0
+  level3Special: 0
 --- !u!212 &1009632858
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -102961,6 +102989,10 @@ MonoBehaviour:
   dialogueBox: {fileID: 1260980909}
   spaceGuyHitLevel1: 0
   spaceGuy: {fileID: 0}
+  level01: 0
+  level03: 0
+  dialogues: []
+  level03_enemy: {fileID: 0}
 --- !u!61 &1072583129
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -119996,6 +120028,10 @@ MonoBehaviour:
   dialogueBox: {fileID: 824440560}
   spaceGuyHitLevel1: 1
   spaceGuy: {fileID: 18861301}
+  level01: 0
+  level03: 0
+  dialogues: []
+  level03_enemy: {fileID: 0}
 --- !u!4 &1078390938
 Transform:
   m_ObjectHideFlags: 0
@@ -144626,7 +144662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1141642646
 RectTransform:
   m_ObjectHideFlags: 0
@@ -144665,12 +144701,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
   credits: {fileID: 1914082861}
+  creditsNextArrow: {fileID: 0}
   controls: {fileID: 810504606}
+  controlsNextArrow: {fileID: 0}
   tutorial: 0
   level1: 1
   level2: 0
   level2Special: 0
   level3: 0
+  rhythymGame: 0
+  backgroundMusic: {fileID: 0}
   pauseFirstButton: {fileID: 1740302868}
 --- !u!114 &1141642648
 MonoBehaviour:
@@ -144688,6 +144728,7 @@ MonoBehaviour:
   credits: {fileID: 1914082862}
   curvedMatieral: {fileID: 2100000, guid: 6f6faee07e1447d44be66c73fbdbdc9d, type: 2}
   upsidedownCurvedMaterial: {fileID: 2100000, guid: 345aff09acbad2345a70c2396eee6922, type: 2}
+  reusme: {fileID: 0}
 --- !u!1 &1173309038
 GameObject:
   m_ObjectHideFlags: 0
@@ -144769,6 +144810,7 @@ MonoBehaviour:
   heightOffset: 16.5
   spaceGuy: {fileID: 1195494297}
   level1: 1
+  level3Special: 0
 --- !u!95 &1195494300
 Animator:
   serializedVersion: 7
@@ -145278,6 +145320,7 @@ MonoBehaviour:
   heightOffset: -6.5
   spaceGuy: {fileID: 1250109974}
   level1: 0
+  level3Special: 0
 --- !u!212 &1250109980
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -145449,13 +145492,14 @@ MonoBehaviour:
     characterDialogueBox: {fileID: 7375646780646497706, guid: 37a5964f24b643d429c645e52473311f, type: 3}
   - line: I think I see something ahead that might help you!
     characterDialogueBox: {fileID: 5392214278869696427, guid: e4955e0569eb60045a6cca06f2de1c00, type: 3}
-  - line: If I shoot it in some vital area it could do something...
+  - line: If I shoot it in some vital area it could stop it..
     characterDialogueBox: {fileID: 5392214278869696427, guid: e4955e0569eb60045a6cca06f2de1c00, type: 3}
   level01: 1
   level02: 0
   level02_underwater: 0
   level03: 0
   tutorial: 0
+  nextArrow: {fileID: 0}
 --- !u!114 &1260980909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145681,6 +145725,7 @@ MonoBehaviour:
   heightOffset: 18.5
   spaceGuy: {fileID: 1282992940}
   level1: 1
+  level3Special: 0
 --- !u!70 &1282992943
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -146162,6 +146207,7 @@ MonoBehaviour:
   heightOffset: 19
   spaceGuy: {fileID: 1308279683}
   level1: 1
+  level3Special: 0
 --- !u!95 &1308279689
 Animator:
   serializedVersion: 7
@@ -146319,6 +146365,7 @@ MonoBehaviour:
   heightOffset: 1
   spaceGuy: {fileID: 1354867281}
   level1: 0
+  level3Special: 0
 --- !u!212 &1354867283
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -167172,7 +167219,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3660896184065197988, guid: f297992401c36b04887b82991c124266, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3727696072749055732, guid: f297992401c36b04887b82991c124266, type: 3}
       propertyPath: m_Layer
@@ -173013,6 +173060,7 @@ MonoBehaviour:
   heightOffset: 11
   spaceGuy: {fileID: 1409361662}
   level1: 1
+  level3Special: 0
 --- !u!95 &1409361668
 Animator:
   serializedVersion: 7
@@ -173379,6 +173427,7 @@ MonoBehaviour:
   heightOffset: 17.5
   spaceGuy: {fileID: 1468389362}
   level1: 1
+  level3Special: 0
 --- !u!70 &1468389365
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -173762,6 +173811,7 @@ MonoBehaviour:
   heightOffset: 15.5
   spaceGuy: {fileID: 1564106344}
   level1: 1
+  level3Special: 0
 --- !u!61 &1564106349
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -174312,6 +174362,7 @@ MonoBehaviour:
   heightOffset: 20.5
   spaceGuy: {fileID: 1636522029}
   level1: 1
+  level3Special: 0
 --- !u!4 &1636522033 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: e9188ba3a12d8744ab03593999c709a0, type: 3}
@@ -236170,6 +236221,7 @@ MonoBehaviour:
   heightOffset: 16.5
   spaceGuy: {fileID: 1719730965}
   level1: 1
+  level3Special: 0
 --- !u!58 &1719730967
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -236674,6 +236726,7 @@ MonoBehaviour:
   level02_underwater: 0
   level03: 0
   tutorial: 0
+  nextArrow: {fileID: 0}
 --- !u!114 &1799386702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236858,6 +236911,7 @@ MonoBehaviour:
   heightOffset: 0.5
   spaceGuy: {fileID: 0}
   level1: 0
+  level3Special: 0
 --- !u!212 &1839062954
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -237307,7 +237361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.21176472, g: 0.07450981, b: 0.23137257, a: 0.7176471}
+  m_Color: {r: 0.21176472, g: 0.07450981, b: 0.23137257, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -237442,6 +237496,7 @@ MonoBehaviour:
   heightOffset: -4.5
   spaceGuy: {fileID: 1879785728}
   level1: 0
+  level3Special: 0
 --- !u!114 &1879785733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237620,6 +237675,7 @@ MonoBehaviour:
   heightOffset: -4.5
   spaceGuy: {fileID: 1887699871}
   level1: 0
+  level3Special: 0
 --- !u!212 &1887699877
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -237824,6 +237880,7 @@ MonoBehaviour:
   heightOffset: -9
   spaceGuy: {fileID: 1899322643}
   level1: 0
+  level3Special: 0
 --- !u!212 &1899322649
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -237919,6 +237976,7 @@ MonoBehaviour:
   heightOffset: 19.5
   spaceGuy: {fileID: 1899415672}
   level1: 1
+  level3Special: 0
 --- !u!70 &1899415674
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -238517,6 +238575,7 @@ MonoBehaviour:
   heightOffset: -10
   spaceGuy: {fileID: 1973536847}
   level1: 0
+  level3Special: 0
 --- !u!212 &1973536852
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -238756,6 +238815,7 @@ MonoBehaviour:
   heightOffset: 16.5
   spaceGuy: {fileID: 1986656455}
   level1: 1
+  level3Special: 0
 --- !u!95 &1986656458
 Animator:
   serializedVersion: 7
@@ -239070,6 +239130,7 @@ MonoBehaviour:
   heightOffset: -6.5
   spaceGuy: {fileID: 2078084041}
   level1: 0
+  level3Special: 0
 --- !u!114 &2078084046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239554,6 +239615,7 @@ MonoBehaviour:
   level02_underwater: 0
   level03: 0
   tutorial: 0
+  nextArrow: {fileID: 0}
 --- !u!114 &2116990796
 MonoBehaviour:
   m_ObjectHideFlags: 0

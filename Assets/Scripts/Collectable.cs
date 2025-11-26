@@ -33,6 +33,18 @@ public class Collectable : MonoBehaviour
                 GameManager.instance.incrementTutorialCollectable();
                 Destroy(this.gameObject);
             }
+
+            if (level2)
+            {
+                GameManager.instance.incrementLevel2Collectable();
+                Destroy(this.gameObject);
+            }
+
+            if (level3)
+            {
+                GameManager.instance.incrementLevel3Collectables();
+                Destroy(this.gameObject);
+            }
            
         }
     }

@@ -33,6 +33,7 @@ public class HideFollow : MonoBehaviour
         {
             Vector3 objectTransform = transform.position;
             Vector3 characterTransform = GameManager.instance.getTargetPlayer().transform.position;
+          
             objectTransform.x = characterTransform.x;
             transform.position = objectTransform;
             //transform.position = gameManager.getTargetPlayer().transform.position;

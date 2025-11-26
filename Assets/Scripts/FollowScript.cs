@@ -106,6 +106,7 @@ public class FollowScript : MonoBehaviour
             if (GameManager.instance.getMustMoveCamera() && !isMoving)
             {
                 isMoving = true;
+             
                 StartCoroutine(MoveToTarget());
 
 
@@ -138,7 +139,9 @@ public class FollowScript : MonoBehaviour
 
     IEnumerator MoveToTarget()
     {
-        if(!followAudioSource.isPlaying)
+       
+
+        if (!followAudioSource.isPlaying)
         {
             followAudioSource.PlayOneShot(switchSound);
         }
@@ -146,7 +149,7 @@ public class FollowScript : MonoBehaviour
         Vector3 startPos = transform.position;
         if (curvedScene && !level01)
         {
-           
+            
 
             Vector3 endPosY = GameManager.instance.getTargetPlayer().transform.position;
             endPosY.y = vertexOfParabola;
@@ -196,25 +199,27 @@ public class FollowScript : MonoBehaviour
             }
         }
 
+
         GameManager.instance.getTargetPlayer().GetComponent<PlayerController>().enabled = true;
         GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().gravityScale = 1;
 
-        
-            
-      
+    
+
+
+
         GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         GameManager.instance.getTargetPlayer().transform.rotation = Quaternion.Euler(0, 0, 0);
         
             
         
-        Vector3 pos = GameManager.instance.getTargetPlayer().transform.position;
-        if (curvedScene)
-        {
-            pos.y = vertexOfParabola;
-        }
+        //Vector3 pos = GameManager.instance.getTargetPlayer().transform.position;
+        //if (curvedScene)
+        //{
+        //    pos.y = vertexOfParabola;
+        //}
        
-        GameManager.instance.getTargetPlayer().transform.position = pos;
+        //GameManager.instance.getTargetPlayer().transform.position = pos;
 
         GameManager.instance.setMustMoveCamera(false);
 

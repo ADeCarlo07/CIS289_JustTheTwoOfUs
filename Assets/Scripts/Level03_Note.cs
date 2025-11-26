@@ -11,10 +11,15 @@ public class Level03_Note : MonoBehaviour
     public bool guyNote;
 
     public GameObject level03;
+
+    public bool lowNote;
+    public bool highNote;
+    public bool normNote;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -38,18 +43,40 @@ public class Level03_Note : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Hit"))
         {
-            AudioSource[] audio = level03.GetComponents<AudioSource>();
-            if (dogNote)
+            if (dogNote || guyNote)
             {
-                audio[0].Play();
+                AudioSource[] audio = level03.GetComponents<AudioSource>();
+                if (dogNote && highNote)
+                {
+                    audio[0].Play();
+                }
+                else if (dogNote && lowNote)
+                {
+                    audio[1].Play();
+                }
+                else if (dogNote && normNote)
+                {
+                    audio[2].Play();
+                }
+
+                if (guyNote && highNote)
+                {
+                    audio[3].Play();
+                }
+                else if (guyNote && lowNote)
+                {
+                    audio[4].Play();
+                }
+                else if (guyNote && normNote)
+                {
+                    audio[5].Play();
+                }
+
+                level03.GetComponent<PlayerController_SpecialLevel03>().numHits++;
+                Debug.Log("NumHits: " + level03.GetComponent<PlayerController_SpecialLevel03>().numHits);
+                Destroy(gameObject);
             }
-            if (guyNote)
-            {
-                audio[1].Play();
-            }
-            
-            level03.GetComponent<PlayerController_SpecialLevel03>().numHits++;
-            Destroy(gameObject);
+           
         }
     }
 }

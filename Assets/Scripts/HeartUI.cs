@@ -20,6 +20,8 @@ public class HeartUI : MonoBehaviour
         UpdateHeartDisplay(currentHearts);
     }
 
+   
+
     public void UpdateHeartDisplay(int newHealth)
     {
         currentHearts= newHealth;

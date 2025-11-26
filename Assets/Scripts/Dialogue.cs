@@ -1,9 +1,10 @@
-using UnityEngine;
-using TMPro;
 using System.Collections;
-using UnityEngine.UI;   
 using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;   
 public class Dialogue : MonoBehaviour
 {
     //I watched a very helpful tutorial video for this but I can't
@@ -62,6 +63,9 @@ public class Dialogue : MonoBehaviour
     public bool level02_underwater;
     public bool level03;
     public bool tutorial;
+    
+
+    public GameObject nextArrow;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -101,7 +105,10 @@ public class Dialogue : MonoBehaviour
             {
                 
             }
-                
+
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(nextArrow);
+
             StartDialogue();
         }
     }
@@ -159,7 +166,7 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-
+            Debug.Log("End of dialogue");
             if (level01)
             {
                 GameManager.instance.getTargetPlayer().GetComponent<PlayerController_SpecialLevel01>().enabled = true;
@@ -175,6 +182,7 @@ public class Dialogue : MonoBehaviour
             else if (level03)
             {
                 GameManager.instance.getTargetPlayer().GetComponent<PlayerController>().enabled = true;
+                GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().gravityScale = 1;
             }
             else if (tutorial)
             {

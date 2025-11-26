@@ -308,12 +308,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
   credits: {fileID: 693993857}
+  creditsNextArrow: {fileID: 0}
   controls: {fileID: 554303578}
+  controlsNextArrow: {fileID: 0}
   tutorial: 0
   level1: 0
   level2: 1
   level2Special: 0
   level3: 0
+  rhythymGame: 0
+  backgroundMusic: {fileID: 0}
+  chaseMusic: {fileID: 0}
   pauseFirstButton: {fileID: 154129459}
 --- !u!114 &119262363
 MonoBehaviour:
@@ -331,6 +336,7 @@ MonoBehaviour:
   credits: {fileID: 693993858}
   curvedMatieral: {fileID: 2100000, guid: 6f6faee07e1447d44be66c73fbdbdc9d, type: 2}
   upsidedownCurvedMaterial: {fileID: 2100000, guid: 345aff09acbad2345a70c2396eee6922, type: 2}
+  reusme: {fileID: 0}
 --- !u!1 &154129459
 GameObject:
   m_ObjectHideFlags: 0
@@ -115812,6 +115818,7 @@ MonoBehaviour:
   level02_underwater: 0
   level03: 0
   tutorial: 0
+  nextArrow: {fileID: 0}
 --- !u!114 &744125907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116634,6 +116641,7 @@ MonoBehaviour:
   backgroundMusic: {fileID: 379870495}
   audioSource: {fileID: 1124397345}
   lowHealth: {fileID: 220014270}
+  blocker: {fileID: 0}
 --- !u!82 &1124397345
 AudioSource:
   m_ObjectHideFlags: 0
@@ -116936,6 +116944,7 @@ MonoBehaviour:
   level02_underwater: 0
   level03: 0
   tutorial: 0
+  nextArrow: {fileID: 0}
 --- !u!114 &1243975067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118477,7 +118486,7 @@ MonoBehaviour:
   swimForce: 6
   audioSource: {fileID: 1758579756}
   swim: {fileID: 8300000, guid: 9908665fc7da05748ac1e4a9c6eaebfe, type: 3}
-  pauseMenu: {fileID: 0}
+  pauseMenu: {fileID: 119262360}
 --- !u!82 &1758579756
 AudioSource:
   m_ObjectHideFlags: 0
@@ -118846,53 +118855,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850143609}
   m_CullTransparentMesh: 1
---- !u!1 &1887275165
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1887275167}
-  - component: {fileID: 1887275166}
-  m_Layer: 0
-  m_Name: GameManagerTest
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1887275166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1887275165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a06b78bf494d764f8574d5aa815ac43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  triggerTutorialButton01: 0
-  triggerTutorialButton02: 0
-  numberOfHearts: 3
---- !u!4 &1887275167
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1887275165}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.04463, y: -9.78373, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1947915950
 GameObject:
   m_ObjectHideFlags: 0
@@ -119616,4 +119578,3 @@ SceneRoots:
   - {fileID: 1418776008}
   - {fileID: 846604729}
   - {fileID: 1331472930}
-  - {fileID: 1887275167}

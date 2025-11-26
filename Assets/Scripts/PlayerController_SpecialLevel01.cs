@@ -54,6 +54,8 @@ public class PlayerController_SpecialLevel01 : MonoBehaviour
 
     public GameObject pauseMenu;
 
+    private bool canSwitch;
+
 
     private void Awake()
     {
@@ -91,6 +93,8 @@ public class PlayerController_SpecialLevel01 : MonoBehaviour
     {
         playerActions.Action_Map.Disable();
         offsetApplied = false;
+        audioSource.Stop();
+        audioSource2.Stop();
     }
 
     private void FixedUpdate()
@@ -330,7 +334,7 @@ public class PlayerController_SpecialLevel01 : MonoBehaviour
 
     private void switchCharacters()
     {
-        if (playerInput.actions["SwitchPlayer"].WasPressedThisFrame())
+        if (playerInput.actions["SwitchPlayer"].WasPressedThisFrame() && isGrounded && canSwitch)
         {
 
             if (!GameManager.instance.playingAsSpaceDog())
@@ -381,6 +385,44 @@ public class PlayerController_SpecialLevel01 : MonoBehaviour
 
         }
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!GameManager.instance.playingAsSpaceDog())
+        {
+            if (collision.gameObject.CompareTag("GroundUpsideDown"))
+            {
+                canSwitch = true;
+            }
+        }
+
+        if (GameManager.instance.playingAsSpaceDog())
+        {
+            if (collision.gameObject.CompareTag("Ground"))
+            {
+                canSwitch = true;
+            }
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (!GameManager.instance.playingAsSpaceDog())
+        {
+            if (collision.gameObject.CompareTag("GroundUpsideDown"))
+            {
+                canSwitch = false;
+            }
+        }
+
+        if (GameManager.instance.playingAsSpaceDog())
+        {
+            if (collision.gameObject.CompareTag("Ground"))
+            {
+                canSwitch = false;
+            }
+        }
     }
 
     private void Run()

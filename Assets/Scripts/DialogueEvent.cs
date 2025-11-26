@@ -7,6 +7,12 @@ public class DialogueEvent : MonoBehaviour
     private bool dialogueComplete;
     public bool spaceGuyHitLevel1;
     public GameObject spaceGuy;
+
+    public bool level01;
+
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -41,13 +47,31 @@ public class DialogueEvent : MonoBehaviour
         //        dialogueComplete = true;
         //    }
         //}
-  
-        if (collision.gameObject.CompareTag("Player") && !dialogueComplete)
+
+        if (level01)
         {
-            dialogueBox.gameObject.SetActive(true);
-            dialogueComplete = true;
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Character02") && !dialogueComplete)
+            {
+                dialogueBox.gameObject.SetActive(true);
+                dialogueComplete = true;
+            }
         }
+        
+        else
+        {
+            if (collision.gameObject.CompareTag("Player") && !dialogueComplete)
+            {
+                dialogueBox.gameObject.SetActive(true);
+                dialogueComplete = true;
+            }
+
+            else if (collision.gameObject.CompareTag("SpaceGuy") && !dialogueComplete)
+            {
+                dialogueBox.gameObject.SetActive(true);
+                dialogueComplete = true;
+            }
 
 
+        }
     }
 }

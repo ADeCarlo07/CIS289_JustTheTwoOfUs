@@ -24,6 +24,8 @@ public class Level02_Enemy01 : MonoBehaviour
 
     public GameObject blocker;
 
+    private bool hasPlayed = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -81,9 +83,10 @@ public class Level02_Enemy01 : MonoBehaviour
                 lowHealth.Stop();
             }
 
-            if (!audioSource.isPlaying)
+            if (!hasPlayed)
             {
                 audioSource.Play();
+                hasPlayed = true;
             }
             
         }

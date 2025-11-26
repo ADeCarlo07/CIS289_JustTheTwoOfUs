@@ -17,6 +17,19 @@ public class GameManager : MonoBehaviour
     private int numOfHitsGame01;
     private int numOfHitsGame02;
     private int numOfHitsGame03;
+    private bool level03Enemy02Done;
+    private bool level03Enemy01Done;
+    private bool level03Enemy03Done;
+
+    public int curDamageDoneLevel03 = 0;
+    public int curHeartsLevel03 = 0;
+
+    public int id = 0;
+
+    public string level03_01_eval = "";
+    public string level03_02_eval = "";
+    public string level03_03_eval = "";
+
 
     public static GameManager instance { get; private set; }
 
@@ -43,9 +56,41 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log("DAM_GM: " + curDamageDoneLevel03);
     }
 
+    
+
+    public void setLevel03Enemy02Done(bool b)
+    {
+        level03Enemy02Done = b;
+    }
+
+    public bool getLevel03Enemy02Done()
+    {
+        return level03Enemy02Done;
+    }
+
+    public void setLevel03Enemy01Done(bool b)
+    {
+        level03Enemy01Done = b;
+    }
+
+    public bool getLevel03Enemy01Done()
+    {
+        return level03Enemy01Done;
+    }
+
+    public void setLevel03Enemy03Done(bool b)
+    {
+        level03Enemy03Done = b;
+    }
+
+    public bool getLevel03Enemy03Done()
+    {
+        return level03Enemy03Done;
+    }
+   
     public void setNumOfHitsGame01(int n)
     {
         numOfHitsGame01 = n;
@@ -66,7 +111,7 @@ public class GameManager : MonoBehaviour
         return numOfHitsGame02;
     }
 
-    public void setumOfHitsGame03(int n)
+    public void setNumOfHitsGame03(int n)
     {
         numOfHitsGame03 = n;
     }

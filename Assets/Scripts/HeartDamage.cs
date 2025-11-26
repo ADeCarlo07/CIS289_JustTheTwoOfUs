@@ -25,6 +25,17 @@ public class HeartDamage : MonoBehaviour
 
     }
 
+    public int GetCurrentHealth()
+    {
+        return curHealth;
+    }
+
+    public void SetHealth(int value)
+    {
+        curHealth = Mathf.Clamp(value, 0, maxHealth);
+        UpdateHealthBar();
+    }
+
     public void TakeDamage(int damage)
     {
 

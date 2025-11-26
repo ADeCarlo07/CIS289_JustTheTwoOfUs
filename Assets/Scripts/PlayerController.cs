@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private bool isRunning;
     public float jumpForce = 12f;
-    private bool isGrounded;
+    public bool isGrounded;
     public LayerMask groundLayer;
     private bool jumpRequested;
     public Transform groundCheck;
@@ -42,6 +42,8 @@ public class PlayerController : MonoBehaviour
     public GameObject rotateFollowObject;
 
     public GameObject pauseMenu;
+
+    private bool canSwitch = false;
 
     private void Awake()
     {
@@ -73,6 +75,9 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         playerActions.Action_Map.Disable();
+        audioSource.Stop();
+        audioSource2.Stop();
+
     }
 
     private void FixedUpdate()
@@ -258,8 +263,9 @@ public class PlayerController : MonoBehaviour
 
     private void switchCharacters()
     {
-        if(playerInput.actions["SwitchPlayer"].WasPressedThisFrame())
+        if(playerInput.actions["SwitchPlayer"].WasPressedThisFrame() && isGrounded && canSwitch)
         {
+           
             if (!GameManager.instance.playingAsSpaceDog())
             {
                 gameObject.GetComponent<SpaceGuyShoot>().enabled = false;
@@ -269,8 +275,10 @@ public class PlayerController : MonoBehaviour
                 GameManager.instance.getOtherPlayer().GetComponent<SpaceGuyShoot>().enabled = true;
             }
 
-                GameManager.instance.setTargetPlayer(otherCharacter);
+            GameManager.instance.setTargetPlayer(otherCharacter);
             GameManager.instance.setOtherPlayer(this.gameObject);
+
+         
 
             Debug.Log("Switch players");
             rb.linearVelocity = Vector2.zero;
@@ -322,6 +330,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-   
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            canSwitch = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            canSwitch = false;
+        }
+    }
 }

@@ -11,16 +11,17 @@ public class RotateWithCurve : MonoBehaviour
     public GameObject spaceGuy;
     public bool level1;
 
+    public bool level3Special;
     // public GameManager gameManager;
 
     void OnEnable()
     {
-        
+
     }
 
     void OnDisable()
     {
-       
+  
     }
 
     void Start()
@@ -43,8 +44,6 @@ public class RotateWithCurve : MonoBehaviour
     void Update()
     {
        
-        
-
         //updating y pos to match the curve. Just doing what
         //I did in the shader for the material to the sprite (kind of)
         Vector3 pos = transform.position;

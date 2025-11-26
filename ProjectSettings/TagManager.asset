@@ -18,6 +18,8 @@ TagManager:
   - Hit
   - Block
   - EndOfScreen
+  - Enemy
+  - Buttons
   layers:
   - Default
   - TransparentFX

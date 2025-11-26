@@ -16,6 +16,7 @@ public class Level1_Enemy2_HeartRad : MonoBehaviour
             {
                 Debug.Log("Bullet hit the heart: " + hit.name);
                 stopAttacking = true;
+                Destroy(hit.gameObject);
             }
             else
             {
