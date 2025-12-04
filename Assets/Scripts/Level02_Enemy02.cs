@@ -24,6 +24,8 @@ public class Level02_Enemy02 : MonoBehaviour
 
     public Transform pos;
 
+    public float followSpeed = 2f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,7 +45,8 @@ public class Level02_Enemy02 : MonoBehaviour
 
         if (headPositionList.Count > followIndex)
         {
-            transform.position = headPositionList[followIndex];
+            //transform.position = headPositionList[followIndex];
+            transform.position = Vector2.Lerp(transform.position, headPositionList[followIndex], Time.deltaTime * followSpeed);
         }
 
 

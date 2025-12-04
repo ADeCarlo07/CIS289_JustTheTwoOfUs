@@ -6456,7 +6456,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &134249722
 Transform:
   m_ObjectHideFlags: 0
@@ -8368,9 +8368,6 @@ MonoBehaviour:
   spaceGuyHitLevel1: 1
   spaceGuy: {fileID: 18861301}
   level01: 0
-  level03: 0
-  dialogues: []
-  level03_enemy: {fileID: 0}
 --- !u!4 &529331670
 Transform:
   m_ObjectHideFlags: 0
@@ -8420,9 +8417,6 @@ MonoBehaviour:
   spaceGuyHitLevel1: 0
   spaceGuy: {fileID: 0}
   level01: 0
-  level03: 0
-  dialogues: []
-  level03_enemy: {fileID: 0}
 --- !u!61 &539386019
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9725,7 +9719,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &654701510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77219,9 +77213,6 @@ MonoBehaviour:
   spaceGuyHitLevel1: 0
   spaceGuy: {fileID: 0}
   level01: 0
-  level03: 0
-  dialogues: []
-  level03_enemy: {fileID: 0}
 --- !u!61 &950037522
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -102990,9 +102981,6 @@ MonoBehaviour:
   spaceGuyHitLevel1: 0
   spaceGuy: {fileID: 0}
   level01: 0
-  level03: 0
-  dialogues: []
-  level03_enemy: {fileID: 0}
 --- !u!61 &1072583129
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -120029,9 +120017,6 @@ MonoBehaviour:
   spaceGuyHitLevel1: 1
   spaceGuy: {fileID: 18861301}
   level01: 0
-  level03: 0
-  dialogues: []
-  level03_enemy: {fileID: 0}
 --- !u!4 &1078390938
 Transform:
   m_ObjectHideFlags: 0
@@ -144662,7 +144647,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1141642646
 RectTransform:
   m_ObjectHideFlags: 0
@@ -144711,7 +144696,14 @@ MonoBehaviour:
   level3: 0
   rhythymGame: 0
   backgroundMusic: {fileID: 0}
+  chaseMusic: {fileID: 0}
   pauseFirstButton: {fileID: 1740302868}
+  managerLevel03Special: {fileID: 0}
+  resume: {fileID: 0}
+  retry: {fileID: 0}
+  quit: {fileID: 0}
+  controlsB: {fileID: 0}
+  creditsB: {fileID: 0}
 --- !u!114 &1141642648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144726,9 +144718,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TitleScreen
   controls: {fileID: 810504607}
   credits: {fileID: 1914082862}
+  controlsNextArrow: {fileID: 0}
+  creditsNextArrow: {fileID: 0}
   curvedMatieral: {fileID: 2100000, guid: 6f6faee07e1447d44be66c73fbdbdc9d, type: 2}
   upsidedownCurvedMaterial: {fileID: 2100000, guid: 345aff09acbad2345a70c2396eee6922, type: 2}
   reusme: {fileID: 0}
+  retry: {fileID: 0}
+  quit: {fileID: 0}
+  controlsB: {fileID: 0}
+  creditsB: {fileID: 0}
+  resume: {fileID: 0}
+  pauseMenu: 0
 --- !u!1 &1173309038
 GameObject:
   m_ObjectHideFlags: 0
@@ -173288,7 +173288,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1438060220
 Transform:
   m_ObjectHideFlags: 0

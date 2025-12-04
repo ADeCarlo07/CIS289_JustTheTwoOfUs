@@ -18,6 +18,8 @@ public class Level02_Enemy03 : MonoBehaviour
 
     public GameObject heartUI;
 
+    public GameObject hitBox;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,6 +29,12 @@ public class Level02_Enemy03 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (hitBox.GetComponent<Level02_Enemy03_Hit>().playerInRange)
+        {
+            Destroy(this.gameObject);
+        }
+
+
         Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
         if (hit != null && !isAttacking)
         {

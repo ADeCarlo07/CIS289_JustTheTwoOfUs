@@ -41,6 +41,12 @@ public class Level02_Enemy02_Head : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      
+
+    }
+
+    private void FixedUpdate()
+    {
         Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
         if (hit != null && !isAttacking)
         {
@@ -94,7 +100,6 @@ public class Level02_Enemy02_Head : MonoBehaviour
         {
             angle = 0f;
         }
-
     }
 
     void OnDrawGizmosSelected()

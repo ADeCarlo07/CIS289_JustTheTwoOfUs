@@ -3,6 +3,7 @@ using UnityEngine;
 public class Level02_Enemy03_AttackRad : MonoBehaviour
 {
     public bool playerInRange;
+ 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,6 +21,7 @@ public class Level02_Enemy03_AttackRad : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             playerInRange = true;
+            
         }
     }
 

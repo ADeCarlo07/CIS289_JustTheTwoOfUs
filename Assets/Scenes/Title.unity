@@ -508,6 +508,9 @@ MonoBehaviour:
   curDamageDoneLevel03: 0
   curHeartsLevel03: 0
   id: 0
+  level03_01_eval: 
+  level03_02_eval: 
+  level03_03_eval: 
 --- !u!4 &1075571773
 Transform:
   m_ObjectHideFlags: 0
@@ -580,7 +583,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Just The Two of Us DEMO
+  m_text: Just The Two of Us
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 793d4749f5278564289aa5c9aaf6a0ab, type: 2}
   m_sharedMaterial: {fileID: -913063918259949787, guid: 793d4749f5278564289aa5c9aaf6a0ab, type: 2}
@@ -1214,7 +1217,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Just The Two Of us DEMO
+  m_text: Just The Two Of us
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 793d4749f5278564289aa5c9aaf6a0ab, type: 2}
   m_sharedMaterial: {fileID: -913063918259949787, guid: 793d4749f5278564289aa5c9aaf6a0ab, type: 2}
