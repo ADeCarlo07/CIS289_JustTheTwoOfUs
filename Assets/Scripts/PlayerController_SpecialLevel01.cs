@@ -99,6 +99,8 @@ public class PlayerController_SpecialLevel01 : MonoBehaviour
 
     private void FixedUpdate()
     {
+       
+
         if (curvedScene)
         {
             Vector3 position = circleCollider.transform.position;

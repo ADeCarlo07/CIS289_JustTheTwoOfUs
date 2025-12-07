@@ -38,6 +38,7 @@ public class PauseMenu : MonoBehaviour
     public Button creditsB;
 
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -57,7 +58,7 @@ public class PauseMenu : MonoBehaviour
             }
             else if (level1)
             {
-                GameManager.instance.getTargetPlayer().GetComponent<PlayerController_SpecialLevel01>().enabled = false;
+                //GameManager.instance.getTargetPlayer().GetComponent<PlayerController_SpecialLevel01>().enabled = false;
                 //time = backgroundMusic.GetComponent<AudioSource>().time;
                 backgroundMusic.GetComponent<AudioSource>().Pause();
             }
@@ -89,8 +90,9 @@ public class PauseMenu : MonoBehaviour
                //time = backgroundMusic.GetComponent<AudioSource>().time;
                 backgroundMusic.GetComponent<AudioSource>().Pause();
             }
+
             Time.timeScale = 0;
-        
+            
             EventSystem.current.SetSelectedGameObject(null);
             EventSystem.current.SetSelectedGameObject(pauseFirstButton);
             isPaused = true;
@@ -114,15 +116,22 @@ public class PauseMenu : MonoBehaviour
         }
         else if (level1)
         {
-            if (GameManager.instance.playingAsSpaceDog())
-            {
-                Physics2D.gravity = new Vector2(0, -9.8f);
-            }
-            else
-            {
-                Physics2D.gravity = new Vector2(0, 9.8f);
-            }
-            GameManager.instance.getTargetPlayer().GetComponent<PlayerController_SpecialLevel01>().enabled = true;
+            //if (GameManager.instance.playingAsSpaceDog())
+            //{
+            //    Physics2D.gravity = new Vector2(0, -9.8f);
+            //}
+            //else
+            //{
+            //    Physics2D.gravity = new Vector2(0, 9.8f);
+            //}
+            //GameManager.instance.getTargetPlayer().GetComponent<PlayerController_SpecialLevel01>().enabled = true;
+        
+            
+
+            GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+
+
+
             //backgroundMusic.GetComponent<AudioSource>().time = time;
             backgroundMusic.GetComponent<AudioSource>().UnPause();
         }
@@ -200,6 +209,9 @@ public class PauseMenu : MonoBehaviour
 
         if (level3)
         {
+            Level03_HeartCanvas.destroyInstance();
+
+
             GameManager.instance.setLevel3Collectable(0);
             GameManager.instance.setLevel03Enemy01Done(false);
             GameManager.instance.setLevel03Enemy02Done(false);
@@ -215,6 +227,8 @@ public class PauseMenu : MonoBehaviour
 
         if (rhythymGame)
         {
+            Level03_HeartCanvas.destroyInstance();
+
             GameManager.instance.setLevel3Collectable(0);
             GameManager.instance.setLevel03Enemy01Done(false);
             GameManager.instance.setLevel03Enemy02Done(false);

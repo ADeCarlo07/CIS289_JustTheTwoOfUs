@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HeartUI : MonoBehaviour
@@ -14,10 +16,31 @@ public class HeartUI : MonoBehaviour
 
     private Transform heartTransform;
 
+    public bool level03;
+
+    private bool initalized;
+
     private void Start()
     {
-        currentHearts = GameManager.instance.getNumberOfHearts();
-        UpdateHeartDisplay(currentHearts);
+        if (level03)
+        {
+            if (!initalized)
+            {
+                currentHearts = GameManager.instance.getNumberOfHearts();
+                UpdateHeartDisplay(currentHearts);
+                initalized = true;
+
+            }
+
+       
+            //DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            currentHearts = GameManager.instance.getNumberOfHearts();
+            UpdateHeartDisplay(currentHearts);
+        }
+       
     }
 
    

@@ -108,6 +108,7 @@ public class Level1_Enemy3 : MonoBehaviour
             defeated = true;
 
             Debug.Log("Bullet hit enemy 3");
+            Destroy(collision.gameObject);
             //numHits++;
         }
     }

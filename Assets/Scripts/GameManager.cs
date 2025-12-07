@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     public string level03_03_eval = "";
 
 
+
+
     public static GameManager instance { get; private set; }
 
 
@@ -59,7 +61,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("DAM_GM: " + curDamageDoneLevel03);
     }
 
-    
+   
 
     public void setLevel03Enemy02Done(bool b)
     {

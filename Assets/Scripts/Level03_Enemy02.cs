@@ -20,8 +20,7 @@ public class Level03_Enemy02 : MonoBehaviour
     //public Image okayDialogue;
     //public Image horribleDialogue;
 
-    public GameObject heartUI;
-    public GameObject heartContainter;
+ 
 
     private AudioSource audioSource;
     private Animator animator;
@@ -48,12 +47,14 @@ public class Level03_Enemy02 : MonoBehaviour
             {
                 Debug.Log("DAM" + GameManager.instance.curDamageDoneLevel03);
                 Debug.Log("HAR " + GameManager.instance.curHeartsLevel03);
-                heartContainter.GetComponent<HeartUI>().currentHearts = GameManager.instance.curHeartsLevel03;
+
+
+                //heartContainter.GetComponent<HeartUI>().currentHearts = GameManager.instance.curHeartsLevel03;
                 
-                if (enemy01 && GameManager.instance.level03_02_eval != "p" && GameManager.instance.level03_03_eval != "")
-                {
-                    heartUI.GetComponent<HeartDamage>().SetHealth(GameManager.instance.curDamageDoneLevel03);
-                }
+                //if (enemy01 && GameManager.instance.level03_02_eval != "p" && GameManager.instance.level03_03_eval != "")
+                //{
+                //    heartUI.GetComponent<HeartDamage>().SetHealth(GameManager.instance.curDamageDoneLevel03);
+                //}
                 
             }
 
@@ -154,8 +155,8 @@ public class Level03_Enemy02 : MonoBehaviour
         {
             Debug.Log("perfect");
             perfect = true;
-            GameManager.instance.curDamageDoneLevel03 = heartUI.GetComponent<HeartDamage>().GetCurrentHealth();
-            GameManager.instance.curHeartsLevel03 = heartContainter.GetComponent<HeartUI>().currentHearts;
+            //GameManager.instance.curDamageDoneLevel03 = heartUI.GetComponent<HeartDamage>().GetCurrentHealth();
+            //GameManager.instance.curHeartsLevel03 = heartContainter.GetComponent<HeartUI>().currentHearts;
             return;
         }
         else
@@ -170,9 +171,10 @@ public class Level03_Enemy02 : MonoBehaviour
                 //okayDialogue.gameObject.SetActive(true);
                 animator.SetTrigger("Attack");
                 audioSource.Play();
-                heartUI.GetComponent<HeartDamage>().TakeDamage(2);
-                GameManager.instance.curDamageDoneLevel03 = heartUI.GetComponent<HeartDamage>().GetCurrentHealth();
-                GameManager.instance.curHeartsLevel03 = heartContainter.GetComponent<HeartUI>().currentHearts;
+                HeartDamage heartDamage = FindAnyObjectByType<HeartDamage>();
+                heartDamage.TakeDamage(2);
+                //GameManager.instance.curDamageDoneLevel03 = heartUI.GetComponent<HeartDamage>().GetCurrentHealth();
+                //GameManager.instance.curHeartsLevel03 = heartContainter.GetComponent<HeartUI>().currentHearts;
                 return;
             }
             else
@@ -182,9 +184,22 @@ public class Level03_Enemy02 : MonoBehaviour
                 //horribleDialogue.gameObject.SetActive(true);
                 animator.SetTrigger("Attack");
                 audioSource.Play();
-                heartUI.GetComponent<HeartDamage>().TakeDamage(4);
-                GameManager.instance.curDamageDoneLevel03 = heartUI.GetComponent<HeartDamage>().GetCurrentHealth();
-                GameManager.instance.curHeartsLevel03 = heartContainter.GetComponent<HeartUI>().currentHearts;
+                HeartDamage heartDamage = FindAnyObjectByType<HeartDamage>();
+
+                if (heartDamage.curHealth == 2)
+                {
+                    heartDamage.TakeDamage(2);
+                    heartDamage.TakeDamage(2);
+                }
+                else
+                {
+                    heartDamage.TakeDamage(4);
+                }
+
+                
+                //heartUI.GetComponent<HeartDamage>().TakeDamage(4);
+                //GameManager.instance.curDamageDoneLevel03 = heartUI.GetComponent<HeartDamage>().GetCurrentHealth();
+                //GameManager.instance.curHeartsLevel03 = heartContainter.GetComponent<HeartUI>().currentHearts;
                 return;
             }
         }

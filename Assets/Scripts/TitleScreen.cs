@@ -30,11 +30,17 @@ public class TitleScreen : MonoBehaviour
         if (GameManager.instance != null)
         {
             Destroy(GameManager.instance);
+            Level03_HeartCanvas.destroyInstance();
         }
         
 
         curvedMatieral.SetFloat("_PlayerOffset", 0);
         upsidedownCurvedMaterial.SetFloat("_PlayerOffset", 0);
+    }
+
+    private void Awake()
+    {
+        
     }
 
     // Update is called once per frame

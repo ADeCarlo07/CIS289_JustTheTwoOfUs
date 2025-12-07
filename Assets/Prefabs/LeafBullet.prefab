@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6265330808829378106}
   - component: {fileID: 2547338555410701046}
   - component: {fileID: 3761423688572079736}
+  - component: {fileID: 2648311534448592548}
   m_Layer: 0
   m_Name: LeafBullet
   m_TagString: Untagged
@@ -171,4 +172,17 @@ MonoBehaviour:
   bulletSpeed: 10
   bulletLifeTime: 2.5
   upsideDown: 0
-  heartUI: {fileID: 0}
+--- !u!114 &2648311534448592548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590036472893333061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b79bf4d4cfd75a43bae36b8eac22a82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Level1Manager
+  upsideDown: 0
+  hidden: 0

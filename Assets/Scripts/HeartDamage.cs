@@ -6,18 +6,40 @@ using UnityEngine.UI;
 public class HeartDamage : MonoBehaviour
 {
     public Image heartUI;
-    public int curHealth;
+    public int curHealth = 4;
     private int maxHealth = 4;
     public GameObject heartList;
     private int heartCount;
     public AudioSource audioSource;
     public GameObject backGroundMusic;
 
+    public bool level03;
+
+    private bool initalized = false;
+
     private void Start()
     {
-        curHealth = maxHealth;
+       
+        
+
+        if (level03)
+        {
+            //DontDestroyOnLoad(this.gameObject);
+            if (!initalized)
+            {
+                curHealth = maxHealth;
+                initalized = true;
+            }
+
+            
+        }
+        else
+        {
+            curHealth = maxHealth;
+        }
+
     }
-    
+
     private void UpdateHealthBar()
     {
         float health = (float)curHealth / maxHealth;
