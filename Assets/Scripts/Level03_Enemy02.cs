@@ -147,8 +147,13 @@ public class Level03_Enemy02 : MonoBehaviour
         }
 
     }
+    
+    public void slapSound()
+    {
+        audioSource.Play();
+    }
 
-    void EvaluateHits(int numHits)
+    private void EvaluateHits(int numHits)
     {
 
         if (numHits >= max)
@@ -170,7 +175,7 @@ public class Level03_Enemy02 : MonoBehaviour
                 okay = true;
                 //okayDialogue.gameObject.SetActive(true);
                 animator.SetTrigger("Attack");
-                audioSource.Play();
+                
                 HeartDamage heartDamage = FindAnyObjectByType<HeartDamage>();
                 heartDamage.TakeDamage(2);
                 //GameManager.instance.curDamageDoneLevel03 = heartUI.GetComponent<HeartDamage>().GetCurrentHealth();
@@ -183,7 +188,7 @@ public class Level03_Enemy02 : MonoBehaviour
                 horrible = true;
                 //horribleDialogue.gameObject.SetActive(true);
                 animator.SetTrigger("Attack");
-                audioSource.Play();
+              
                 HeartDamage heartDamage = FindAnyObjectByType<HeartDamage>();
 
                 if (heartDamage.curHealth == 2)
@@ -204,6 +209,8 @@ public class Level03_Enemy02 : MonoBehaviour
             }
         }
     }
+
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

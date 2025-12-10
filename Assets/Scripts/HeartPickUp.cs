@@ -21,8 +21,9 @@ public class HeartPickUp : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (heartUI.GetComponent<HeartUI>().currentHearts != GameManager.instance.numberOfHearts)
+            if (heartUI.GetComponent<HeartUI>().currentHearts < GameManager.instance.numberOfHearts)
             {
+                Debug.Log("healed with" +  heartUI.GetComponent<HeartUI>().currentHearts + " and max being " +  GameManager.instance.numberOfHearts);
                 heartUI.GetComponent<HeartUI>().Heal(1);
             }
             else

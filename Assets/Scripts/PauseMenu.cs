@@ -1,6 +1,8 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -58,7 +60,7 @@ public class PauseMenu : MonoBehaviour
             }
             else if (level1)
             {
-                //GameManager.instance.getTargetPlayer().GetComponent<PlayerController_SpecialLevel01>().enabled = false;
+                GameManager.instance.getTargetPlayer().GetComponent<PlayerController_SpecialLevel01>().canMove = false;
                 //time = backgroundMusic.GetComponent<AudioSource>().time;
                 backgroundMusic.GetComponent<AudioSource>().Pause();
             }
@@ -105,6 +107,8 @@ public class PauseMenu : MonoBehaviour
         Application.Quit();
     }
 
+  
+
 
     public void ResumeGame()
     {
@@ -124,9 +128,11 @@ public class PauseMenu : MonoBehaviour
             //{
             //    Physics2D.gravity = new Vector2(0, 9.8f);
             //}
-            //GameManager.instance.getTargetPlayer().GetComponent<PlayerController_SpecialLevel01>().enabled = true;
-        
-            
+
+            GameManager.instance.getTargetPlayer().GetComponent<PlayerInput>().actions["Jump"].Reset();
+
+            GameManager.instance.getTargetPlayer().GetComponent<PlayerController_SpecialLevel01>().canMove = true;
+
 
             GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
 

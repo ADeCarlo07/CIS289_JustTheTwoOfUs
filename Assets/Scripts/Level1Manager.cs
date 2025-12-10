@@ -21,6 +21,10 @@ public class Level1Manager : MonoBehaviour
             if (GameManager.instance.playingAsSpaceDog())
             {
                 hidden = true;
+                if (gameObject.GetComponent<MeshRenderer>() != null)
+                {
+                    gameObject.GetComponent<MeshRenderer>().enabled = false;
+                }
                 if (gameObject.GetComponent<TilemapRenderer>() != null)
                 {
                     gameObject.GetComponent<TilemapRenderer>().enabled = false;
@@ -37,6 +41,10 @@ public class Level1Manager : MonoBehaviour
             else
             {
                 hidden = false;
+                if (gameObject.GetComponent<MeshRenderer>() != null)
+                {
+                    gameObject.GetComponent<MeshRenderer>().enabled = true;
+                }
                 if (gameObject.GetComponent<TilemapRenderer>() != null)
                 {
                     gameObject.GetComponent<TilemapRenderer>().enabled = true;
@@ -55,6 +63,10 @@ public class Level1Manager : MonoBehaviour
         {
             if (GameManager.instance.playingAsSpaceDog())
             {
+                if (gameObject.GetComponent<MeshRenderer>() != null)
+                {
+                    gameObject.GetComponent<MeshRenderer>().enabled = true;
+                }
                 if (gameObject.GetComponent<TilemapRenderer>() != null)
                 {
                     gameObject.GetComponent<TilemapRenderer>().enabled = true;
@@ -71,6 +83,11 @@ public class Level1Manager : MonoBehaviour
             }
             else
             {
+                if (gameObject.GetComponent<MeshRenderer>() != null)
+                {
+                    gameObject.GetComponent<MeshRenderer>().enabled = false;
+                }
+
                 if (gameObject.GetComponent<TilemapRenderer>() != null)
                 {
                     gameObject.GetComponent<TilemapRenderer>().enabled = false;

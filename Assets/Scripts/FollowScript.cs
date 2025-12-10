@@ -56,7 +56,9 @@ public class FollowScript : MonoBehaviour
 
                 isMoving = true;
 
-                GameManager.instance.getTargetPlayer().GetComponent<PlayerController_SpecialLevel01>().enabled = true;
+                GameManager.instance.getTargetPlayer().GetComponent<PlayerController_SpecialLevel01>().canMove = true;
+
+             
                 GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().gravityScale = 1;
                 GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
                 GameManager.instance.getTargetPlayer().GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;

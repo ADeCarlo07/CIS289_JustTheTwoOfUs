@@ -6912,7 +6912,7 @@ Transform:
   m_GameObject: {fileID: 839639320}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0503, y: -20.57, z: 0}
+  m_LocalPosition: {x: 0.0503, y: -14.07, z: 0}
   m_LocalScale: {x: 12.485861, y: 4.6561456, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11446,7 +11446,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2413806693520163455, guid: e1061eb516099a441a03928183a3d586, type: 3}
   m_Color: {r: 0.21960786, g: 0, b: 0.6, a: 1}
   m_FlipX: 0
@@ -13099,7 +13099,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: -654981527035600902, guid: 71b1cc7867fbf4e4591dac956d118bac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -13593,10 +13593,10 @@ MonoBehaviour:
   level2Special: 0
   level3: 0
   rhythymGame: 1
-  backgroundMusic: {fileID: 0}
-  chaseMusic: {fileID: 0}
+  backgroundMusic: {fileID: 57874176}
+  chaseMusic: {fileID: 57874176}
   pauseFirstButton: {fileID: 1717954011}
-  managerLevel03Special: {fileID: 0}
+  managerLevel03Special: {fileID: 2108730234}
   resume: {fileID: 1717954012}
   retry: {fileID: 1325315673}
   quit: {fileID: 636117513}
@@ -15088,7 +15088,7 @@ Transform:
   m_GameObject: {fileID: 1801240862}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.12, y: -13.18, z: 0}
+  m_LocalPosition: {x: 0.12, y: -20.67, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15509,7 +15509,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2413806693520163455, guid: e1061eb516099a441a03928183a3d586, type: 3}
   m_Color: {r: 0.21960786, g: 0, b: 0.6, a: 1}
   m_FlipX: 0

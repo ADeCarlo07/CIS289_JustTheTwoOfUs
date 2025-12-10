@@ -1,4 +1,5 @@
 using Unity.Cinemachine;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.InputSystem;
@@ -56,9 +57,12 @@ public class PlayerController_SpecialLevel01 : MonoBehaviour
 
     private bool canSwitch;
 
+    public bool canMove = true;
+
 
     private void Awake()
     {
+      
         playerActions = new PlayerActions();
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
@@ -99,42 +103,57 @@ public class PlayerController_SpecialLevel01 : MonoBehaviour
 
     private void FixedUpdate()
     {
-       
-
-        if (curvedScene)
-        {
-            Vector3 position = circleCollider.transform.position;
-            position.x = this.transform.position.x;
-            circleCollider.transform.position = position;
-        }
-
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.05f, groundLayer);
-        Run();
-
-        //ternary operator, saying if we are running current speed is run speed
-        //and if we aren't its walkspeed
-        currentSpeed = isRunning ? runSpeed : walkSpeed;
-
-        //reading and storing the input
-        movementInput = playerActions.Action_Map.Movement.ReadValue<Vector2>();
-        movementInput = movementInput.normalized;
-
-
-        //Audio
-        if (movementInput != Vector2.zero && isGrounded)
-        {
-            if (isRunning)
+       if (canMove)
+       {
+            if (curvedScene)
             {
-                if (audioSource2.isPlaying)
-                {
-                    audioSource2.Stop();
-                }
+                Vector3 position = circleCollider.transform.position;
+                position.x = this.transform.position.x;
+                circleCollider.transform.position = position;
+            }
 
-                if (!audioSource.isPlaying)
+            isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.05f, groundLayer);
+            Run();
+
+            //ternary operator, saying if we are running current speed is run speed
+            //and if we aren't its walkspeed
+            currentSpeed = isRunning ? runSpeed : walkSpeed;
+
+            //reading and storing the input
+            movementInput = playerActions.Action_Map.Movement.ReadValue<Vector2>();
+            movementInput = movementInput.normalized;
+
+
+            //Audio
+            if (movementInput != Vector2.zero && isGrounded)
+            {
+                if (isRunning)
                 {
-                    audioSource.clip = runningSound;
-                    audioSource.loop = true;
-                    audioSource.Play();
+                    if (audioSource2.isPlaying)
+                    {
+                        audioSource2.Stop();
+                    }
+
+                    if (!audioSource.isPlaying)
+                    {
+                        audioSource.clip = runningSound;
+                        audioSource.loop = true;
+                        audioSource.Play();
+                    }
+                }
+                else
+                {
+                    if (audioSource.isPlaying)
+                    {
+                        audioSource.Stop();
+                    }
+
+                    if (!audioSource2.isPlaying)
+                    {
+                        audioSource2.clip = walkingSound;
+                        audioSource2.loop = true;
+                        audioSource2.Play();
+                    }
                 }
             }
             else
@@ -143,85 +162,73 @@ public class PlayerController_SpecialLevel01 : MonoBehaviour
                 {
                     audioSource.Stop();
                 }
-
-                if (!audioSource2.isPlaying)
+                if (audioSource2.isPlaying)
                 {
-                    audioSource2.clip = walkingSound;
-                    audioSource2.loop = true;
-                    audioSource2.Play();
+                    audioSource2.Stop();
                 }
             }
-        }
-        else
-        {
-            if (audioSource.isPlaying)
-            {
-                audioSource.Stop();
-            }
-            if (audioSource2.isPlaying)
-            {
-                audioSource2.Stop();
-            }
-        }
 
-        float currentYVelocity = rb.linearVelocityY;
-        rb.linearVelocity = new Vector2(movementInput.x * currentSpeed, currentYVelocity);
+            float currentYVelocity = rb.linearVelocityY;
+            rb.linearVelocity = new Vector2(movementInput.x * currentSpeed, currentYVelocity);
 
 
-        //checking to see if player can jump and letting them jump
+            //checking to see if player can jump and letting them jump
 
-        if (GameManager.instance.playingAsSpaceDog())
-        {
-            if (jumpRequested && numJumps != maxNumJumps)
-            {
-                numJumps++;
-                Debug.Log("Max num jumps: " + maxNumJumps);
-                Debug.Log("Space dog jumped " + numJumps);
-                animator.SetTrigger("Jump");
-                rb.linearVelocity = new Vector2(rb.linearVelocityX, 0);
-                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-
-                jumpRequested = false;
-            }
-            if (numJumps >= maxNumJumps && isGrounded)
-            {
-                numJumps = 0;
-                jumpRequested = false;
-            }
-
-        }
-        else
-        {
-            if (isGrounded && jumpRequested)
-            {
-                animator.SetTrigger("Jump");
-                rb.linearVelocity = new Vector2(rb.linearVelocityX, 0);
-                rb.AddForce(Vector2.down * jumpForce, ForceMode2D.Impulse);
-                jumpRequested = false;
-            }
-        }
-
-
-
-        if (curvedScene)
-        {
             if (GameManager.instance.playingAsSpaceDog())
             {
-                material.SetFloat("_PlayerOffset", this.transform.position.x);
+                if (jumpRequested && numJumps != maxNumJumps)
+                {
+                    numJumps++;
+                    Debug.Log("Max num jumps: " + maxNumJumps);
+                    Debug.Log("Space dog jumped " + numJumps);
+                    animator.SetTrigger("Jump");
+                    rb.linearVelocity = new Vector2(rb.linearVelocityX, 0);
+                    rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+
+                    jumpRequested = false;
+                }
+                if (numJumps >= maxNumJumps && isGrounded)
+                {
+                    numJumps = 0;
+                    jumpRequested = false;
+                }
+
             }
             else
             {
-                material02.SetFloat("_PlayerOffset", this.transform.position.x);
+                if (isGrounded && jumpRequested)
+                {
+                    animator.SetTrigger("Jump");
+                    rb.linearVelocity = new Vector2(rb.linearVelocityX, 0);
+                    rb.AddForce(Vector2.down * jumpForce, ForceMode2D.Impulse);
+                    jumpRequested = false;
+                }
             }
-      
+
+
+
+            if (curvedScene)
+            {
+                if (GameManager.instance.playingAsSpaceDog())
+                {
+                    material.SetFloat("_PlayerOffset", this.transform.position.x);
+                }
+                else
+                {
+                    material02.SetFloat("_PlayerOffset", this.transform.position.x);
+                }
+
+            }
+
+            Debug.Log("Is grounded: " + isGrounded);
+
+
+            animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
+            animator.SetFloat("VerticalVelocity", rb.linearVelocity.y);
+            animator.SetInteger("VertVel", (int)rb.linearVelocity.y);
         }
 
-        Debug.Log("Is grounded: " + isGrounded);
-
-
-        animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
-        animator.SetFloat("VerticalVelocity", rb.linearVelocity.y);
-        animator.SetInteger("VertVel", (int)rb.linearVelocity.y);
+        
 
     }
     private void OnApplicationQuit()
@@ -242,101 +249,112 @@ public class PlayerController_SpecialLevel01 : MonoBehaviour
         
 
         GameManager.instance.setSpaceDog(spaceDog);
-        GameManager.instance.setTargetPlayer(this.gameObject);
+        GameManager.instance.setTargetPlayer(spaceDog);
         GameManager.instance.setOtherPlayer(otherCharacter);
         animator = GetComponent<Animator>();
 
+     
 
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (playerInput.actions["Pause"].WasPressedThisFrame())
+        if (GameManager.instance.getOtherPlayer().GetComponent<PlayerController_SpecialLevel01>().enabled == false)
         {
-            pauseMenu.SetActive(true);
+
+            GameManager.instance.getOtherPlayer().GetComponent<PlayerController_SpecialLevel01>().enabled = true;
+            GameManager.instance.getOtherPlayer().GetComponent<PlayerController_SpecialLevel01>().canMove = false;
         }
-
-        if (!GameManager.instance.playingAsSpaceDog() && !offsetApplied)
+        if (canMove)
         {
-            Vector3 pos = transform.position;
-            pos.y = level01_heightOffset;
-            transform.position = pos;
-            Debug.Log("offset guy");
-
-            offsetApplied = true;
-        }
-        
-
-        if (GameManager.instance.playingAsSpaceDog())
-        {
-
-            //make gravity normal
-            Physics2D.gravity = new Vector2(0, -9.8f);
-
-            if (movementInput.x != 0)
+            if (playerInput.actions["Pause"].WasPressedThisFrame())
             {
-                //flips entire gameObject by inverting its x scale
+                pauseMenu.SetActive(true);
+            }
+
+            if (!GameManager.instance.playingAsSpaceDog() && !offsetApplied)
+            {
+                Vector3 pos = transform.position;
+                pos.y = level01_heightOffset;
+                transform.position = pos;
+                Debug.Log("offset guy");
+
+                offsetApplied = true;
+            }
+
+
+            if (GameManager.instance.playingAsSpaceDog())
+            {
+
+                //make gravity normal
+                Physics2D.gravity = new Vector2(0, -9.8f);
+
+                if (movementInput.x != 0)
+                {
+                    //flips entire gameObject by inverting its x scale
+                    Vector3 scale = transform.localScale;
+                    scale.x = Mathf.Sign(movementInput.x) * Mathf.Abs(scale.x);
+                    transform.localScale = scale;
+                }
+                //else
+                //{
+                //    //Snap back to facing right
+                //    Vector3 scale = transform.localScale;
+                //    scale.x = Mathf.Abs(scale.x);
+                //    transform.localScale = scale;
+                //}
+            }
+            else
+            {
+                //flip gravity
+                Physics2D.gravity = new Vector2(0, 9.8f);
+
+
+                //this is so the space guy character remains upside down
                 Vector3 scale = transform.localScale;
-                scale.x = Mathf.Sign(movementInput.x) * Mathf.Abs(scale.x);
+                scale.y = -Mathf.Abs(scale.y);
+
+                if (movementInput.x != 0)
+                {
+                    scale.x = Mathf.Sign(movementInput.x) * Mathf.Abs(scale.x);
+                }
+
                 transform.localScale = scale;
+
             }
-            //else
-            //{
-            //    //Snap back to facing right
-            //    Vector3 scale = transform.localScale;
-            //    scale.x = Mathf.Abs(scale.x);
-            //    transform.localScale = scale;
-            //}
-        }
-        else
-        {
-            //flip gravity
-            Physics2D.gravity = new Vector2(0, 9.8f);
 
 
-            //this is so the space guy character remains upside down
-            Vector3 scale = transform.localScale;
-            scale.y = -Mathf.Abs(scale.y);
 
-            if (movementInput.x != 0)
+
+            switchCharacters();
+
+            if (GameManager.instance.playingAsSpaceDog())
             {
-                scale.x = Mathf.Sign(movementInput.x) * Mathf.Abs(scale.x);
+                if (playerInput.actions["Jump"].WasPressedThisFrame())
+                {
+                    jumpRequested = true;
+                }
             }
-
-            transform.localScale = scale;
-
-        }
-
-       
-
-
-        switchCharacters();
-
-        if (GameManager.instance.playingAsSpaceDog())
-        {
-            if (playerInput.actions["Jump"].WasPressedThisFrame())
+            else
             {
-                jumpRequested = true;
+                if (playerInput.actions["Jump"].WasPressedThisFrame() && isGrounded)
+                {
+                    jumpRequested = true;
+                }
             }
-        }
-        else
-        {
-            if (playerInput.actions["Jump"].WasPressedThisFrame() && isGrounded)
-            {
-                jumpRequested = true;
-            }
-        }
 
 
-        animator.SetBool("IsGrounded", isGrounded);
+            animator.SetBool("IsGrounded", isGrounded);
+        }    
+        
 
     }
 
     private void switchCharacters()
     {
-        if (playerInput.actions["SwitchPlayer"].WasPressedThisFrame() && isGrounded && canSwitch)
+        if (playerInput.actions["SwitchPlayer"].WasPressedThisFrame() && isGrounded && canSwitch && canMove)
         {
 
             if (!GameManager.instance.playingAsSpaceDog())
@@ -348,10 +366,25 @@ public class PlayerController_SpecialLevel01 : MonoBehaviour
                 GameManager.instance.getOtherPlayer().GetComponent<SpaceGuyShoot>().enabled = true;
             }
 
-            GameManager.instance.setTargetPlayer(otherCharacter);
-            GameManager.instance.setOtherPlayer(this.gameObject);
+            if (GameManager.instance.getTargetPlayer() == spaceDog)
+            {
+                GameManager.instance.setTargetPlayer(otherCharacter);
+                GameManager.instance.setOtherPlayer(spaceDog);
+                audioSource.Stop();
+                audioSource2.Stop();
+            }
+            else
+            {
+                GameManager.instance.setTargetPlayer(spaceDog);
+                GameManager.instance.setOtherPlayer(otherCharacter);
+                audioSource.Stop();
+                audioSource2.Stop();
+            }
+
+
 
             Debug.Log("Switch players");
+            
             rb.linearVelocity = Vector2.zero;
             rb.angularVelocity = 0f;
             currentSpeed = 0f;
@@ -380,7 +413,7 @@ public class PlayerController_SpecialLevel01 : MonoBehaviour
                 //GameManager.instance.getTargetPlayer().GetComponent<RotateWithCurve>().enabled = false;
             }
 
-            this.GetComponent<PlayerController_SpecialLevel01>().enabled = false;
+            canMove = false;
 
             GameManager.instance.setMustMoveCamera(true);
 

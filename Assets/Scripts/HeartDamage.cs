@@ -79,9 +79,13 @@ public class HeartDamage : MonoBehaviour
 
             if (heartCount == 0)
             {
-                AudioSource audioS = backGroundMusic.GetComponent<AudioSource>();
-                audioS.Stop();
-                audioSource.Play();
+                if (backGroundMusic != null)
+                {
+                    AudioSource audioS = backGroundMusic.GetComponent<AudioSource>();
+                    audioS.Stop();
+                    audioSource.Play();
+                }
+                
             }
             else
             {
@@ -110,14 +114,20 @@ public class HeartDamage : MonoBehaviour
     {
         curHealth += healthAdded;
 
-        if (curHealth > maxHealth)
-        {
-            heartCount = heartList.GetComponent<HeartUI>().currentHearts;
-            heartCount++;
+        //if (curHealth > maxHealth)
+        //{
+           
+        //    heartCount = heartList.GetComponent<HeartUI>().currentHearts;
 
-            heartList.GetComponent<HeartUI>().UpdateHeartDisplay(heartCount);
+        //    if (heartCount < GameManager.instance.numberOfHearts)
+        //    {
+        //        heartCount++;
 
-        }
+        //        heartList.GetComponent<HeartUI>().UpdateHeartDisplay(heartCount);
+        //    }
+            
+
+        //}
 
         curHealth = Mathf.Clamp(curHealth, 0, maxHealth);
         UpdateHealthBar();

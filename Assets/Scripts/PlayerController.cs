@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     private bool jumpRequested;
     public Transform groundCheck;
     public Material material;
+
+
     public CinemachineCamera cam;
     public GameObject circleCollider;
     public float vertexOfParabola;
@@ -47,6 +49,8 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        material.SetFloat("_PlayerOffset", this.transform.position.x);
+
         rb = GetComponent<Rigidbody2D>();
 
         playerActions = new PlayerActions();
@@ -55,6 +59,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
+       
 
         if (curvedScene)
         {
@@ -98,6 +103,7 @@ public class PlayerController : MonoBehaviour
 
         if (curvedScene)
         {
+          
             material.SetFloat("_PlayerOffset", this.transform.position.x);
         }
 

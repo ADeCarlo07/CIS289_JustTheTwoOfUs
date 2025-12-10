@@ -20,6 +20,8 @@ public class Level02_Enemy03 : MonoBehaviour
 
     public GameObject hitBox;
 
+    private Coroutine attackC;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -38,7 +40,7 @@ public class Level02_Enemy03 : MonoBehaviour
         Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
         if (hit != null && !isAttacking)
         {
-            StartCoroutine(attack());
+            attackC = StartCoroutine(attack());
         }
        
 
@@ -83,6 +85,12 @@ public class Level02_Enemy03 : MonoBehaviour
         else
         {
             animator.SetBool("OutOfRad", true);
+            if (attackC != null)
+            {
+                StopCoroutine(attackC);
+                attackC = null;
+            }
+         
         }
     }
 
